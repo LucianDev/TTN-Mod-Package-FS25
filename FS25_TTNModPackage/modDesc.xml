@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="92">
     <author>LucianDev</author>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <iconFilename>store_af11.dds</iconFilename>
 
     <title>
         <en>TTN Mod Package</en>
     </title>
 	<description>
-		<en><![CDATA[TTN Mod Package
-➣ Price: $
-➣ Power: HP
-➣ Max Speed:KMH
-]]></en>	
-	</description>
+        <en><![CDATA[
+    TTN Mod Package FS25
+    ➣ A collection of high-quality, customizable vehicles for your farm.
+    ➣ Features vehicles with diverse power outputs, speeds, and price ranges to suit any need.
+    ➣ Perfect for expanding your fleet and tackling various tasks with efficiency and style.
+        ]]></en>
+    </description>
 	<multiplayer supported="true"/>
     <storeItems>
         <storeItem xmlFilename="xml/cr11.xml"/>

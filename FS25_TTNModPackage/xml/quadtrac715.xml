@@ -457,26 +457,39 @@
 
         <motorConfigurations>
             <motorConfiguration name="Steiger 715 Quadtrac" hp="1200" price="0">
-                <motor torqueScale="6.0" minRpm="850" maxRpm="2100" maxForwardSpeed="50" maxBackwardSpeed="20" brakeForce="10" lowBrakeForceScale="0.1" dampingRateScale="2.1">
-                    <torque normRpm="0.45" torque="0.95"/>
-                    <torque normRpm="0.50" torque="1.00"/>
+                <motor torqueScale="5.306" minRpm="850" maxRpm="2100" maxForwardSpeed="56" maxBackwardSpeed="15" brakeForce="5" lowBrakeForceScale="0.1" dampingRateScale="2.1">
+                    <torque normRpm="0.45" torque="0.90"/>
+                    <torque normRpm="0.50" torque="0.97"/>
                     <torque normRpm="0.59" torque="1.00"/>
                     <torque normRpm="0.72" torque="1.00"/>
-                    <torque normRpm="0.86" torque="0.95"/>
-                    <torque normRpm="1.00" torque="0.85"/>
+                    <torque normRpm="0.86" torque="0.88"/>
+                    <torque normRpm="1.00" torque="0.72"/>
                 </motor>
 
-                <!-- Automatic Transmission 4F / 2R with seamless shifting and top speed of 36 km/h at 2100 RPM -->
-                <transmission autoShift="true" autoGearChangeTime="0.5" gearChangeTime="0.5" axleRatio="0.85" name="$l10n_info_transmission_auto">
-                    <directionChange useGear="false"/>
+                <!-- PowerDrive full-powershift 16F / 2R w/16 Hi - speeds at 2100rpm -->
+                <transmission autoGearChangeTime="0" gearChangeTime="0" axleRatio="0.965" name="$l10n_info_transmission_powerShift">
+                    <directionChange useGear="true" reverseGearIndex="1" changeTime="0.5"/>
 
-                    <gearForward index="1" ratio="3.5" maxSpeed="10.0"/>
-                    <gearForward index="2" ratio="2.0" maxSpeed="20.0"/>
-                    <gearForward index="3" ratio="1.5" maxSpeed="30.0"/>
-                    <gearForward index="4" ratio="1.0" maxSpeed="36.0"/>
+                    <forwardGear maxSpeed="6.0" actionName="SHIFT_GEAR_SELECT_1"/>
+                    <forwardGear maxSpeed="7.5" actionName="-"/>
+                    <forwardGear maxSpeed="8.8" actionName="-"/>
+                    <forwardGear maxSpeed="10.5" actionName="SHIFT_GEAR_SELECT_2"/>
+                    <forwardGear maxSpeed="12.2" actionName="-"/>
+                    <forwardGear maxSpeed="13.5" actionName="-"/>
+                    <forwardGear maxSpeed="15.0" actionName="SHIFT_GEAR_SELECT_3"/>
+                    <forwardGear maxSpeed="17.5" actionName="-"/>
+                    <forwardGear maxSpeed="20.5" actionName="SHIFT_GEAR_SELECT_4"/>
+                    <forwardGear maxSpeed="23.0" actionName="-"/>
+                    <forwardGear maxSpeed="26.0" actionName="SHIFT_GEAR_SELECT_5"/>
+                    <forwardGear maxSpeed="29.0" actionName="-"/>
+                    <forwardGear maxSpeed="32.0" actionName="SHIFT_GEAR_SELECT_6"/>
+                    <forwardGear maxSpeed="35.0" actionName="-"/>
+                    <forwardGear maxSpeed="38.0" actionName="SHIFT_GEAR_SELECT_7"/>
+                    <forwardGear maxSpeed="42.0" actionName="-"/>
+                    <forwardGear maxSpeed="56.0" name="16H" actionName="SHIFT_GEAR_SELECT_8"/>
 
-                    <gearReverse index="1" ratio="4.0" maxSpeed="8.0"/>
-                    <gearReverse index="2" ratio="2.5" maxSpeed="15.0"/>
+                    <backwardGear maxSpeed="8.8"/>
+                    <backwardGear maxSpeed="15.0"/>
                 </transmission>
             </motorConfiguration>
         </motorConfigurations>
