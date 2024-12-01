@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="cutter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>FD250 FlexDraper®</name>
+        <specs>
+            <workingWidth>15.2</workingWidth>
+            <combination xmlFilename="$data/vehicles/newHolland/cr11/cr11.xml"/>
+            <combination xmlFilename="$data/vehicles/caseIH/af11/af11.xml"/>
+            <combination xmlFilename="$data/vehicles/demco/hdht52/hdht52.xml"/>
+        </specs>
+        <functions>
+            <function>$l10n_function_cutter</function>
+        </functions>
+        <image>$data/vehicles/macDon/fd250/store_fd250.png</image>
+        <price>75000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>MACDON</brand>
+        <category>cutters</category>
+        <shopTranslationOffset>0 -0.208 0</shopTranslationOffset>
+        <shopRotationOffset>-6.614 0 0</shopRotationOffset>
+        <shopFoldingState>1</shopFoldingState>
+        <vertexBufferMemoryUsage>4472064</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>1612800</indexBufferMemoryUsage>
+        <textureMemoryUsage>1114112</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_cutter</typeDesc>
+        <filename>$data/vehicles/macDon/fd250/fd250.i3d</filename>
+        <size width="16.6" length="4" height="2.5" lengthOffset="0.7"/>
+        <speedLimit value="30"/>
+        <componentConfigurations>
+            <componentConfiguration numComponents="4">
+                <component centerOfMass="0 0.5 0.28" solverIterationCount="10" mass="1450"/>
+                <component centerOfMass="0 -0.263 -0.1" solverIterationCount="10" mass="650"/>
+                <component centerOfMass="0 -0.263 -0.1" solverIterationCount="10" mass="650"/>
+                <component centerOfMass="0 0 0" solverIterationCount="10" mass="1500"/>
+                <joint component1="1" component2="2" node="componentJointArmLeft" rotLimit="0 0 0"/>
+                <joint component1="1" component2="3" node="componentJointArmRight" rotLimit="0 0 0"/>
+                <joint component1="4" component2="1" node="componentJointAttacher" rotLimit="0 0 0"/>
+
+                <collisionPair component1="2" component2="4" enabled="false"/>
+                <collisionPair component1="3" component2="4" enabled="false"/>
+            </componentConfiguration>
+            <componentConfiguration numComponents="6">
+                <component centerOfMass="0 0.5 0.28" solverIterationCount="10" mass="1450"/>
+                <component centerOfMass="0 -0.263 -0.1" solverIterationCount="10" mass="650"/>
+                <component centerOfMass="0 -0.263 -0.1" solverIterationCount="10" mass="650"/>
+                <component centerOfMass="0 0 0" solverIterationCount="10" mass="1500"/>
+                <component centerOfMass="0 0 0" solverIterationCount="10" mass="500"/>
+                <component centerOfMass="0 0 0" solverIterationCount="10" mass="250"/>
+                <joint component1="1" component2="2" node="componentJointArmLeft" rotLimit="0 0 0"/>
+                <joint component1="1" component2="3" node="componentJointArmRight" rotLimit="0 0 0"/>
+                <joint component1="4" component2="1" node="componentJointAttacher" rotLimit="0 0 0"/>
+                <joint component1="2" component2="5" node="componentJointFrontWheels" rotLimit="0 75 0"/>
+                <joint component1="5" component2="6" node="componentJointDrawbar" rotLimit="0 0 0"/>
+
+                <collisionPair component1="2" component2="6" enabled="false"/>
+                <collisionPair component1="2" component2="4" enabled="false"/>
+                <collisionPair component1="3" component2="4" enabled="false"/>
+            </componentConfiguration>
+        </componentConfigurations>
+        <schemaOverlay attacherJointPosition="0 0" name="COMBINE_HEADER"/>
+        <mapHotspot type="CUTTER"/>
+    </base>
+
+    <configurationSets title="$l10n_configuration_transportWheels" isYesNoOption="true">
+        <configurationSet name="$l10n_configuration_valueNo">
+            <configuration name="component" index="1"/>
+            <configuration name="wheel" index="1"/>
+            <configuration name="inputAttacherJoint" index="1"/>
+            <configuration name="folding" index="1"/>
+            <configuration name="animation" index="1"/>
+            <configuration name="cylindered" index="1"/>
+        </configurationSet>
+        <configurationSet name="$l10n_configuration_valueYes">
+            <configuration name="component" index="2"/>
+            <configuration name="wheel" index="2"/>
+            <configuration name="inputAttacherJoint" index="2"/>
+            <configuration name="folding" index="2"/>
+            <configuration name="animation" index="2"/>
+            <configuration name="cylindered" index="2"/>
+        </configurationSet>
+    </configurationSets>
+
+    <designColorConfigurations>
+        <designColorConfiguration name="newHollandFD250" materialTemplateName="NEWHOLLAND_YELLOW1" vehicleBrand="NEWHOLLAND" isSelectable="false">
+            <objectChange node="configurationLeftNewHolland" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightNewHolland" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="sideLogoNewHolland2DLeftDecal" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="sideLogoNewHolland2DRightDecal" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_nhStripe_mat" materialTemplateName="NEWHOLLAND_BLUE1"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration name="newHollandFD250Gold" materialTemplateName="NEWHOLLAND_GOLD1" vehicleBrand="NEWHOLLAND" isSelectable="false">
+            <objectChange node="configurationLeftNewHolland" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightNewHolland" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="sideLogoNewHolland3DLeft" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="sideLogoNewHolland3DRight" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="NEWHOLLAND_GOLD1"/>
+            <material materialSlotName="fd250_nhStripe_mat" materialTemplateName="NEWHOLLAND_DARKBLUE1" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration name="caseIHFD250" materialTemplateName="CASEIH_RED1" vehicleBrand="CASEIH" isSelectable="false">
+            <objectChange node="configurationLeftCaseIH" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightCaseIH" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonDecal_mat" materialTemplateName="SHARED_WHITE2" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration materialTemplateName="MACDON_RED">
+            <objectChange node="configurationLeftMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="SHARED_BLACK6" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonBackground_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonDecal_mat" materialTemplateName="SHARED_WHITE2" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration materialTemplateName="MACDON_GREY">
+            <objectChange node="configurationLeftMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="SHARED_BLACK6" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonBackground_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration materialTemplateName="JOHNDEERE_GREEN1">
+            <objectChange node="configurationLeftMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="SHARED_BLACK6" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonBackground_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonDecal_mat" materialTemplateName="SHARED_WHITE2" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration materialTemplateName="CASEIH_RED1">
+            <objectChange node="configurationLeftMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="SHARED_BLACK6" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonBackground_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonDecal_mat" materialTemplateName="SHARED_WHITE2" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration materialTemplateName="NEWHOLLAND_YELLOW1">
+            <objectChange node="configurationLeftMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="SHARED_BLACK6" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonBackground_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+
+        <designColorConfiguration materialTemplateName="CLAAS_GREEN1">
+            <objectChange node="configurationLeftMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightMacDon" visibilityActive="true" visibilityInactive="false"/>
+            <material materialSlotName="fd250_mainColor_mat" materialTemplateName="SHARED_BLACK6" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_macDonBackground_mat" materialTemplateUseColorOnly="true"/>
+            <material materialSlotName="fd250_rimColor_mat" materialTemplateName="SHARED_WHITE2"/>
+        </designColorConfiguration>
+    </designColorConfigurations>
+
+    <designConfigurations isYesNoOption="true">
+        <designConfiguration name="EU"/>
+        <designConfiguration name="US" price="250">
+            <objectChange node="configurationLeftUS" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="configurationRightUS" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="reelRightConfigurationUS" visibilityActive="true" visibilityInactive="false"/>
+        </designConfiguration>
+    </designConfigurations>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration>
+                <wheels hasSurfaceSounds="false" autoRotateBackSpeed="2.0">
+                    <wheel>
+                        <physics restLoad="0.5" repr="wheelLeft01Phy" forcePointRatio="0.15" radius="0.16" width="0.2" initialCompression="30" suspTravel="0.05" spring="12" damper="10" frictionScale="0.5" yOffset="0.02"/>
+                    </wheel>
+                    <wheel hasParticles="true">
+                        <physics restLoad="0.7" repr="wheelLeft02Phy" useDriveNodeDirection="true" forcePointRatio="0.15" radius="0.35" width="0.5" initialCompression="30" suspTravel="0.05" spring="22" damper="10" frictionScale="0.5" yOffset="0.02"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="0.5" repr="wheelLeft03Phy" forcePointRatio="0.15" radius="0.16" width="0.6" initialCompression="30" suspTravel="0.05" spring="15" damper="10" frictionScale="0.5" yOffset="0.02"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="0.3" repr="wheelRight01Phy" forcePointRatio="0.15" radius="0.16" width="0.2" initialCompression="30" suspTravel="0.05" spring="12" damper="10" frictionScale="0.5" yOffset="0.02"/>
+                    </wheel>
+                    <wheel hasParticles="true">
+                        <physics restLoad="0.7" repr="wheelRight02Phy"  useDriveNodeDirection="true" forcePointRatio="0.15" radius="0.35" width="0.5" initialCompression="30" suspTravel="0.05" spring="22" damper="10" frictionScale="0.5" yOffset="0.02"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="0.5" repr="wheelRight03Phy" forcePointRatio="0.15" radius="0.16" width="0.6" initialCompression="30" suspTravel="0.05" spring="15" damper="10" frictionScale="0.5" yOffset="0.02"/>
+                    </wheel>
+                </wheels>
+
+                <objectChange node="configurationLeftDefault" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="configurationRightDefault" visibilityActive="true" visibilityInactive="false"/>
+            </wheelConfiguration>
+            <wheelConfiguration price="3000">
+                <wheels hasSurfaceSounds="false" autoRotateBackSpeed="2.0">
+                    <wheel>
+                        <physics restLoad="0.1" repr="wheelLeft01Phy"  forcePointRatio="0.15" radius="0.16" width="0.2" initialCompression="30" suspTravel="0.05" spring="12" damper="10" frictionScale="0.5" yOffset="0.02" brakeFactor="0"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="0.1" repr="wheelLeft03Phy"  forcePointRatio="0.15" radius="0.16" width="0.6" initialCompression="30" suspTravel="0.05" spring="15" damper="10" frictionScale="0.5" yOffset="0.02" brakeFactor="0"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="0.1" repr="wheelRight01Phy" forcePointRatio="0.15" radius="0.16" width="0.2" initialCompression="30" suspTravel="0.05" spring="12" damper="10" frictionScale="0.5" yOffset="0.02" brakeFactor="0"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="0.1" repr="wheelRight03Phy" forcePointRatio="0.15" radius="0.16" width="0.6" initialCompression="30" suspTravel="0.05" spring="15" damper="10" frictionScale="0.5" yOffset="0.02" brakeFactor="0"/>
+                    </wheel>
+
+                    <wheel filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="1.5" repr="headerTrailerWheelFrontLeft"  useReprDirection="true" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="50" damper="40"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="1.4" repr="headerTrailerWheelFrontRight" useReprDirection="true" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="50" damper="40"/>
+                    </wheel>
+
+                    <wheel filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="1.2" repr="headerTrailerWheelBackLeft"   useReprDirection="true" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="50" damper="40" brakeFactor="0.5"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.8" repr="headerTrailerWheelBackRight"  useReprDirection="true" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="50" damper="40"/>
+                    </wheel>
+                </wheels>
+
+                <objectChange node="configurationLeftTrailer" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="configurationRightTrailer" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="lightLeftTrailer_static" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="lightRightTrailer_static" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="bigTriangle" visibilityActive="true" visibilityInactive="false"/>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <dynamicallyLoadedWheels>
+            <dynamicallyLoadedWheel linkNode="wheelLeft01"  filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="true"/>
+            <dynamicallyLoadedWheel linkNode="wheelLeft02"  filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="false"/>
+            <dynamicallyLoadedWheel linkNode="wheelRight01" filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="false"/>
+            <dynamicallyLoadedWheel linkNode="wheelRight02" filename="$data/shared/wheels/tires/mitas/FL02/7_R12.xml" isLeft="true"/>
+        </dynamicallyLoadedWheels>
+
+        <hubs>
+            <hub linkNode="wheelLeft01" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.12 0.12 0.12"/>
+            <hub linkNode="wheelLeft02" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.12 0.12 0.12"/>
+            <hub linkNode="wheelRight01" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.12 0.12 0.12"/>
+            <hub linkNode="wheelRight02" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.12 0.12 0.12"/>
+
+            <hub linkNode="headerTrailerWheelFrontLeft" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.12 0.12 0.12"/>
+            <hub linkNode="headerTrailerWheelFrontRight" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.12 0.12 0.12"/>
+            <hub linkNode="headerTrailerWheelBackLeft" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.12 0.12 0.12"/>
+            <hub linkNode="headerTrailerWheelBackRight" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.12 0.12 0.12"/>
+        </hubs>
+    </wheels>
+
+    <speedRotatingParts>
+        <speedRotatingPart node="wheelVis01" wheelIndex="1"/>
+        <speedRotatingPart nodes="wheelLeft01" wheelIndex="2" hasTireTracks="true" tireTrackAtlasIndex="4"/>
+        <speedRotatingPart nodes="wheelLeft02" wheelIndex="2" hasTireTracks="true" tireTrackAtlasIndex="4"/>
+        <speedRotatingPart node="innerWheelsLeft" wheelNodes="wheelLeft03Phy"/>
+        <speedRotatingPart nodes="wheelRight01" wheelIndex="5" hasTireTracks="true" tireTrackAtlasIndex="4"/>
+        <speedRotatingPart nodes="wheelRight02" wheelIndex="5" hasTireTracks="true" tireTrackAtlasIndex="4"/>
+        <speedRotatingPart node="innerWheelsRight" wheelNodes="wheelRight03Phy"/>
+        <speedRotatingPart node="wheelVis02" wheelIndex="4"/>
+    </speedRotatingParts>
+
+    <attachable>
+        <inputAttacherJointConfigurations>
+            <inputAttacherJointConfiguration>
+                <support animationName="moveSupport"/>
+            </inputAttacherJointConfiguration>
+            <inputAttacherJointConfiguration>
+                <inputAttacherJoint node="attacherJointTrailer" jointType="trailer" attacherHeight="0.6" allowFolding="false"/>
+                <support animationName="lockDrawbarLimit" delayedOnAttach="false" detachAfterAnimation="false"/>
+            </inputAttacherJointConfiguration>
+        </inputAttacherJointConfigurations>
+
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="cutter" lowerRotLimitScale="0 0 0">
+                <heightNode node="heightNode" />
+                <distanceToGround lower="0.9" upper="2"/>
+            </inputAttacherJoint>
+        </inputAttacherJoints>
+
+        <lowerAnimation name="lowerAnimation" directionOnDetach="-1"/>
+        <brakeForce force="0.3" loweredForce="0.15"/>
+    </attachable>
+
+    <connectionHoses>
+        <customTarget node="cnhMultiCoupler" type="cnhMultiCoupler" inputAttacherJointIndices="1"/>
+
+        <hose inputAttacherJointIndices="2" type="electric" node="electricIn01" adapterNode="electricIn01_detachedAdapter" length="1.6" diameter="0.01" straighteningFactor="0.2">
+            <objectChange node="electricIn01_detachedAdapter" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+    </connectionHoses>
+
+    <lights>
+        <realLights>
+            <high>
+                <light node="backLightsHigh" lightTypes="0" inputAttacherJointIndex="2"/>
+                <light node="positionLightLeft" lightTypes="0" inputAttacherJointIndex="1"/>
+                <light node="positionLightRight" lightTypes="0" inputAttacherJointIndex="1"/>
+                <brakeLight node="backLightsHigh" inputAttacherJointIndex="2"/>
+                <turnLightLeft node="turnLightLeftFront" inputAttacherJointIndex="2"/>
+                <turnLightLeft node="turnLightLeftBack" inputAttacherJointIndex="2"/>
+                <turnLightRight node="turnLightRightFront" inputAttacherJointIndex="2"/>
+                <turnLightRight node="turnLightRightBack" inputAttacherJointIndex="2"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="lightLeft_static" intensity="5" inputAttacherJointIndex="1"/>
+                <node node="lightLeftGlass_static" intensity="1" inputAttacherJointIndex="1"/>
+                <node node="lightRight_static" intensity="5" inputAttacherJointIndex="1"/>
+                <node node="lightRightGlass_static" intensity="1" inputAttacherJointIndex="1"/>
+
+                <node node="lightLeftTrailer_static" intensity="5" inputAttacherJointIndex="2"/>
+                <node node="lightLeftTrailerGlass_static" intensity="1" inputAttacherJointIndex="2"/>
+                <node node="lightRightTrailer_static" intensity="5" inputAttacherJointIndex="2"/>
+                <node node="lightRightTrailerGlass_static" intensity="1" inputAttacherJointIndex="2"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+    </lights>
+
+    <powerTakeOffs>
+        <input inputAttacherJointIndices="1" inputNode="ptoInputNode" detachNode="ptoDetachNode" aboveAttacher="true" ptoName="LEFT_PTO" materialTemplateName="SHARED_BLACK1" decalMaterialTemplateName="WALTERSCHEID_YELLOW1"/>
+    </powerTakeOffs>
+
+    <powerConsumer ptoRpm="540" neededMaxPtoPower="125"/>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="heightNode" threshold="0.5" />
+    </groundReferenceNodes>
+
+    <workAreas>
+        <workArea type="cutter" functionName="processCutterArea" disableBackwards="true" >
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight" />
+            <groundReferenceNode index="1" />
+            <testAreas autoGenerate="true" zOffset="0.5" xOffset="0" length="0.6" numAreas="16" areaWidthScale="0.25" scale="0.97"/>
+        </workArea>
+    </workAreas>
+
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration />
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="0" turnOnFoldMinLimit="1" turnOnFoldMaxLimit="1">
+                    <foldingPart animationName="folding" speedScale="1"/>
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <animations>
+        <animationConfigurations>
+            <animationConfiguration />
+            <animationConfiguration>
+                <animation name="lockDrawbarLimit">
+                    <part componentJointIndex="5" startTime="0.0" endTime="0.1" startRotLimit="15 0 0" endRotLimit="0 0 0" requiredAnimation="folding" requiredAnimationRange="0 0"/>
+                </animation>
+
+                <animation name="folding">
+                    <part node="headerTrailerDrawbar" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+                    <part node="drawbarWorkPosition" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+
+                    <part node="drawbarColPart" startTime="0" endTime="0.25" startTrans="0 0 2.68" endTrans="0 0 0"/>
+                    <part node="componentJointDrawbar" startTime="0" endTime="1" startRot="0 0 0" endRot="-90 0 0"/>
+                    <part node="componentJointDrawbar" startTime="1" endTime="2" startRot="-90 0 0" endRot="0 -70 0"/>
+                    <part componentIndex="5" startTime="1" endTime="2" startCenterOfMass="0 0 0" endCenterOfMass="0 -0.5 0.5"/>
+
+                    <part node="headerTrailerLockBolt" startTime="0.9" endTime="1.0" startRot="0 0 0" endRot="-28 0 0" />
+
+                    <part node="componentJointFrontWheels" startTime="0" endTime="1" startRot="0 0 0" endRot="0 90 0" />
+                    <part node="headerTrailerArmLeft01" startTime="1" endTime="2" startRot="0 0 0" endRot="109.5 0 0" />
+                    <part node="headerTrailerArmLeft05" startTime="1" endTime="2" startRot="0 0 0" endRot="106.205 0 0" />
+                    <part node="headerTrailerArmLeft06" startTime="1" endTime="1.5" startRot="0 0 0" endRot="-34.230 0 0" />
+                    <part node="headerTrailerArmLeft06" startTime="1.5" endTime="2" startRot="-34.230 0 0" endRot="-77.351 0 0" />
+                    <part node="headerTrailerWheelFrontRot" startTime="1" endTime="2" startRot="0 0 0" endRot="120 0 0" />
+
+                    <part node="headerTrailerArmRight03LockArm01" startTime="0" endTime="0.1" startRot="0 0 0" endRot="0 0 -12.5" />
+                    <part node="headerTrailerArmRight03LockArm02" startTime="0" endTime="0.1" startRot="0 0 0" endRot="0 0 12.5" />
+
+                    <part node="headerTrailerArmRight03" startTime="0.1" endTime="0.5" startRot="0 0 0" endRot="2.5 0 0" />
+
+                    <part node="headerTrailerArmRight01" startTime="0.5" endTime="2.0" startRot="0 0 0" endRot="36 0 0" />
+                    <part node="headerTrailerArmRight01Handle" startTime="0.5" endTime="2.0" startRot="0 0 0" endRot="-32.58 0 0" />
+                    <part node="headerTrailerArmRight02" startTime="0.5" endTime="2.0" startRot="0 0 0" endRot="0 -94.161 0" />
+                    <part node="headerTrailerArmRight03" startTime="2.0" endTime="2.5" startRot="2.5 0 0" endRot="-5.045 0 0" />
+
+                    <part node="headerTrailerMountArmRight" startTime="1.0" endTime="2.0" startRot="0 0 0" endRot="0 0 -30" />
+                    <part node="headerTrailerMountArmRight" startTime="2.0" endTime="2.5" startRot="0 0 -30" endRot="0 0 -15" />
+
+                    <part node="headerTrailerWheelBackLeftRot" startTime="0.5" endTime="1.5" startRot="0 90 0" endRot="-51 90 0" />
+
+                    <part componentJointIndex="4" startTime="0.0" endTime="0.1" startRotLimit="0 75 0" endRotLimit="0 0 0" />
+                    <part componentJointIndex="5" startTime="0.0" endTime="0.1" startRotLimit="15 0 0" endRotLimit="0 0 0" />
+                </animation>
+            </animationConfiguration>
+        </animationConfigurations>
+
+        <animation name="turnedOnAnimation_knifes" looping="true">
+            <part node="knifesDecal" startTime="0.0" endTime="0.5" shaderStartValues="0 0 0 0" shaderEndValues="0 0.1 0 0" shaderParameter="offsetUV"/>
+            <part node="knifesDecal" startTime="0.5" endTime="1.0" shaderStartValues="0 0.1 0 0" shaderEndValues="0 0 0 0" shaderParameter="offsetUV"/>
+
+            <part node="extensionLeftCanolaKnife01"  startTime="0.0" endTime="0.5" startTrans="0 0 0" endTrans="0 0.05 0"/>
+            <part node="extensionLeftCanolaKnife01"  startTime="0.5" endTime="1.0" startTrans="0 0.05 0" endTrans="0 0 0"/>
+            <part node="extensionLeftCanolaKnife02"  startTime="0.0" endTime="0.5" startTrans="0 0 0" endTrans="0 -0.05 0"/>
+            <part node="extensionLeftCanolaKnife02"  startTime="0.5" endTime="1.0" startTrans="0 -0.05 0" endTrans="0 0 0"/>
+
+            <part node="extensionRightCanolaKnife01" startTime="0.0" endTime="0.5" startTrans="0 0 0" endTrans="0 -0.05 0"/>
+            <part node="extensionRightCanolaKnife01" startTime="0.5" endTime="1.0" startTrans="0 -0.05 0" endTrans="0 0 0"/>
+            <part node="extensionRightCanolaKnife02" startTime="0.0" endTime="0.5" startTrans="0 0 0" endTrans="0 0.05 0"/>
+            <part node="extensionRightCanolaKnife02" startTime="0.5" endTime="1.0" startTrans="0 0.05 0" endTrans="0 0 0"/>
+        </animation>
+
+        <animation name="moveSupport">
+            <part node="wheelArmLeftPhy" startTime="0" endTime="0.5" startRot="2 0 0" endRot="0 0 0" />
+            <part node="wheelArmInnerLeftPhy" startTime="0" endTime="0.5" startRot="2 0 0" endRot="0 0 0" />
+            <part node="wheelArmRightPhy" startTime="0" endTime="0.5" startRot="2 0 0" endRot="0 0 0" />
+            <part node="wheelArmInnerRightPhy" startTime="0" endTime="0.5" startRot="2 0 0" endRot="0 0 0" />
+        </animation>
+
+        <animation name="reelAnimation" looping="true">
+            <part node="reelCenter" startTime="0" endTime="1" animationClip="reelAnimationSource" clipStartTime="0" clipEndTime="15000" />
+        </animation>
+
+        <animation name="lowerAnimation">
+            <part componentJointIndex="1" startTime="0.5" endTime="1.5" startRotLimit="0 0 0" endRotLimit="4 0 0"/>
+            <part componentJointIndex="2" startTime="0.5" endTime="1.5" startRotLimit="0 0 0" endRotLimit="4 0 0"/>
+            <part componentJointIndex="3" startTime="0.5" endTime="1.5" startRotMinLimit="0 0 5" startRotMaxLimit="0 0 5" endRotMinLimit="-3 0 -3" endRotMaxLimit="3 0 10" startTransLimit="0 0 0" endTransMinLimit="0 0 0" endTransMaxLimit="0 0.25 0"/>
+        </animation>
+
+        <animation name="jointAnimation">
+            <part node="reelRotCenter_animated_joint" startTime="0.0" endTime="1.0" startTrans="2.447 0.247 0.647" endTrans="2.447 0.374 0.319" startRot="0.0 0.0 0.0" endRot="5.789 0.0 0.0" />
+        </animation>
+
+        <animation name="canolaExtensionAnimation">
+            <part node="extensionLeftDefault" startTime="0.0" endTime="0.1" startVisibility="true" endVisibility="false"/>
+            <part node="extensionLeftCanola" startTime="0.0" endTime="0.1" startVisibility="false" endVisibility="true"/>
+            <part node="extensionRightDefault" startTime="0.0" endTime="0.1" startVisibility="true" endVisibility="false"/>
+            <part node="extensionRightCanola" startTime="0.0" endTime="0.1" startVisibility="false" endVisibility="true"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <cylinderedConfigurations>
+            <cylinderedConfiguration />
+            <cylinderedConfiguration>
+                <movingTools>
+                    <movingTool node="headerTrailerArmLeft01">
+                        <dependentPart node="headerTrailerArmLeft03"/>
+                        <componentJoint index="4"/>
+                    </movingTool>
+                    <movingTool node="componentJointFrontWheels">
+                        <componentJoint index="4"/>
+                    </movingTool>
+                    <movingTool node="componentJointDrawbar">
+                        <componentJoint index="5"/>
+                    </movingTool>
+
+                    <movingTool node="headerTrailerArmLeft05">
+                        <dependentPart node="headerTrailerArmLeft03Spring"/>
+                    </movingTool>
+                    <movingTool node="headerTrailerArmLeft06">
+                        <dependentPart node="headerTrailerArmLeft03Spring"/>
+                    </movingTool>
+
+                    <movingTool node="headerTrailerArmRight01" wheelNodes="headerTrailerWheelBackLeft headerTrailerWheelBackRight">
+                        <dependentPart node="headerTrailerArmRight01Spring"/>
+                    </movingTool>
+                    <movingTool node="headerTrailerArmRight02" wheelNodes="headerTrailerWheelBackLeft headerTrailerWheelBackRight"/>
+                    <movingTool node="headerTrailerArmRight03" wheelNodes="headerTrailerWheelBackRight"/>
+                    <movingTool node="headerTrailerWheelBackLeftRot" wheelNodes="headerTrailerWheelBackLeft"/>
+                    <movingTool node="headerTrailerWheelFrontRot" wheelNodes="headerTrailerWheelFrontLeft headerTrailerWheelFrontRight"/>
+
+                    <movingTool node="headerTrailerArmRight01Handle">
+                        <dependentPart node="headerTrailerArmRight01Spring"/>
+                    </movingTool>
+
+                    <movingTool node="headerTrailerArmRight03LockArm01">
+                        <dependentPart node="headerTrailerArmRight03LockArm01Spring"/>
+                    </movingTool>
+                    <movingTool node="headerTrailerArmRight03LockArm02">
+                        <dependentPart node="headerTrailerArmRight03LockArm01Spring"/>
+                    </movingTool>
+                </movingTools>
+
+                <movingParts>
+                    <movingPart node="headerTrailerFrontWheelArm" referencePoint="headerTrailerFrontWheelArmRef" referenceFrame="headerTrailerFrontWheelArmRefFrame" isActiveDirty="true" maxUpdateDistance="150">
+                        <dependentPart node="headerTrailerDrawbar" maxUpdateDistance="75"/>
+                    </movingPart>
+                    <movingPart node="headerTrailerDrawbar" referencePoint="headerTrailerDrawbarRef" referenceFrame="headerTrailerDrawbarRefFrame"/>
+
+                    <movingPart node="headerTrailerArmLeft03" localReferencePoint="headerTrailerArmLeft04" referencePoint="headerTrailerArmLeft04Ref" referenceFrame="headerTrailerArmLeft03RefFrame">
+                        <dependentPart node="headerTrailerArmLeft04" />
+                        <dependentPart node="headerTrailerArmLeft03Spring" />
+                    </movingPart>
+                    <movingPart node="headerTrailerArmLeft04" referencePoint="headerTrailerArmLeft04Ref" referenceFrame="headerTrailerArmLeft04Ref"/>
+
+                    <movingPart node="headerTrailerArmLeft03Spring" referencePoint="headerTrailerArmLeft03SpringRef" referenceFrame="headerTrailerArmLeft03SpringRef">
+                        <translatingPart node="headerTrailerArmLeft03SpringTrans" />
+                        <dependentPart node="headerTrailerArmLeft03SpringScale" />
+                    </movingPart>
+                    <movingPart node="headerTrailerArmLeft03SpringScale" referencePoint="headerTrailerArmLeft03SpringScaleRef" referenceFrame="headerTrailerArmLeft03SpringScaleRef" scaleZ="true"/>
+
+                    <movingPart node="headerTrailerArmRight03LockArm01Spring" referencePoint="headerTrailerArmRight03LockArm01SpringRef" referenceFrame="headerTrailerArmRight03LockArm01SpringRef" scaleZ="true"/>
+
+                    <movingPart node="headerTrailerArmRight01Spring" referencePoint="headerTrailerArmRight01SpringRef" referenceFrame="headerTrailerArmRight01SpringRef">
+                        <translatingPart node="headerTrailerArmRight01SpringTrans" />
+                        <dependentPart node="headerTrailerArmRight01SpringScale"/>
+                    </movingPart>
+                    <movingPart node="headerTrailerArmRight01SpringScale" referencePoint="headerTrailerArmRight01SpringScaleRef" referenceFrame="headerTrailerArmRight01SpringScaleRef" scaleZ="true"/>
+                </movingParts>
+            </cylinderedConfiguration>
+        </cylinderedConfigurations>
+
+        <movingTools>
+            <movingTool node="reelRotCenter" playSound="true" >
+                <controls axis="AXIS_CUTTER_REEL2" invertAxis="true" mouseSpeedFactor="0.5" iconName="REEL_TRANSLATE_Y" />
+                <rotation rotSpeed="13" rotAcceleration="50" rotMax="9" rotMin="-20" startRot="-20"/>
+                <dependentMovingTool node="reelRotArmLeft" speedScale="1"/>
+                <dependentMovingTool node="reelRotArmRight" speedScale="1"/>
+                <dependentPart node="reelRotCenterHydraulic"/>
+            </movingTool>
+            <movingTool node="reelRotArmLeft">
+                <rotation rotSpeed="13" rotAcceleration="50" rotMax="9" rotMin="-20" startRot="-20"/>
+                <dependentPart node="reelRotArmLeftHydraulic"/>
+                <dependentPart node="reelTransArmLeftColPart"/>
+            </movingTool>
+            <movingTool node="reelRotArmRight">
+                <rotation rotSpeed="13" rotAcceleration="50" rotMax="9" rotMin="-20" startRot="-20"/>
+                <dependentPart node="reelRotArmRightHydraulic"/>
+                <dependentPart node="reelTransArmRightColPart"/>
+            </movingTool>
+            <movingTool node="reelTransCenter" playSound="true" >
+                <controls axis="AXIS_CUTTER_REEL" invertAxis="true" mouseSpeedFactor="0.5" iconName="REEL_TRANSLATE_X" />
+                <translation transSpeed="0.2" transAcceleration="50" transMax="0" transMin="-0.7" translationAxis="3" startTrans="-0.1"/>
+                <dependentMovingTool node="reelTransArmLeft" speedScale="1"/>
+                <dependentMovingTool node="reelTransArmRight" speedScale="1"/>
+                <dependentAnimation name="jointAnimation" minValue="-0.7" maxValue="0" translationAxis="3" invert="true"/>
+            </movingTool>
+            <movingTool node="reelTransArmLeft">
+                <translation transSpeed="0.2" transAcceleration="50" transMax="0" transMin="-0.7" translationAxis="3" startTrans="-0.1"/>
+                <dependentPart node="reelTransArmLeftColPart"/>
+            </movingTool>
+            <movingTool node="reelTransArmRight">
+                <translation transSpeed="0.2" transAcceleration="50" transMax="0" transMin="-0.7" translationAxis="3" startTrans="-0.1"/>
+                <dependentPart node="reelTransArmRightColPart"/>
+            </movingTool>
+
+            <movingTool node="wheelArmLeftPhy" wheelNodes="wheelLeft01Phy"/>
+            <movingTool node="wheelArmInnerLeftPhy" wheelNodes="wheelLeft03Phy"/>
+            <movingTool node="wheelArmRightPhy" wheelNodes="wheelRight01Phy"/>
+            <movingTool node="wheelArmInnerRightPhy" wheelNodes="wheelRight03Phy"/>
+        </movingTools>
+
+        <movingParts>
+            <movingPart node="reelTransArmLeftColPart" referenceFrame="reelTransArmLeftColPartRef" moveToReferenceFrame="true" doDirectionAlignment="false"/>
+            <movingPart node="reelTransArmRightColPart" referenceFrame="reelTransArmRightColPartRef" moveToReferenceFrame="true" doDirectionAlignment="false"/>
+
+            <movingPart node="reelRotArmLeftHydraulic" referencePoint="reelRotArmLeftHydraulicRef" referenceFrame="reelRotArmLeftHydraulicRef">
+                <translatingPart node="reelRotArmLeftHydraulicPunch" />
+            </movingPart>
+            <movingPart node="reelRotCenterHydraulic" referencePoint="reelRotCenterHydraulicRef" referenceFrame="reelRotCenterHydraulicRef">
+                <translatingPart node="reelRotCenterHydraulicPunch" />
+            </movingPart>
+            <movingPart node="reelRotArmRightHydraulic" referencePoint="reelRotArmRightHydraulicRef" referenceFrame="reelRotArmRightHydraulicRef">
+                <translatingPart node="reelRotArmRightHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="drumLeftRot" referencePoint="drumLeftRef" referenceFrame="drumLeftRef" isActiveDirty="true" maxUpdateDistance="100"/>
+            <movingPart node="reelLeftAlign" referencePoint="reelLeftAlignRef" referenceFrame="reelLeftAlignRef" isActiveDirty="true" maxUpdateDistance="100"/>
+            <movingPart node="drumRightRot" referencePoint="drumRightRef" referenceFrame="drumRightRef" isActiveDirty="true" maxUpdateDistance="100"/>
+            <movingPart node="reelRightAlign" referencePoint="reelRightAlignRef" referenceFrame="reelRightAlignRef" isActiveDirty="true" maxUpdateDistance="100"/>
+
+            <movingPart node="wheelArmLeft" referencePoint="wheelArmLeftRef" referenceFrame="wheelArmLeftRefFrame" limitedAxis="1" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="wheelArmLeftHydraulic" />
+            </movingPart>
+            <movingPart node="wheelArmLeftHydraulic" referencePoint="wheelArmLeftHydraulicRef" referenceFrame="wheelArmLeftHydraulicRef">
+                <translatingPart node="wheelArmLeftHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="wheelArmInnerLeft" referencePoint="wheelArmInnerLeftRef" referenceFrame="wheelArmInnerLeftRefFrame" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="wheelArmInnerLeftHydraulic" />
+            </movingPart>
+            <movingPart node="wheelArmInnerLeftHydraulic" referencePoint="wheelArmInnerLeftHydraulicRef" referenceFrame="wheelArmInnerLeftHydraulicRef"/>
+
+            <movingPart node="wheelArmRight" referencePoint="wheelArmRightRef" referenceFrame="wheelArmRightRefFrame" limitedAxis="1" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="wheelArmRightHydraulic" />
+            </movingPart>
+            <movingPart node="wheelArmRightHydraulic" referencePoint="wheelArmRightHydraulicRef" referenceFrame="wheelArmRightHydraulicRef">
+                <translatingPart node="wheelArmRightHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="wheelArmInnerRight" referencePoint="wheelArmInnerRightRef" referenceFrame="wheelArmInnerRightRefFrame" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="wheelArmInnerRightHydraulic" />
+            </movingPart>
+            <movingPart node="wheelArmInnerRightHydraulic" referencePoint="wheelArmInnerRightHydraulicRef" referenceFrame="wheelArmInnerRightHydraulicRef"/>
+
+            <movingPart node="attacherMainArmLeft" referencePoint="attacherMainArmLeftRef" referenceFrame="attacherMainArmLeftRefFrame" limitedAxis="1" minRot="-10" maxRot="0" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="attacherSuspensionArmLeft" />
+                <dependentPart node="attacherMainArmRight" />
+                <dependentPart node="attacherHydraulic" />
+                <dependentPart node="attacherOrientationBar" />
+                <dependentPart node="attacherCenterBelt" />
+            </movingPart>
+            <movingPart node="attacherSuspensionArmLeft" localReferencePoint="attacherSuspensionArmLeftPart" referencePoint="attacherSuspensionArmLeftPartRef" referenceFrame="attacherSuspensionArmLeftRefFrame">
+                <dependentPart node="attacherSuspensionArmLeftPart" />
+                <dependentPart node="attacherSpringLeft" />
+                <dependentPart node="attacherHeightIndicatorLeftArm03" />
+            </movingPart>
+            <movingPart node="attacherSuspensionArmLeftPart" referencePoint="attacherSuspensionArmLeftPartRef" referenceFrame="attacherSuspensionArmLeftPartRef"/>
+            <movingPart node="attacherSpringLeft" referencePoint="attacherSpringLeftRef" referenceFrame="attacherSpringLeftRef" scaleZ="true"/>
+
+            <movingPart node="attacherHeightIndicatorLeftArm03" localReferencePoint="attacherHeightIndicatorLeftArm04" referencePoint="attacherHeightIndicatorLeftArm04Ref" referenceFrame="attacherHeightIndicatorLeftArm03RefFrame">
+                <dependentPart node="attacherHeightIndicatorLeftArm01" />
+                <dependentPart node="attacherHeightIndicatorLeftArm04" />
+                <dependentPart node="attacherHeightIndicatorLeftSpring" />
+            </movingPart>
+            <movingPart node="attacherHeightIndicatorLeftArm04" referencePoint="attacherHeightIndicatorLeftArm04Ref" referenceFrame="attacherHeightIndicatorLeftArm04Ref"/>
+            <movingPart node="attacherHeightIndicatorLeftSpring" referencePoint="attacherHeightIndicatorLeftSpringRef" referenceFrame="attacherHeightIndicatorLeftSpringRef" scaleZ="true"/>
+            <movingPart node="attacherHeightIndicatorLeftArm01" localReferencePoint="attacherHeightIndicatorLeftArm02" referencePoint="attacherHeightIndicatorLeftArm02Ref" referenceFrame="attacherHeightIndicatorLeftArm01RefFrame">
+                <dependentPart node="attacherHeightIndicatorLeftArm02" />
+            </movingPart>
+            <movingPart node="attacherHeightIndicatorLeftArm02" referencePoint="attacherHeightIndicatorLeftArm02Ref" referenceFrame="attacherHeightIndicatorLeftArm02Ref"/>
+
+            <movingPart node="attacherMainArmRight" referencePoint="attacherMainArmRightRef" referenceFrame="attacherMainArmRightRefFrame" limitedAxis="1" minRot="-10" maxRot="0">
+                <dependentPart node="attacherSuspensionArmRight" />
+            </movingPart>
+            <movingPart node="attacherSuspensionArmRight" localReferencePoint="attacherSuspensionArmRightPart" referencePoint="attacherSuspensionArmRightPartRef" referenceFrame="attacherSuspensionArmRightRefFrame">
+                <dependentPart node="attacherSuspensionArmRightPart" />
+                <dependentPart node="attacherSpringRight" />
+                <dependentPart node="attacherHeightIndicatorRightArm03" />
+            </movingPart>
+            <movingPart node="attacherSuspensionArmRightPart" referencePoint="attacherSuspensionArmRightPartRef" referenceFrame="attacherSuspensionArmRightPartRef"/>
+            <movingPart node="attacherSpringRight" referencePoint="attacherSpringRightRef" referenceFrame="attacherSpringRightRef" scaleZ="true"/>
+
+            <movingPart node="attacherHeightIndicatorRightArm03" localReferencePoint="attacherHeightIndicatorRightArm04" referencePoint="attacherHeightIndicatorRightArm04Ref" referenceFrame="attacherHeightIndicatorRightArm03RefFrame">
+                <dependentPart node="attacherHeightIndicatorRightArm01" />
+                <dependentPart node="attacherHeightIndicatorRightArm04" />
+                <dependentPart node="attacherHeightIndicatorRightSpring" />
+            </movingPart>
+            <movingPart node="attacherHeightIndicatorRightArm04" referencePoint="attacherHeightIndicatorRightArm04Ref" referenceFrame="attacherHeightIndicatorRightArm04Ref"/>
+            <movingPart node="attacherHeightIndicatorRightSpring" referencePoint="attacherHeightIndicatorRightSpringRef" referenceFrame="attacherHeightIndicatorRightSpringRef" scaleZ="true"/>
+            <movingPart node="attacherHeightIndicatorRightArm01" localReferencePoint="attacherHeightIndicatorRightArm02" referencePoint="attacherHeightIndicatorRightArm02Ref" referenceFrame="attacherHeightIndicatorRightArm01RefFrame">
+                <dependentPart node="attacherHeightIndicatorRightArm02" />
+            </movingPart>
+            <movingPart node="attacherHeightIndicatorRightArm02" referencePoint="attacherHeightIndicatorRightArm02Ref" referenceFrame="attacherHeightIndicatorRightArm02Ref"/>
+
+            <movingPart node="attacherHydraulic" referencePoint="attacherHydraulicRef" referenceFrame="attacherHydraulicRef" limitedAxis="1">
+                <dependentPart node="attacherHydraulicYAlign" />
+            </movingPart>
+            <movingPart node="attacherHydraulicYAlign" referencePoint="attacherHydraulicRef" referenceFrame="attacherHydraulicRef">
+                <translatingPart node="attacherHydraulicPunch" />
+            </movingPart>
+            <movingPart node="attacherOrientationBar" referencePoint="attacherOrientationBarRef" referenceFrame="attacherOrientationBarRef"/>
+            <movingPart node="attacherCenterBelt" referencePoint="attacherCenterBeltRef" referenceFrame="attacherCenterBeltRefFrame" limitedAxis="1"/>
+        </movingParts>
+
+        <sounds>
+            <actionSound template="hydraulicOpen05"  volumeScale="3.5" pitchScale="1.0" linkNode="reelRotCenter"         actionNames="TOOL_MOVE_NEG"                                   nodes="reelRotCenter"   fadeIn="0.1" fadeOut="0.1" />
+            <actionSound template="hydraulicOpen02"  volumeScale="3.0" pitchScale="1.0" linkNode="reelRotCenter"         actionNames="TOOL_MOVE_POS"                                   nodes="reelRotCenter"   fadeIn="0.1" fadeOut="0.1" />
+            <actionSound template="hydraulicClose03" volumeScale="2.5" pitchScale="1.5" linkNode="fd250_main_component1" actionNames="TOOL_MOVE_POS TOOL_MOVE_NEG"                     nodes="reelTransCenter" fadeIn="0.1" fadeOut="0.1" />
+            <actionSound template="vibratingImp"     volumeScale="1.9" pitchScale="1"   linkNode="reelRotCenter"         actionNames="TOOL_MOVE_END_POS_LIMIT"                         nodes="reelRotCenter"/>
+            <actionSound template="metalImpHigh01"   volumeScale="0.5" pitchScale="1"   linkNode="reelRotCenter"         actionNames="TOOL_MOVE_END_POS_LIMIT"                         nodes="reelRotCenter"/>
+            <actionSound template="vibratingImp"     volumeScale="1.6" pitchScale="1.3" linkNode="reelRotCenter"         actionNames="TOOL_MOVE_END_NEG_LIMIT"                         nodes="reelRotCenter"/>
+            <actionSound template="clackVar6"        volumeScale="2.6" pitchScale="0.7" linkNode="reelRotCenter"         actionNames="TOOL_MOVE_END_NEG_LIMIT"                         nodes="reelRotCenter"/>
+            <actionSound template="metalImpHigh01"   volumeScale="1.2" pitchScale="1"   linkNode="fd250_main_component1" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="reelTransCenter"/>
+            <actionSound template="sheetImp02"       volumeScale="3"   pitchScale="1"   linkNode="fd250_main_component1" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="reelTransCenter"/>
+            <actionSound template="vibratingImp"     volumeScale="0.7" pitchScale="1.6" linkNode="fd250_main_component1" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="reelTransCenter"/>
+        </sounds>
+    </cylindered>
+
+    <cutter fruitTypeCategories="grainHeader">
+        <effect>
+            <effectNode effectClass="CutterMotionPathEffect" effectType="CUTTER" linkNode="cutterEffectLinkNodeCenter">
+                <motionPathEffect textureFilename="$data/vehicles/macDon/fd250/beltXArrayCenter.dds" numRows="32" rowLength="42" minFade="0.06" textureRealWidth="16" speedScale="0.18"/>
+            </effectNode>
+            <effectNode effectClass="CutterMotionPathEffect" effectType="CUTTER" linkNode="cutterEffectLinkNodeLeft">
+                <motionPathEffect textureFilename="$data/vehicles/macDon/fd250/beltXArrayLeft.dds" numRows="32" rowLength="42" minFade="0.06" textureRealWidth="16" speedScale="0.18"/>
+            </effectNode>
+            <effectNode effectClass="CutterMotionPathEffect" effectType="CUTTER" linkNode="cutterEffectLinkNodeRight">
+                <motionPathEffect textureFilename="$data/vehicles/macDon/fd250/beltXArrayRight.dds" numRows="32" rowLength="42" minFade="0.06" textureRealWidth="16" speedScale="0.18"/>
+            </effectNode>
+            <effectNode effectClass="ParticleEffect" effectNode="smokeEmitter" particleType="SMOKE" materialType="smokeParticle" emitCountScale="0.1" worldSpace="false" useCuttingWidth="false"/>
+        </effect>
+
+        <animationNodes>
+            <animationNode node="drumLeft" rotAxis="3" rotSpeed="-1500" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="drumCenter" rotAxis="1" rotSpeed="1500" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="drumRight" rotAxis="3" rotSpeed="1500" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode class="ScrollingAnimation" node="beltLeft" shaderParameterName="offsetUV" shaderParameterComponent="2" scrollLength="8" scrollSpeed="-1.1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode class="ScrollingAnimation" node="beltCenter" shaderParameterName="offsetUV" shaderParameterComponent="2" scrollLength="1" scrollSpeed="-1.1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode class="ScrollingAnimation" node="beltRight" shaderParameterName="offsetUV" shaderParameterComponent="2" scrollLength="8" scrollSpeed="-1.1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+
+            <animationNode node="drumFeeder" rotSpeed="700" rotAxis="1" class="RotationAnimationSpikes" turnOnFadeTime="2" turnOffFadeTime="3">
+                <spikes moveUpRange="70 170" moveDownRange="260 320" maxTrans="-0.13" transAxis="2">
+                    <spike node="drumFeederSpike05"/>
+                    <spike node="drumFeederSpike04"/>
+                    <spike node="drumFeederSpike03"/>
+                    <spike node="drumFeederSpike02"/>
+                    <spike node="drumFeederSpike01"/>
+                </spikes>
+            </animationNode>
+        </animationNodes>
+
+        <fruitExtraObjects>
+            <fruitExtraObject node="extensionLeftCanola" fruitType="canola" animationName="canolaExtensionAnimation"/>
+        </fruitExtraObjects>
+
+        <sounds>
+            <cut template="cropCutting" volumeScale="1.3"/>
+        </sounds>
+    </cutter>
+
+    <turnOnVehicle turnedOnByAttacherVehicle="true">
+        <turnedOnAnimation name="reelAnimation" speedScale="0.8" turnOnFadeTime="2" turnOffFadeTime="3"/>
+        <turnedOnAnimation name="turnedOnAnimation_knifes" speedScale="8" turnOnFadeTime="2" turnOffFadeTime="3"/>
+
+        <sounds>
+            <start template="harvesterToolStart" volumeScale="1.2" />
+            <start template="mowerBeltStart"     volumeScale="0.5" />
+            <work  template="harvesterToolWork"  volumeScale="1.2" />
+            <work  template="mowerBeltLoop"      volumeScale="0.5" />
+            <stop  template="harvesterToolStop"  pitchScale="1.2" volumeScale="1.1" />
+            <stop  template="mowerBeltStop"      pitchScale="0.5" volumeScale="1.1" />
+        </sounds>
+    </turnOnVehicle>
+
+    <dynamicMount forceLimitScale="1" />
+
+    <ai>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack" />
+        <collisionTrigger useSize="true"/>
+        <agentAttachment useSize="true"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-8.4" maxX="8.4" minZ="-0.8" maxZ="1.4" yOffset="0.4" />
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="fd250_main_component1" node="0>" />
+        <i3dMapping id="fd250_vis" node="0>0" />
+        <i3dMapping id="drumCenter" node="0>0|0|0" />
+        <i3dMapping id="reelRotCenter" node="0>0|0|1" />
+        <i3dMapping id="reelTransCenter" node="0>0|0|1|0|0" />
+        <i3dMapping id="reelCenter" node="0>0|0|1|0|0|0|0" />
+        <i3dMapping id="reelCenterSpike01" node="0>0|0|1|0|0|0|0|0" />
+        <i3dMapping id="reelCenterSpike01Part01" node="0>0|0|1|0|0|0|0|0|0" />
+        <i3dMapping id="reelCenterSpike02" node="0>0|0|1|0|0|0|0|1" />
+        <i3dMapping id="reelCenterSpike02Part01" node="0>0|0|1|0|0|0|0|1|0" />
+        <i3dMapping id="reelCenterSpike03" node="0>0|0|1|0|0|0|0|2" />
+        <i3dMapping id="reelCenterSpike03Part01" node="0>0|0|1|0|0|0|0|2|0" />
+        <i3dMapping id="reelCenterSpike04" node="0>0|0|1|0|0|0|0|3" />
+        <i3dMapping id="reelCenterSpike04Part01" node="0>0|0|1|0|0|0|0|3|0" />
+        <i3dMapping id="reelCenterSpike05" node="0>0|0|1|0|0|0|0|4" />
+        <i3dMapping id="reelCenterSpike05Part01" node="0>0|0|1|0|0|0|0|4|0" />
+        <i3dMapping id="reelCenterSpike01Part02" node="0>0|0|1|0|0|0|0|5" />
+        <i3dMapping id="reelCenterSpike02Part02" node="0>0|0|1|0|0|0|0|6" />
+        <i3dMapping id="reelCenterSpike03Part02" node="0>0|0|1|0|0|0|0|7" />
+        <i3dMapping id="reelCenterSpike04Part02" node="0>0|0|1|0|0|0|0|8" />
+        <i3dMapping id="reelCenterSpike05Part02" node="0>0|0|1|0|0|0|0|9" />
+        <i3dMapping id="reelLeftAlignRef" node="0>0|0|1|0|0|1" />
+        <i3dMapping id="reelRightAlignRef" node="0>0|0|1|0|0|2" />
+        <i3dMapping id="reelRotCenterHydraulic" node="0>0|0|1|1" />
+        <i3dMapping id="reelRotCenterHydraulicPunch" node="0>0|0|1|1|0" />
+        <i3dMapping id="reelRotCenter_animated_joint" node="0>0|0|1|4" />
+        <i3dMapping id="drumLeftRef" node="0>0|0|2" />
+        <i3dMapping id="drumRightRef" node="0>0|0|3" />
+        <i3dMapping id="reelRotCenterHydraulicRef" node="0>0|0|4" />
+        <i3dMapping id="attacherHydraulicRef" node="0>0|0|5" />
+        <i3dMapping id="attacherOrientationBarRef" node="0>0|0|6" />
+        <i3dMapping id="attacherCenterBeltRef" node="0>0|0|7" />
+        <i3dMapping id="attacherMainArmLeftRef" node="0>0|0|8" />
+        <i3dMapping id="attacherMainArmRightRef" node="0>0|0|9" />
+        <i3dMapping id="workAreaStart" node="0>0|1|0" />
+        <i3dMapping id="workAreaWidth" node="0>0|1|1" />
+        <i3dMapping id="workAreaHeight" node="0>0|1|2" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|2|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|2|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|2|2" />
+        <i3dMapping id="smokeEmitter" node="0>0|4|0" />
+        <i3dMapping id="cutterEffectLinkNodeCenter" node="0>0|4|1" />
+        <i3dMapping id="componentJointArmLeft" node="0>0|5" />
+        <i3dMapping id="componentJointArmRight" node="0>0|6" />
+        <i3dMapping id="beltLeft" node="0>1|1" />
+        <i3dMapping id="beltRight" node="0>1|2" />
+        <i3dMapping id="knifesDecal" node="0>1|3" />
+        <i3dMapping id="armLeft" node="1>0" />
+        <i3dMapping id="lightLeftTrailer_static" node="1>0|0|0" />
+        <i3dMapping id="lightLeftTrailerGlass_static" node="1>0|0|0|0" />
+        <i3dMapping id="turnLightLeftFront" node="1>0|0|0|1" />
+        <i3dMapping id="turnLightRightFront" node="1>0|0|0|2" />
+        <i3dMapping id="wheelArmLeftRefFrame" node="1>0|1" />
+        <i3dMapping id="wheelArmLeft" node="1>0|1|0" />
+        <i3dMapping id="wheelVis01" node="1>0|1|0|0|0" />
+        <i3dMapping id="wheelArmLeftHydraulicRef" node="1>0|1|0|1" />
+        <i3dMapping id="wheelArmLeftHydraulic" node="1>0|2" />
+        <i3dMapping id="wheelArmLeftHydraulicPunch" node="1>0|2|0" />
+        <i3dMapping id="wheelArmInnerLeftRefFrame" node="1>0|3" />
+        <i3dMapping id="wheelArmInnerLeft" node="1>0|3|0" />
+        <i3dMapping id="innerWheelsLeft" node="1>0|3|0|0|0" />
+        <i3dMapping id="wheelArmInnerLeftHydraulicRef" node="1>0|3|0|1" />
+        <i3dMapping id="wheelArmInnerLeftHydraulic" node="1>0|4" />
+        <i3dMapping id="drumLeftRot" node="1>0|5" />
+        <i3dMapping id="drumLeft" node="1>0|5|0" />
+        <i3dMapping id="reelRotArmLeft" node="1>0|6|0" />
+        <i3dMapping id="reelTransArmLeft" node="1>0|6|0|0|0" />
+        <i3dMapping id="reelLeftAlign" node="1>0|6|0|0|0|0" />
+        <i3dMapping id="reelLeft" node="1>0|6|0|0|0|0|0|0" />
+        <i3dMapping id="reelLeftSpike01" node="1>0|6|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="reelLeftSpike01Part02" node="1>0|6|0|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="reelLeftSpike01Part01" node="1>0|6|0|0|0|0|0|0|0|1" />
+        <i3dMapping id="reelLeftSpike02" node="1>0|6|0|0|0|0|0|0|0|2" />
+        <i3dMapping id="reelLeftSpike02Part02" node="1>0|6|0|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="reelLeftSpike02Part01" node="1>0|6|0|0|0|0|0|0|0|3" />
+        <i3dMapping id="reelLeftSpike03" node="1>0|6|0|0|0|0|0|0|0|4" />
+        <i3dMapping id="reelLeftSpike03Part02" node="1>0|6|0|0|0|0|0|0|0|4|0" />
+        <i3dMapping id="reelLeftSpike03Part01" node="1>0|6|0|0|0|0|0|0|0|5" />
+        <i3dMapping id="reelLeftSpike04" node="1>0|6|0|0|0|0|0|0|0|6" />
+        <i3dMapping id="reelLeftSpike04Part02" node="1>0|6|0|0|0|0|0|0|0|6|0" />
+        <i3dMapping id="reelLeftSpike04Part01" node="1>0|6|0|0|0|0|0|0|0|7" />
+        <i3dMapping id="reelLeftSpike05" node="1>0|6|0|0|0|0|0|0|0|8" />
+        <i3dMapping id="reelLeftSpike05Part02" node="1>0|6|0|0|0|0|0|0|0|8|0" />
+        <i3dMapping id="reelLeftSpike05Part01" node="1>0|6|0|0|0|0|0|0|0|9" />
+        <i3dMapping id="reelTransArmLeftColPartRef" node="1>0|6|0|0|0|3" />
+        <i3dMapping id="reelRotArmLeftHydraulicRef" node="1>0|6|0|1" />
+        <i3dMapping id="reelRotArmLeftHydraulic" node="1>0|7" />
+        <i3dMapping id="reelRotArmLeftHydraulicPunch" node="1>0|7|0" />
+        <i3dMapping id="cutterEffectLinkNodeLeft" node="1>0|8" />
+        <i3dMapping id="configurationLeftNewHolland" node="1>0|9|0" />
+        <i3dMapping id="sideLogoNewHolland2DLeftDecal" node="1>0|9|0|1" />
+        <i3dMapping id="sideLogoNewHolland3DLeft" node="1>0|9|0|2" />
+        <i3dMapping id="configurationLeftCaseIH" node="1>0|9|1" />
+        <i3dMapping id="configurationLeftMacDon" node="1>0|9|2" />
+        <i3dMapping id="configurationLeftDefault" node="1>0|9|3" />
+        <i3dMapping id="wheelLeft01" node="1>0|9|3|0|0|0" />
+        <i3dMapping id="wheelLeft02" node="1>0|9|3|0|1|0" />
+        <i3dMapping id="configurationLeftTrailer" node="1>0|9|4" />
+        <i3dMapping id="headerTrailerArmLeft01" node="1>0|9|4|0|0" />
+        <i3dMapping id="headerTrailerFrontWheelArmRefFrame" node="1>0|9|4|0|0|0" />
+        <i3dMapping id="headerTrailerFrontWheelArm" node="1>0|9|4|0|0|0|0" />
+        <i3dMapping id="headerTrailerDrawbarRefFrame" node="1>0|9|4|0|0|0|0|0" />
+        <i3dMapping id="headerTrailerDrawbar" node="1>0|9|4|0|0|0|0|0|0" />
+        <i3dMapping id="electricIn01_detachedAdapter" node="1>0|9|4|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="electricIn01" node="1>0|9|4|0|0|0|0|0|0|2|1" />
+        <i3dMapping id="componentJointFrontWheels" node="1>0|9|4|0|0|1|0" />
+        <i3dMapping id="headerTrailerArmLeft04Ref" node="1>0|9|4|0|0|3" />
+        <i3dMapping id="headerTrailerArmLeft03RefFrame" node="1>0|9|4|0|1" />
+        <i3dMapping id="headerTrailerArmLeft03" node="1>0|9|4|0|1|0" />
+        <i3dMapping id="headerTrailerArmLeft04" node="1>0|9|4|0|1|0|0" />
+        <i3dMapping id="headerTrailerArmLeft03SpringRef" node="1>0|9|4|0|1|0|1" />
+        <i3dMapping id="headerTrailerArmLeft05" node="1>0|9|4|0|2" />
+        <i3dMapping id="headerTrailerArmLeft06" node="1>0|9|4|0|2|0" />
+        <i3dMapping id="headerTrailerArmLeft03Spring" node="1>0|9|4|0|2|0|0" />
+        <i3dMapping id="headerTrailerArmLeft03SpringTrans" node="1>0|9|4|0|2|0|0|0" />
+        <i3dMapping id="headerTrailerArmLeft03SpringScaleRef" node="1>0|9|4|0|2|0|0|0|0" />
+        <i3dMapping id="headerTrailerArmLeft03SpringScale" node="1>0|9|4|0|2|0|0|1" />
+        <i3dMapping id="headerTrailerLockBolt" node="1>0|9|4|0|3" />
+        <i3dMapping id="drawbarWorkPosition" node="1>0|9|4|0|4" />
+        <i3dMapping id="extensionLeftDefault" node="1>0|9|5" />
+        <i3dMapping id="extensionLeftCanola" node="1>0|9|6" />
+        <i3dMapping id="extensionLeftCanolaKnife01" node="1>0|9|6|0|0" />
+        <i3dMapping id="extensionLeftCanolaKnife02" node="1>0|9|6|1|0" />
+        <i3dMapping id="configurationLeftUS" node="1>0|9|7" />
+        <i3dMapping id="lightLeft_static" node="1>0|9|7|0" />
+        <i3dMapping id="lightLeftGlass_static" node="1>0|9|7|0|0" />
+        <i3dMapping id="positionLightLeft" node="1>0|9|7|1" />
+        <i3dMapping id="wheelArmLeftPhy" node="1>1" />
+        <i3dMapping id="wheelLeft01Phy" node="1>1|0" />
+        <i3dMapping id="wheelArmLeftRef" node="1>1|0|0" />
+        <i3dMapping id="wheelLeft02Phy" node="1>2" />
+        <i3dMapping id="wheelArmInnerLeftPhy" node="1>3" />
+        <i3dMapping id="wheelLeft03Phy" node="1>3|0" />
+        <i3dMapping id="wheelArmInnerLeftRef" node="1>3|0|0" />
+        <i3dMapping id="reelTransArmLeftColPart" node="1>4" />
+        <i3dMapping id="armRight" node="2>0" />
+        <i3dMapping id="lightRightTrailer_static" node="2>0|0|0" />
+        <i3dMapping id="lightRightTrailerGlass_static" node="2>0|0|0|0" />
+        <i3dMapping id="backLightsHigh" node="2>0|0|0|1" />
+        <i3dMapping id="turnLightLeftBack" node="2>0|0|0|2" />
+        <i3dMapping id="turnLightRightBack" node="2>0|0|0|3" />
+        <i3dMapping id="wheelArmRightRefFrame" node="2>0|1" />
+        <i3dMapping id="wheelArmRight" node="2>0|1|0" />
+        <i3dMapping id="wheelVis02" node="2>0|1|0|0|0" />
+        <i3dMapping id="wheelArmRightHydraulicRef" node="2>0|1|0|1" />
+        <i3dMapping id="wheelArmRightHydraulic" node="2>0|2" />
+        <i3dMapping id="wheelArmRightHydraulicPunch" node="2>0|2|0" />
+        <i3dMapping id="wheelArmInnerRightRefFrame" node="2>0|3" />
+        <i3dMapping id="wheelArmInnerRight" node="2>0|3|0" />
+        <i3dMapping id="innerWheelsRight" node="2>0|3|0|0|0" />
+        <i3dMapping id="wheelArmInnerRightHydraulicRef" node="2>0|3|0|1" />
+        <i3dMapping id="wheelArmInnerRightHydraulic" node="2>0|4" />
+        <i3dMapping id="drumRightRot" node="2>0|5" />
+        <i3dMapping id="drumRight" node="2>0|5|0" />
+        <i3dMapping id="reelRotArmRight" node="2>0|6|0" />
+        <i3dMapping id="reelTransArmRight" node="2>0|6|0|0|0" />
+        <i3dMapping id="reelRightAlign" node="2>0|6|0|0|0|0" />
+        <i3dMapping id="reelRightRot" node="2>0|6|0|0|0|0|0" />
+        <i3dMapping id="reelRight" node="2>0|6|0|0|0|0|0|0" />
+        <i3dMapping id="reelRightSpike01" node="2>0|6|0|0|0|0|0|0|0" />
+        <i3dMapping id="reelRightSpike01Part01" node="2>0|6|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="reelRightSpike02" node="2>0|6|0|0|0|0|0|0|1" />
+        <i3dMapping id="reelRightSpike02Part01" node="2>0|6|0|0|0|0|0|0|1|0" />
+        <i3dMapping id="reelRightSpike03" node="2>0|6|0|0|0|0|0|0|2" />
+        <i3dMapping id="reelRightSpike03Part01" node="2>0|6|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="reelRightSpike04" node="2>0|6|0|0|0|0|0|0|3" />
+        <i3dMapping id="reelRightSpike04Part01" node="2>0|6|0|0|0|0|0|0|3|0" />
+        <i3dMapping id="reelRightSpike05" node="2>0|6|0|0|0|0|0|0|4" />
+        <i3dMapping id="reelRightSpike05Part01" node="2>0|6|0|0|0|0|0|0|4|0" />
+        <i3dMapping id="reelRightSpike01Part02" node="2>0|6|0|0|0|0|0|0|5" />
+        <i3dMapping id="reelRightSpike02Part02" node="2>0|6|0|0|0|0|0|0|6" />
+        <i3dMapping id="reelRightSpike03Part02" node="2>0|6|0|0|0|0|0|0|7" />
+        <i3dMapping id="reelRightSpike04Part02" node="2>0|6|0|0|0|0|0|0|8" />
+        <i3dMapping id="reelRightSpike05Part02" node="2>0|6|0|0|0|0|0|0|9" />
+        <i3dMapping id="reelRightConfigurationUS" node="2>0|6|0|0|0|1" />
+        <i3dMapping id="bigTriangle" node="2>0|6|0|0|0|1|0" />
+        <i3dMapping id="reelTransArmRightColPartRef" node="2>0|6|0|0|0|2" />
+        <i3dMapping id="reelRotArmRightHydraulicRef" node="2>0|6|0|1" />
+        <i3dMapping id="reelRotArmRightHydraulic" node="2>0|7" />
+        <i3dMapping id="reelRotArmRightHydraulicPunch" node="2>0|7|0" />
+        <i3dMapping id="cutterEffectLinkNodeRight" node="2>0|8" />
+        <i3dMapping id="configurationRightNewHolland" node="2>0|9|0" />
+        <i3dMapping id="sideLogoNewHolland2DRightDecal" node="2>0|9|0|1" />
+        <i3dMapping id="sideLogoNewHolland3DRight" node="2>0|9|0|2" />
+        <i3dMapping id="configurationRightCaseIH" node="2>0|9|1" />
+        <i3dMapping id="configurationRightMacDon" node="2>0|9|2" />
+        <i3dMapping id="configurationRightDefault" node="2>0|9|3" />
+        <i3dMapping id="wheelRight01" node="2>0|9|3|0|0|0" />
+        <i3dMapping id="wheelRight02" node="2>0|9|3|0|1|0" />
+        <i3dMapping id="configurationRightTrailer" node="2>0|9|4" />
+        <i3dMapping id="headerTrailerArmRight01" node="2>0|9|4|0|0" />
+        <i3dMapping id="headerTrailerArmRight02" node="2>0|9|4|0|0|0|0" />
+        <i3dMapping id="headerTrailerArmRight03" node="2>0|9|4|0|0|0|0|0|0" />
+        <i3dMapping id="headerTrailerWheelBackRight" node="2>0|9|4|0|0|0|0|0|0|0" />
+        <i3dMapping id="headerTrailerArmRight03LockArm01" node="2>0|9|4|0|0|0|0|0|0|2" />
+        <i3dMapping id="headerTrailerArmRight03LockArm01SpringRef" node="2>0|9|4|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="headerTrailerArmRight03LockArm02" node="2>0|9|4|0|0|0|0|0|0|3" />
+        <i3dMapping id="headerTrailerArmRight03LockArm01Spring" node="2>0|9|4|0|0|0|0|0|0|3|0" />
+        <i3dMapping id="headerTrailerWheelBackLeftRot" node="2>0|9|4|0|0|0|0|1" />
+        <i3dMapping id="headerTrailerWheelBackLeft" node="2>0|9|4|0|0|0|0|1|0" />
+        <i3dMapping id="headerTrailerArmRight01Handle" node="2>0|9|4|0|0|1" />
+        <i3dMapping id="headerTrailerArmRight01Spring" node="2>0|9|4|0|0|1|0" />
+        <i3dMapping id="headerTrailerArmRight01SpringTrans" node="2>0|9|4|0|0|1|0|0" />
+        <i3dMapping id="headerTrailerArmRight01SpringScaleRef" node="2>0|9|4|0|0|1|0|0|0" />
+        <i3dMapping id="headerTrailerArmRight01SpringScale" node="2>0|9|4|0|0|1|0|1" />
+        <i3dMapping id="headerTrailerArmRight01SpringRef" node="2>0|9|4|0|0|2" />
+        <i3dMapping id="headerTrailerMountArmRight" node="2>0|9|4|0|1" />
+        <i3dMapping id="extensionRightDefault" node="2>0|9|5" />
+        <i3dMapping id="extensionRightCanola" node="2>0|9|6" />
+        <i3dMapping id="extensionRightCanolaKnife01" node="2>0|9|6|0|0" />
+        <i3dMapping id="extensionRightCanolaKnife02" node="2>0|9|6|1|0" />
+        <i3dMapping id="configurationRightUS" node="2>0|9|7" />
+        <i3dMapping id="lightRight_static" node="2>0|9|7|0" />
+        <i3dMapping id="lightRightGlass_static" node="2>0|9|7|0|0" />
+        <i3dMapping id="positionLightRight" node="2>0|9|7|1" />
+        <i3dMapping id="wheelArmRightPhy" node="2>1" />
+        <i3dMapping id="wheelRight01Phy" node="2>1|0" />
+        <i3dMapping id="wheelArmRightRef" node="2>1|0|0" />
+        <i3dMapping id="wheelRight02Phy" node="2>2" />
+        <i3dMapping id="wheelArmInnerRightPhy" node="2>3" />
+        <i3dMapping id="wheelRight03Phy" node="2>3|0" />
+        <i3dMapping id="wheelArmInnerRightRef" node="2>3|0|0" />
+        <i3dMapping id="reelTransArmRightColPart" node="2>4" />
+        <i3dMapping id="fd250_attacher_component4" node="3>" />
+        <i3dMapping id="attacherJoint" node="3>0|0|0" />
+        <i3dMapping id="heightNode" node="3>0|0|1" />
+        <i3dMapping id="ptoInputNode" node="3>0|0|2" />
+        <i3dMapping id="ptoDetachNode" node="3>0|0|3" />
+        <i3dMapping id="cnhMultiCoupler" node="3>0|0|4" />
+        <i3dMapping id="attacherMainArmLeftRefFrame" node="3>0|1|0" />
+        <i3dMapping id="attacherMainArmLeft" node="3>0|1|0|0" />
+        <i3dMapping id="attacherSuspensionArmLeftPartRef" node="3>0|1|0|0|0" />
+        <i3dMapping id="attacherSuspensionArmLeftRefFrame" node="3>0|1|1" />
+        <i3dMapping id="attacherSuspensionArmLeft" node="3>0|1|1|0" />
+        <i3dMapping id="attacherSuspensionArmLeftPart" node="3>0|1|1|0|0" />
+        <i3dMapping id="attacherSpringLeftRef" node="3>0|1|1|0|1" />
+        <i3dMapping id="attacherHeightIndicatorRightArm04Ref" node="3>0|1|1|0|2" />
+        <i3dMapping id="attacherSpringLeft" node="3>0|1|2" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm01RefFrame" node="3>0|1|3" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm01" node="3>0|1|3|0" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm02" node="3>0|1|3|0|0" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm03RefFrame" node="3>0|1|4" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm03" node="3>0|1|4|0" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm04" node="3>0|1|4|0|0" />
+        <i3dMapping id="attacherHeightIndicatorLeftSpringRef" node="3>0|1|4|0|1" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm02Ref" node="3>0|1|4|0|2" />
+        <i3dMapping id="attacherHeightIndicatorLeftSpring" node="3>0|1|5" />
+        <i3dMapping id="attacherMainArmRightRefFrame" node="3>0|1|6" />
+        <i3dMapping id="attacherMainArmRight" node="3>0|1|6|0" />
+        <i3dMapping id="attacherSuspensionArmRightPartRef" node="3>0|1|6|0|0" />
+        <i3dMapping id="attacherSuspensionArmRightRefFrame" node="3>0|1|7" />
+        <i3dMapping id="attacherSuspensionArmRight" node="3>0|1|7|0" />
+        <i3dMapping id="attacherSuspensionArmRightPart" node="3>0|1|7|0|0" />
+        <i3dMapping id="attacherSpringRightRef" node="3>0|1|7|0|1" />
+        <i3dMapping id="attacherHeightIndicatorLeftArm04Ref" node="3>0|1|7|0|2" />
+        <i3dMapping id="attacherSpringRight" node="3>0|1|8" />
+        <i3dMapping id="attacherHeightIndicatorRightArm01RefFrame" node="3>0|1|9" />
+        <i3dMapping id="attacherHeightIndicatorRightArm01" node="3>0|1|9|0" />
+        <i3dMapping id="attacherHeightIndicatorRightArm02" node="3>0|1|9|0|0" />
+        <i3dMapping id="attacherHeightIndicatorRightArm03RefFrame" node="3>0|1|10" />
+        <i3dMapping id="attacherHeightIndicatorRightArm03" node="3>0|1|10|0" />
+        <i3dMapping id="attacherHeightIndicatorRightArm04" node="3>0|1|10|0|0" />
+        <i3dMapping id="attacherHeightIndicatorRightSpringRef" node="3>0|1|10|0|1" />
+        <i3dMapping id="attacherHeightIndicatorRightArm02Ref" node="3>0|1|10|0|2" />
+        <i3dMapping id="attacherHeightIndicatorRightSpring" node="3>0|1|11" />
+        <i3dMapping id="attacherHydraulic" node="3>0|1|12" />
+        <i3dMapping id="attacherHydraulicYAlign" node="3>0|1|12|0" />
+        <i3dMapping id="attacherHydraulicPunch" node="3>0|1|12|0|0" />
+        <i3dMapping id="attacherOrientationBar" node="3>0|1|13" />
+        <i3dMapping id="attacherCenterBeltRefFrame" node="3>0|1|14" />
+        <i3dMapping id="attacherCenterBelt" node="3>0|1|14|0" />
+        <i3dMapping id="beltCenter" node="3>0|1|14|0|0" />
+        <i3dMapping id="drumFeeder" node="3>0|1|15" />
+        <i3dMapping id="drumFeederSpike01" node="3>0|1|15|0|0" />
+        <i3dMapping id="drumFeederSpike02" node="3>0|1|15|1|0" />
+        <i3dMapping id="drumFeederSpike03" node="3>0|1|15|2|0" />
+        <i3dMapping id="drumFeederSpike04" node="3>0|1|15|3|0" />
+        <i3dMapping id="drumFeederSpike05" node="3>0|1|15|4|0" />
+        <i3dMapping id="componentJointAttacher" node="3>0|3" />
+        <i3dMapping id="fd250_frontWheels_component5" node="4>" />
+        <i3dMapping id="componentJointDrawbar" node="4>0|0" />
+        <i3dMapping id="headerTrailerWheelFrontRot" node="4>1" />
+        <i3dMapping id="headerTrailerWheelFrontLeft" node="4>1|0" />
+        <i3dMapping id="headerTrailerWheelFrontRight" node="4>1|1" />
+        <i3dMapping id="headerTrailerFrontWheelArmRef" node="4>2" />
+        <i3dMapping id="fd250_drawbar_component6" node="5>" />
+        <i3dMapping id="attacherJointTrailer" node="5>0" />
+        <i3dMapping id="drawbarColPart" node="5>1" />
+        <i3dMapping id="headerTrailerDrawbarRef" node="5>2" />
+    </i3dMappings>
+</vehicle>

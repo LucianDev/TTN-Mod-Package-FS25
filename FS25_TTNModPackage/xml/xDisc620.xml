@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="cutter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>XDisc 620</name>
+        <specs>
+            <workingWidth>6.2</workingWidth>
+            <combination xmlFilename="$data/vehicles/krone/xDisc620Trailer/xDisc620Trailer.xml"/>
+            <combination xmlFilename="$data/vehicles/krone/bigX1180/bigX1180.xml"/>
+        </specs>
+        <functions>
+            <function>$l10n_function_cutterForage</function>
+        </functions>
+        <image>$data/vehicles/krone/xDisc620/store_xDisc620.png</image>
+        <price>60000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>KRONE</brand>
+        <category>forageHarvesterCutters</category>
+        <shopTranslationOffset>0 -0.026 0</shopTranslationOffset>
+        <shopRotationOffset>-3.006 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>567552</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>139520</indexBufferMemoryUsage>
+        <textureMemoryUsage>393216</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_cutter</typeDesc>
+        <filename>$data/vehicles/krone/xDisc620/xDisc620.i3d</filename>
+        <size width="6.3" length="1.95" height="1.5"/>
+        <speedLimit value="30" />
+        <components>
+            <component centerOfMass="0 0.3 0" solverIterationCount="10" mass="2800"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="COMBINE_HEADER"/>
+        <mapHotspot type="CUTTER"/>
+    </base>
+
+    <powerConsumer ptoRpm="540" neededMinPtoPower="100" neededMaxPtoPower="100"/>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="heightNode02" threshold="0.5"/>
+    </groundReferenceNodes>
+
+    <workAreas>
+        <workArea type="cutter" functionName="processCutterArea" disableBackwards="true" >
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight" />
+            <groundReferenceNode index="1" />
+            <testAreas autoGenerate="true" zOffset="0.5" xOffset="0" length="0.6" numAreas="1" areaWidthScale="0.25"/>
+        </workArea>
+    </workAreas>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="cutterHarvester" upperRotationOffset="0">
+                <heightNode node="heightNode01"/>
+                <heightNode node="heightNode02"/>
+                <heightNode node="heightNode03"/>
+                <distanceToGround lower="0.15" upper="1.25" />
+            </inputAttacherJoint>
+        </inputAttacherJoints>
+        <support animationName="moveSupport" />
+    </attachable>
+
+    <powerTakeOffs>
+        <local startNode="localPowerTakeOff01Start" endNode="localPowerTakeOff01End" />
+        <local startNode="localPowerTakeOff02Start" endNode="localPowerTakeOff02End" />
+    </powerTakeOffs>
+
+    <dynamicMount forceLimitScale="20" />
+
+    <animations>
+        <animation name="moveSupport">
+            <part node="support" startTime="0" endTime="1" startTrans="0 0.617 -0.847" endTrans="0 0.425 -0.853" />
+
+            <sound template="metalClose"   startTime="0.9" direction="1" volumeScale="0.8" pitchScale="2.8"/>
+            <sound template="latchSmall"   startTime="0.9" direction="1" volumeScale="0.2" pitchScale="0.8"/>
+            <sound template="metalClose"   startTime="0.1" direction="-1" volumeScale="0.8" pitchScale="2.8"/>
+            <sound template="latchSmall"   startTime="0.1" direction="-1" volumeScale="0.2" pitchScale="0.8"/>
+            <sound template="slideOpen"    startTime="0.99" direction="-1" volumeScale="3.0" pitchScale="1.3"/>
+            <sound template="slideOpen"    startTime="0.01" direction="1" volumeScale="3.0" pitchScale="1.3"/>
+            <sound template="vibratingImp" startTime="0.01" direction="-1" volumeScale="1.3" pitchScale="1.2"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingParts>
+            <movingPart node="windBendAlignY" referenceFrame="windBendAlignYRefFrame" alignToWorldY="true" limitedAxis="1" minRot="-40" maxRot="40" isActiveDirty="true" maxUpdateDistance="150"/>
+        </movingParts>
+    </cylindered>
+
+    <cutter allowsForageGrowthState="true" fruitTypeCategories="directCutter" fruitTypeConverter="forageHarvester">
+        <effect>
+            <effectNode effectClass="ParticleEffect" effectNode="pickupSmokeEmitter" particleType="SMOKE" materialType="smokeParticle" emitCountScale="0.1" useCuttingWidth="false" useFruitColor="true" />
+            <effectNode effectClass="ParticleEffect" effectNode="pickupSmokeEmitter" particleType="SMOKE" materialType="smokeParticle" emitCountScale="0.1" useCuttingWidth="false" useFruitColor="true"  worldSpace="false"/>
+        </effect>
+
+        <animationNodes>
+            <animationNode node="drum"   rotAxis="1" rotSpeed="700"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc01" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc02" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc03" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc04" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc05" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc06" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc07" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc08" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc09" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc10" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc11" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc12" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc13" rotAxis="2" rotSpeed="-2500" turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+            <animationNode node="disc14" rotAxis="2" rotSpeed="2500"  turnOnFadeTime="2.5" turnOffFadeTime="4"/>
+        </animationNodes>
+
+        <automaticTilt raycastNode1="heightNode01" raycastNode2="heightNode03"/>
+        <sounds>
+            <cut template="mowerToolWork_01" />
+        </sounds>
+    </cutter>
+
+    <windBending>
+        <windBendingNodes>
+            <windBendingNode node="windBend" decalNode="windBendDecal" maxBending="0.1" maxBendingSpeed="20" />
+        </windBendingNodes>
+    </windBending>
+
+    <turnOnVehicle turnedOnByAttacherVehicle="true">
+        <sounds>
+            <start template="mowerToolStart_01" volumeScale="1.8" pitchScale="1" />
+            <work template="mowerToolLoop_01" volumeScale="2" pitchScale="1" />
+            <stop template="mowerToolStop_01" volumeScale="2.1" pitchScale="1"/>
+        </sounds>
+    </turnOnVehicle>
+
+    <ai>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack"/>
+        <collisionTrigger useSize="true"/>
+        <agentAttachment useSize="true"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-3.2" maxX="3.2" minZ="-0.9" maxZ="1.1" yOffset="0.2"/>
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="xDisc620_main_component1" node="0>" />
+        <i3dMapping id="krone_vis" node="0>0" />
+        <i3dMapping id="attacherJoint" node="0>0|0|0" />
+        <i3dMapping id="heightNode01" node="0>0|0|0|0" />
+        <i3dMapping id="heightNode02" node="0>0|0|0|1" />
+        <i3dMapping id="heightNode03" node="0>0|0|0|2" />
+        <i3dMapping id="localPowerTakeOff01Start" node="0>0|0|1|0" />
+        <i3dMapping id="localPowerTakeOff01End" node="0>0|0|1|1" />
+        <i3dMapping id="localPowerTakeOff02Start" node="0>0|0|1|2" />
+        <i3dMapping id="localPowerTakeOff02End" node="0>0|0|1|3" />
+        <i3dMapping id="support" node="0>0|1" />
+        <i3dMapping id="drum" node="0>0|2|0" />
+        <i3dMapping id="disc01" node="0>0|2|1" />
+        <i3dMapping id="disc02" node="0>0|2|2" />
+        <i3dMapping id="disc03" node="0>0|2|3" />
+        <i3dMapping id="disc04" node="0>0|2|4" />
+        <i3dMapping id="disc05" node="0>0|2|5" />
+        <i3dMapping id="disc06" node="0>0|2|6" />
+        <i3dMapping id="disc07" node="0>0|2|7" />
+        <i3dMapping id="disc08" node="0>0|2|8" />
+        <i3dMapping id="disc09" node="0>0|2|9" />
+        <i3dMapping id="disc10" node="0>0|2|10" />
+        <i3dMapping id="disc11" node="0>0|2|11" />
+        <i3dMapping id="disc12" node="0>0|2|12" />
+        <i3dMapping id="disc13" node="0>0|2|13" />
+        <i3dMapping id="disc14" node="0>0|2|14" />
+        <i3dMapping id="workAreaStart" node="0>0|3|0" />
+        <i3dMapping id="workAreaWidth" node="0>0|3|1" />
+        <i3dMapping id="workAreaHeight" node="0>0|3|2" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|4|0|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|4|0|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|4|0|2" />
+        <i3dMapping id="windBendAlignYRefFrame" node="0>0|5" />
+        <i3dMapping id="windBendAlignY" node="0>0|5|0" />
+        <i3dMapping id="windBend" node="0>0|5|0|0" />
+        <i3dMapping id="windBendDecal" node="0>0|5|0|0|0" />
+        <i3dMapping id="pickupSmokeEmitter" node="0>0|6|0" />
+        <i3dMapping id="cover" node="0>0|7|0" />
+        <i3dMapping id="decals_decal" node="0>0|7|1" />
+        <i3dMapping id="decals_decal1" node="0>0|7|4" />
+        <i3dMapping id="decals_decal2" node="0>0|7|5" />
+    </i3dMappings>
+</vehicle>

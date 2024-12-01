@@ -1,0 +1,1302 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="carFillable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>CV Series</name>
+        <specs>
+            <power>350</power>
+            <maxSpeed>90</maxSpeed>
+        </specs>
+        <functions>
+            <function>$l10n_function_car</function>
+        </functions>
+        <image>$data/vehicles/international/cvSeries/store_cvSeries.png</image>
+        <price>30000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>INTERNATIONAL</brand>
+        <category>trucks</category>
+        <shopTranslationOffset>0 0.074 0</shopTranslationOffset>
+        <shopRotationOffset>0.461 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>5097728</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>2453504</indexBufferMemoryUsage>
+        <textureMemoryUsage>1048576</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>1419600</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_car</typeDesc>
+        <filename>$data/vehicles/international/cvSeries/cvSeries.i3d</filename>
+        <sounds filename="$data/vehicles/international/cvSeries/sounds/cvSeries.xml" volumeFactor="1.0"/>
+        <size width="2.5" length="7.8" height="2.35" lengthOffset="-0.73"/>
+        <components>
+            <component centerOfMass="0 0.5 -0.1" solverIterationCount="10" mass="3000"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="CAR"/>
+        <mapHotspot type="TRUCK"/>
+    </base>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="CONTINENTAL" saveId="CONTINENTAL_DEFAULT">
+                <wheels autoRotateBackSpeed="2.5">
+                    <wheel filename="$data/shared/wheels/tires/continental/contiHybridHT3/285_70R19_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="1.2" repr="wheelFrontLeftRepr"  driveNode="wheelFrontLeft"  mass="0.5" forcePointRatio="0.3" initialCompression="20" suspTravel="0.1" spring="35" damper="30" frictionScale="1.7"/>
+                        <innerRim filename="$data/shared/wheels/hubs/hubTrucks.i3d" node="6|0" widthAndDiam="20 21" offset="0.07"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/contiHybridHT3/285_70R19_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="1.2" repr="wheelFrontRightRepr" driveNode="wheelFrontRight" mass="0.5" forcePointRatio="0.3" initialCompression="20" suspTravel="0.1" spring="35" damper="30" frictionScale="1.7"/>
+                        <innerRim filename="$data/shared/wheels/hubs/hubTrucks.i3d" node="6|1" widthAndDiam="20 21" offset="0.07"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/contiHybridHT3/265_70R19_5.xml" configId="dual" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics tipOcclusionAreaGroupId="1" rotSpeed="0" restLoad="1.5" repr="wheelBackLeft"  mass="0.5" forcePointRatio="0.3" initialCompression="17" suspTravel="0.1" spring="53" damper="30" frictionScale="3"/>
+                        <innerRim filename="$data/shared/wheels/hubs/hubTrucks.i3d" node="9|0" widthAndDiam="19 18.8" offset="0.049"/>
+                        <additionalWheel filename="$data/shared/wheels/tires/continental/contiHybridHT3/265_70R19_5.xml" offset="-0.555">
+                            <innerRim filename="$data/shared/wheels/hubs/hubTrucks.i3d" node="9|1" widthAndDiam="19 18.8" offset="-0.049"/>
+                        </additionalWheel>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/contiHybridHT3/265_70R19_5.xml" configId="dual" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics tipOcclusionAreaGroupId="1" rotSpeed="0" restLoad="1.5" repr="wheelBackRight" mass="0.5" forcePointRatio="0.3" initialCompression="17" suspTravel="0.1" spring="53" damper="30" frictionScale="3"/>
+                        <innerRim filename="$data/shared/wheels/hubs/hubTrucks.i3d" node="9|1" widthAndDiam="19 18.8" offset="0.049"/>
+                        <additionalWheel filename="$data/shared/wheels/tires/continental/contiHybridHT3/265_70R19_5.xml" offset="-0.555">
+                            <innerRim filename="$data/shared/wheels/hubs/hubTrucks.i3d" node="9|0" widthAndDiam="19 18.8" offset="-0.049"/>
+                        </additionalWheel>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <hubs>
+            <hub linkNode="wheelBackLeft"  filename="$data/shared/wheels/hubs/hub_n8_10.xml" isLeft="true"  scale="0.3 0.3 0.3" offset="0.15"/>
+            <hub linkNode="wheelBackRight" filename="$data/shared/wheels/hubs/hub_n8_10.xml" isLeft="false" scale="0.3 0.3 0.3" offset="0.15"/>
+        </hubs>
+
+        <ackermannSteeringConfigurations>
+            <ackermannSteering rotSpeed="38" rotMax="50" rotCenterWheels="3 4"/>
+        </ackermannSteeringConfigurations>
+    </wheels>
+
+    <configurationSets title="$l10n_configuration_extension">
+        <configurationSet name="$l10n_configuration_boxBody">
+            <configuration name="design" index="1"/>
+            <configuration name="design2" index="3"/>
+            <configuration name="designColor3" index="1"/>
+            <configuration name="fillUnit" index="1"/>
+            <configuration name="fillVolume" index="2"/>
+            <configuration name="dischargeable" index="2"/>
+            <configuration name="folding" index="1"/>
+            <configuration name="trailer" index="2"/>
+            <configuration name="attacherJoint" index="2"/>
+            <configuration name="tensionBelts" index="1"/>
+        </configurationSet>
+
+        <configurationSet name="$l10n_configuration_flatbed" isDefault="true">
+            <configuration name="design" index="2"/>
+            <configuration name="designColor3" index="1"/>
+            <configuration name="fillUnit" index="1"/>
+            <configuration name="fillVolume" index="2"/>
+            <configuration name="dischargeable" index="2"/>
+            <configuration name="folding" index="3"/>
+            <configuration name="trailer" index="2"/>
+            <configuration name="attacherJoint" index="1"/>
+            <configuration name="tensionBelts" index="2"/>
+        </configurationSet>
+
+        <configurationSet name="$l10n_configuration_tipper">
+            <configuration name="design" index="3"/>
+            <configuration name="design2" index="3"/>
+            <configuration name="fillUnit" index="2"/>
+            <configuration name="fillVolume" index="1"/>
+            <configuration name="dischargeable" index="1"/>
+            <configuration name="folding" index="2"/>
+            <configuration name="trailer" index="1"/>
+            <configuration name="attacherJoint" index="1"/>
+            <configuration name="tensionBelts" index="3"/>
+        </configurationSet>
+    </configurationSets>
+
+    <designConfigurations>
+        <designConfiguration name="1" price="10000">
+            <objectChange node="box" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="frameBack" translationActive="0 0.678 -0.5"/>
+            <objectChange node="frameExtension01" visibilityActive="true"/>
+            <objectChange node="frameExtension02" visibilityActive="false"/>
+            <objectChange node="frameExtension03" visibilityActive="true"/>
+            <objectChange node="kardanShaftPart06" visibilityActive="false"/>
+            <objectChange node="kardanShaftPart07" visibilityActive="true"/>
+            <objectChange node="kardanShaftPart08" visibilityActive="false"/>
+            <objectChange node="kardanShaftPart09" visibilityActive="true"/>
+            <objectChange node="frameBackFuelPart" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="electricBack" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="outdoorCameraTarget" translationActive="0 1.523 -0.77"/>
+            <size width="2.3" length="8.7" height="3.25" lengthOffset="-1.18"/>
+            <objectChange node="colBoxFloor" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colBoxWallLeft" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colBoxWallRight" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colBoxRoof" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colBoxWallFront" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colBoxStep" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colBoxStepMount" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colFrameExtension" compoundChildActive="true" compoundChildInactive="false"/>
+            <foliageBendingModifier index="1" minZ="-4.75"/>
+        </designConfiguration>
+
+        <designConfiguration name="2">
+            <objectChange node="flatbed" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="frameBack" translationActive="0 0.678 0.042"/>
+            <objectChange node="frameExtension01" visibilityActive="false"/>
+            <objectChange node="frameExtension02" visibilityActive="true"/>
+            <objectChange node="frameExtension03" visibilityActive="false"/>
+            <objectChange node="kardanShaftPart06" visibilityActive="true"/>
+            <objectChange node="kardanShaftPart07" visibilityActive="false"/>
+            <objectChange node="kardanShaftPart08" visibilityActive="true"/>
+            <objectChange node="kardanShaftPart09" visibilityActive="false"/>
+            <objectChange node="outdoorCameraTarget" translationActive="0 1.09 -0.34"/>
+            <objectChange node="colFlatbedFloor" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colFlatbedFront" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colFlatbedGuard" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colFlatbedWallLeft" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colFlatbedWallRight" compoundChildActive="true" compoundChildInactive="false"/>
+
+            <objectChange node="colFlatbedWallBack" compoundChildActive="true" compoundChildInactive="false"/>
+        </designConfiguration>
+
+        <designConfiguration name="3" price="8500">
+            <objectChange node="dumper" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="frameBack" translationActive="0 0.678 0.042"/>
+            <objectChange node="frameExtension01" visibilityActive="false"/>
+            <objectChange node="frameExtension02" visibilityActive="true"/>
+            <objectChange node="frameExtension03" visibilityActive="false"/>
+            <objectChange node="kardanShaftPart06" visibilityActive="true"/>
+            <objectChange node="kardanShaftPart07" visibilityActive="false"/>
+            <objectChange node="kardanShaftPart08" visibilityActive="true"/>
+            <objectChange node="kardanShaftPart09" visibilityActive="false"/>
+            <objectChange node="frameBackFuelPart" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="trailerAttacherJointBackLow" translationActive="0 0.551 -3.465" translationInactive="0 0.553 -3.800"/>
+            <objectChange node="electricBack" translationActive="0.299 0.55 -3.303" translationInactive="0.268 0.508 -3.691"/>
+            <objectChange node="outdoorCameraTarget" translationActive="0 1.16 -0.17"/>
+            <size length="7.5" height="2.5" lengthOffset="-0.58"/>
+            <objectChange node="colDumperFloor" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDumperFront" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDumperBackLeft" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDumperBackRight" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDoorLeft" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDoorRight" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDoorBack" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDumperGuard" compoundChildActive="true" compoundChildInactive="false"/>
+            <objectChange node="colDumperFrame" compoundChildActive="true" compoundChildInactive="false"/>
+        </designConfiguration>
+    </designConfigurations>
+
+    <design2Configurations title="$l10n_configuration_sideGuards">
+        <design2Configuration name="%s + %s + %s" params="$l10n_info_tipSideLeft|$l10n_info_tipSideRight|$l10n_info_tipSideBack">
+            <objectChange node="flatbedPanelsBack" visibilityActive="true"/>
+            <objectChange node="colFlatbedWallBack" compoundChildActive="true"/>
+        </design2Configuration>
+
+        <design2Configuration name="%s + %s" params="$l10n_info_tipSideLeft|$l10n_info_tipSideRight">
+            <objectChange node="flatbedPanelsBack" visibilityActive="false"/>
+            <objectChange node="colFlatbedWallBack" compoundChildActive="false"/>
+        </design2Configuration>
+
+        <!-- Empty config -->
+        <design2Configuration name="3" isSelectable="false"/>
+    </design2Configurations>
+
+    <lights>
+        <states>
+            <state lightTypes="0"/>
+        </states>
+
+        <sharedLight linkNode="rearLight80_left" filename="$data/shared/assets/lights/lizard/rearLight80_left.xml"/>
+        <sharedLight linkNode="rearLight80_right" filename="$data/shared/assets/lights/lizard/rearLight80_right.xml"/>
+        <sharedLight linkNode="rearLight26Red_01" filename="$data/shared/assets/lights/lizard/rearLight26Red.xml"/>
+        <sharedLight linkNode="rearLight26Red_02" filename="$data/shared/assets/lights/lizard/rearLight26Red.xml"/>
+        <sharedLight linkNode="rearLight26Orange_01" filename="$data/shared/assets/lights/lizard/rearLight26Orange_left.xml"/>
+        <sharedLight linkNode="rearLight26Orange_02" filename="$data/shared/assets/lights/lizard/rearLight26Orange_right.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_01" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_02" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_03" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_04" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_05" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_06" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_07" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_08" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+        <sharedLight linkNode="sideMarker06Orange_09" filename="$data/shared/assets/lights/lizard/sideMarker06Orange.xml"/>
+
+        <realLights>
+            <low>
+                <light node="frontLightLow" lightTypes="0" excludedLightTypes="3"/>
+                <light node="highBeamLow" lightTypes="3"/>
+            </low>
+            <high>
+                <light node="frontLightHigh" lightTypes="0" excludedLightTypes="3"/>
+                <light node="licensePlateLightHigh" lightTypes="0"/>
+                <light node="backLightsHigh" lightTypes="0"/>
+                <light node="turnLightLeftFront" lightTypes="0"/>
+                <light node="turnLightRightFront" lightTypes="0"/>
+                <light node="highBeamHigh" lightTypes="3"/>
+                <brakeLight node="backLightsHigh"/>
+                <turnLightLeft node="turnLightLeftFront"/>
+                <turnLightLeft node="turnLightLeftBack"/>
+                <turnLightRight node="turnLightRightFront"/>
+                <turnLightRight node="turnLightRightBack"/>
+                <interiorLight node="interiorScreenLight01"/>
+                <interiorLight node="interiorScreenLight02"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="frontLights" intensity="5"/>
+                <node node="frontLightsGlass" intensity="1"/>
+                <node node="frontLightsLeft" intensity="5"/>
+                <node node="frontLightsRight" intensity="5"/>
+
+                <node node="turnLightFrontLeft" intensity="5"/>
+                <node node="turnLightFrontRight" intensity="5"/>
+
+                <node node="dayCabMirrorLightsLeft" intensity="5"/>
+                <node node="dayCabMirrorLightsLeftGlass" intensity="1"/>
+                <node node="dayCabMirrorLightsRight" intensity="5"/>
+                <node node="dayCabMirrorLightsRightGlass" intensity="1"/>
+                <node node="dayCabMirrorTurnlightsLeft" intensity="5"/>
+                <node node="dayCabMirrorTurnlightsLeftGlass" intensity="1"/>
+                <node node="dayCabMirrorTurnlightsRight" intensity="5"/>
+                <node node="dayCabMirrorTurnlightsRightGlass" intensity="1"/>
+
+                <node node="crewCabMirrorLightsLeft" intensity="5"/>
+                <node node="crewCabMirrorLightsLeftGlass" intensity="1"/>
+                <node node="crewCabMirrorLightsRight" intensity="5"/>
+                <node node="crewCabMirrorLightsRightGlass" intensity="1"/>
+                <node node="crewCabMirrorTurnlightsLeft" intensity="5"/>
+                <node node="crewCabMirrorTurnlightsLeftGlass" intensity="1"/>
+                <node node="crewCabMirrorTurnlightsRight" intensity="5"/>
+                <node node="crewCabMirrorTurnlightsRightGlass" intensity="1"/>
+
+                <node node="boxLights" intensity="5"/>
+                <node node="boxLightsGlass" intensity="1"/>
+
+                <node node="flatbedLights" intensity="5"/>
+                <node node="flatbedLightsGlass" intensity="1"/>
+
+                <node node="dumperLights" intensity="5"/>
+                <node node="dumperLightsGlass" intensity="1"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="lightState" node="switchLights" lightTypes="0" minRot="0 0 0" maxRot="0 0 -95" doInterpolation="true"/>
+            <dashboard displayType="ROT" valueType="lightState" node="leverHighbeam" lightTypes="3" minRot="0 0 0" maxRot="10 0 0" doInterpolation="true"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="iconDefaultLight" lightTypes="0" baseColor="SHARED_BLACK4" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow_decals" lightTypes="0" intensity="0.2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="iconsSteeringWheel_decals" lightTypes="0" intensity="0.2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="switchLights_decals" lightTypes="0" intensity="0.2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="dayCabDoorLeft_decals" lightTypes="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="dayCabDoorRight_decals" lightTypes="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="crewCabDoorFrontLeft_decals" lightTypes="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="crewCabDoorFrontRight_decals" lightTypes="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="crewCabDoorBackLeft_decals" lightTypes="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="crewCabDoorBackRight_decals" lightTypes="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+
+            <dashboard displayType="ROT" valueType="turnLight" node="leverTurnlight" minRot="0 10 0" maxRot="0 -10 0" doInterpolation="true"/>
+            <dashboard displayType="EMITTER" valueType="turnLightLeft" node="iconTurnlightLeft_decals" baseColor="SHARED_BLACK4" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightRight" node="iconTurnlightRight_decals" baseColor="SHARED_BLACK4" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ANIMATION" valueType="turnLightLeft" animName="turnLightLeftAnim"/>
+            <dashboard displayType="ANIMATION" valueType="turnLightRight" animName="turnLightRightAnim"/>
+        </dashboards>
+    </lights>
+
+    <licensePlates defaultPlacement="BOTH">
+        <licensePlate node="licensePlateFront" position="FRONT" preferedType="SQUARISH" placementArea="0.06 0.27 0.1 0.27"/>
+        <licensePlate node="licensePlateBack" position="BACK" preferedType="SQUARISH" placementArea="0.06 0.15 0.15 0.4"/>
+    </licensePlates>
+
+    <speedRotatingParts>
+        <speedRotatingPart node="kardanShaftPart01" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart02" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart03" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart04" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart05" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart06" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart07" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart08" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart09" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="kardanShaftPart10" wheelScale="5" wheelNodes="wheelBackLeft wheelBackRight"/>
+        <speedRotatingPart node="driveShaft01" wheelScale="5" wheelNodes="wheelFrontLeft"/>
+        <speedRotatingPart node="driveShaft02" wheelScale="5" wheelNodes="wheelFrontLeft"/>
+        <speedRotatingPart node="driveShaft03" wheelScale="5" wheelNodes="wheelFrontRight"/>
+        <speedRotatingPart node="driveShaft04" wheelScale="5" wheelNodes="wheelFrontRight"/>
+    </speedRotatingParts>
+
+    <enterable>
+        <enterReferenceNode node="cvSeries_main_component1"/>
+        <exitPoint node="exitPoint"/>
+
+        <cameras>
+            <camera node="outdoorCamera" rotatable="true" rotateNode="outdoorCameraTarget" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="5" transMax="40" translation="0 0 6.85" rotation="-18 180 0" positionSmoothingParameter="0.05">
+                <raycastNode node="cameraRaycastNode1"/>
+                <raycastNode node="cameraRaycastNode2"/>
+                <raycastNode node="cameraRaycastNode3"/>
+            </camera>
+            <camera node="indoorCamera" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0.4" shadowFocusBox="shadowFocusBox"/>
+        </cameras>
+
+        <characterNode node="playerSkin" cameraMinDistance="0.5">
+            <target ikChain="leftArm" targetNode="playerLeftHandTarget" poseId="narrowFingers"/>
+            <target ikChain="rightArm" targetNode="playerRightHandTarget" poseId="narrowFingers"/>
+            <target ikChain="leftFoot" targetNode="playerLeftFootTarget"/>
+            <target ikChain="rightFoot" targetNode="playerRightFootTarget"/>
+        </characterNode>
+
+        <characterTargetNodeModifier node="playerSkin" transitionTime="0.2">
+            <state node="playerSkinShift" referenceNode="leverDrivingDirection"/>
+        </characterTargetNodeModifier>
+
+        <characterTargetNodeModifier node="playerRightHandTarget" transitionTime="0.1">
+            <state node="playerRightHandTargetShift" referenceNode="leverDrivingDirection" poseId="narrowFingers"/>
+        </characterTargetNodeModifier>
+
+        <characterTargetNodeModifier node="playerRightFootTarget" transitionTime="0.1">
+            <state node="playerRightFootTargetGas" referenceNode="pedalGas" directionReferenceNode="playerRightFootTargetGasRef"/>
+            <state node="playerRightFootTargetBrake" referenceNode="pedalBrake"/>
+        </characterTargetNodeModifier>
+
+        <enterablePassengerConfigurations title="$l10n_configuration_door" isYesNoOption="true">
+            <enterablePassengerConfiguration name="Day Cab">
+                <passengerSeat node="passengerSeatFrontRight" exitPoint="exitPointPassenger01" outdoorCameraIndex="1">
+                    <camera node="indoorCameraPassenger01" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                    <characterNode node="playerSkinPassenger01" cameraMinDistance="0.5">
+                        <target ikChain="leftArm" targetNode="playerLeftHandTargetPassenger01" poseId="flatFingers"/>
+                        <target ikChain="rightArm" targetNode="playerRightHandTargetPassenger01" poseId="flatFingers"/>
+                        <target ikChain="leftFoot" targetNode="playerLeftFootTargetPassenger01"/>
+                        <target ikChain="rightFoot" targetNode="playerRightFootTargetPassenger01"/>
+                    </characterNode>
+                </passengerSeat>
+
+                <objectChange node="dayCab" visibilityActive="true" visibilityInactive="false"/>
+            </enterablePassengerConfiguration>
+
+            <enterablePassengerConfiguration name="Crew Cab" price="8500">
+                <passengerSeat node="passengerSeatFrontRight" exitPoint="exitPointPassenger01" outdoorCameraIndex="1">
+                    <camera node="indoorCameraPassenger01" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                    <characterNode node="playerSkinPassenger01" cameraMinDistance="0.5">
+                        <target ikChain="leftArm" targetNode="playerLeftHandTargetPassenger01" poseId="flatFingers"/>
+                        <target ikChain="rightArm" targetNode="playerRightHandTargetPassenger01" poseId="flatFingers"/>
+                        <target ikChain="leftFoot" targetNode="playerLeftFootTargetPassenger01"/>
+                        <target ikChain="rightFoot" targetNode="playerRightFootTargetPassenger01"/>
+                    </characterNode>
+                </passengerSeat>
+
+                <passengerSeat node="passengerSeatBackLeft" exitPoint="exitPointPassenger02" outdoorCameraIndex="1">
+                    <camera node="indoorCameraPassenger02" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                    <characterNode node="playerSkinPassenger02" cameraMinDistance="0.5">
+                        <target ikChain="leftArm" targetNode="playerLeftHandTargetPassenger02" poseId="flatFingers"/>
+                        <target ikChain="rightArm" targetNode="playerRightHandTargetPassenger02" poseId="flatFingers"/>
+                        <target ikChain="leftFoot" targetNode="playerLeftFootTargetPassenger02"/>
+                        <target ikChain="rightFoot" targetNode="playerRightFootTargetPassenger02"/>
+                    </characterNode>
+                </passengerSeat>
+
+                <passengerSeat node="passengerSeatBackRight" exitPoint="exitPointPassenger03" outdoorCameraIndex="1">
+                    <camera node="indoorCameraPassenger03" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                    <characterNode node="playerSkinPassenger03" cameraMinDistance="0.5">
+                        <target ikChain="leftArm" targetNode="playerLeftHandTargetPassenger03" poseId="flatFingers"/>
+                        <target ikChain="rightArm" targetNode="playerRightHandTargetPassenger03" poseId="flatFingers"/>
+                        <target ikChain="leftFoot" targetNode="playerLeftFootTargetPassenger03"/>
+                        <target ikChain="rightFoot" targetNode="playerRightFootTargetPassenger03"/>
+                    </characterNode>
+                </passengerSeat>
+
+                <objectChange node="crewCab" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="vocations" translationActive="0 0 -0.816" translationInactive="0 0 0"/>
+                <objectChange node="attacherJoints" translationActive="0 0 -0.816" translationInactive="0 0 0"/>
+                <objectChange node="frameBackTrans" translationActive="0 0 -0.816" translationInactive="0 0 0"/>
+
+                <objectChange node="frameExtensions01" visibilityActive="false" visibilityInactive="true"/>
+                <objectChange node="frameExtensions02" visibilityActive="true" visibilityInactive="false"/>
+
+                <objectChange node="kardanExtension01" visibilityActive="false" visibilityInactive="true"/>
+                <objectChange node="kardanExtension02" visibilityActive="true" visibilityInactive="false"/>
+
+                <objectChange node="outdoorCameraTargetTrans" translationActive="0 0 -0.408" translationInactive="0 0 0"/>
+                <objectChange node="colCrewCab" compoundChildActive="true" compoundChildInactive="false"/>
+                <objectChange node="colFrameExtension" compoundChildActive="true" compoundChildInactive="false"/>
+                <foliageBendingModifier index="1" minZ="-4.55"/>
+            </enterablePassengerConfiguration>
+        </enterablePassengerConfigurations>
+
+        <mirrors>
+            <mirror node="dayCabMirrorLeft_decals" prio="1"/>
+            <mirror node="dayCabMirrorRight_decals" prio="1"/>
+            <mirror node="crewCabMirrorLeft_decals" prio="1"/>
+            <mirror node="crewCabMirrorRight_decals" prio="1"/>
+        </mirrors>
+
+        <dashboards>
+            <dashboard displayType="TEXT" valueType="time" node="numbersTime" textColor="1 1 1" textSize="0.007" textMask="00:00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+        </dashboards>
+    </enterable>
+
+    <attacherJoints>
+        <attacherJointConfigurations>
+            <attacherJointConfiguration name="1">
+                <attacherJoint node="trailerAttacherJointBackLow" jointType="trailerLow" lowerRotLimit="25 70 50" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" comboTime="1">
+                    <schema position="1 0" rotation="0" invertX="false"/>
+                </attacherJoint>
+            </attacherJointConfiguration>
+
+            <attacherJointConfiguration name="2" isSelectable="false"/> <!-- Empty config -->
+        </attacherJointConfigurations>
+    </attacherJoints>
+
+    <connectionHoses>
+        <target attacherJointIndices="1" type="electric" node="electricBack" socket="electric"/>
+    </connectionHoses>
+
+    <motorized statsType="truck">
+        <consumerConfigurations>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="1" usage="140" fillType="diesel"/> <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+        </consumerConfigurations>
+
+        <differentialConfigurations>
+            <differentialConfiguration>
+                <differentials>
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.30" wheelIndex1="1" wheelIndex2="2"/> <!-- front left-right -->
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.45" wheelIndex1="3" wheelIndex2="4"/> <!-- back left-right -->
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.50" differentialIndex1="1" differentialIndex2="2"/> <!-- front-back -->
+                </differentials>
+            </differentialConfiguration>
+        </differentialConfigurations>
+
+        <motorConfigurations>
+            <motorConfiguration name="CV Series" hp="350">
+                <!-- International 6.6L V8 Turbocharged Diesel 950Nm -->
+                <motor torqueScale="8.083" minRpm="800" maxRpm="2000" maxForwardSpeed="92" maxBackwardSpeed="90" brakeForce="8" lowBrakeForceScale="0.1" dampingRateScale="0.4">
+                    <torque normRpm="0.45" torque="0.9"/>
+                    <torque normRpm="0.50" torque="0.97"/>
+                    <torque normRpm="0.59" torque="1.00"/>
+                    <torque normRpm="0.72" torque="1.00"/>
+                    <torque normRpm="0.86" torque="0.88"/>
+                    <torque normRpm="1.00" torque="0.72"/>
+                </motor>
+
+                <!-- Allison 6-Speed: 1700, 1750, 2700 Series; Ratios are all the same -->
+                <transmission autoGearChangeTime="0.3" gearChangeTime="0.3" name="$l10n_info_transmission_automatic" axleRatio="19" startGearThreshold="0.3">
+                    <directionChange useGear="true"/>
+                    <forwardGear gearRatio="3.10"/>
+                    <forwardGear gearRatio="1.81"/>
+                    <forwardGear gearRatio="1.41"/>
+                    <forwardGear gearRatio="1.00"/>
+                    <forwardGear gearRatio="0.71"/>
+                    <forwardGear gearRatio="0.61"/>
+                    <backwardGear gearRatio=".1" name="R"/>
+                </transmission>
+            </motorConfiguration>
+        </motorConfigurations>
+
+        <gearLevers>
+            <gearLever node="leverDrivingDirection" centerAxis="2" changeTime="0.3" handsOnDelay="0.2">
+                <state gear="-1" yRot="15"/>
+                <state gear="0" yRot="0"/>
+                <state gear="1" yRot="-15"/>
+                <state gear="2" yRot="-15"/>
+                <state gear="3" yRot="-15"/>
+                <state gear="4" yRot="-15"/>
+                <state gear="5" yRot="-15"/>
+                <state gear="6" yRot="-15"/>
+            </gearLever>
+        </gearLevers>
+
+        <motorStartDuration>2500</motorStartDuration>
+
+        <exhaustEffects>
+            <exhaustEffect node="exhaustParticle" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.05" maxRpmScale="0.5"/>
+        </exhaustEffects>
+
+        <dashboards>
+            <dashboard displayType="ANIMATION" valueType="speed" animName="needleSpeedAnim" minValueAnim="0" maxValueAnim="200" doInterpolation="true" interpolationSpeed="5" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ANIMATION" valueType="rpm" animName="needleRPMAnim" minValueAnim="0" maxValueAnim="5000" doInterpolation="true" interpolationSpeed="5" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="motorTemperature" node="needleTempWater" minRot="0 0 0" maxRot="0 0 -120" minValueRot="75" maxValueRot="125" doInterpolation="true" interpolationSpeed="0.2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="battery" node="needleVoltage" minRot="0 0 0" maxRot="0 0 -118" minValueRot="9" maxValueRot="19" doInterpolation="true" interpolationSpeed="0.02" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="battery" node="needleOilPressure" minRot="0 0 0" maxRot="0 0 -118" minValueRot="0" maxValueRot="20" doInterpolation="true" interpolationSpeed="0.02" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="speed" node="numbersSpeed" textColor="1 1 1" textSize="0.009" textMask="00" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="MULTI_STATE" valueType="ignitionState" node="keyIgnition" doInterpolation="true">
+                <state value="0" rotation="0 0 0"/>
+                <state value="1" rotation="0 0 90"/>
+                <state value="2" rotation="0 0 45"/>
+            </dashboard>
+        </dashboards>
+    </motorized>
+
+    <drivable>
+        <steeringWheel node="steeringWheel" indoorRotation="360" outdoorRotation="50"/>
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="accelerationAxis" node="pedalGas" minRot="0 0 0" maxRot="-18 0 0" doInterpolation="true"/>
+            <dashboard displayType="ROT" valueType="decelerationAxis" node="pedalBrake" minRot="0 0 0" maxRot="-15 0 0" doInterpolation="true"/>
+            <dashboard displayType="ROT" valueType="steeringAngle" node="steeringPart01" minRot="50 0 0" maxRot="-50 0 0"/>
+            <dashboard displayType="EMITTER" valueType="cruiseControlActive" node="iconCruiseControl_decals" baseColor="SHARED_BLACK4" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </drivable>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration name="1">
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="246">
+                        <dashboard displayType="ROT" valueType="fillLevel" node="needleFuel" minRot="0 0 0" maxRot="0 0 -120" doInterpolation="true" interpolationSpeed="1" groups="MOTOR_ACTIVE"/>
+                        <dashboard displayType="EMITTER" valueType="fillLevelWarning" node="iconWarningFuel_decals" warningThresholdMax="50" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE"/>
+                        <exactFillRootNode node="exactFillRootNodeFuel"/>
+                    </fillUnit>
+                </fillUnits>
+                <objectChange node="exactFillRootNode" rigidBodyTypeActive="NONE"/>
+            </fillUnitConfiguration>
+
+            <fillUnitConfiguration name="2">
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="246">
+                        <dashboard displayType="ROT" valueType="fillLevel" node="needleFuel" minRot="0 0 0" maxRot="0 0 -120" doInterpolation="true" interpolationSpeed="1" groups="MOTOR_ACTIVE"/>
+                        <dashboard displayType="EMITTER" valueType="fillLevelWarning" node="iconWarningFuel_decals" warningThresholdMax="50" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE"/>
+                        <exactFillRootNode node="exactFillRootNodeFuel"/>
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="35000000" updateMass="false" allowAILoading="true">
+                        <exactFillRootNode node="exactFillRootNode"/>
+                        <autoAimTargetNode node="fillAutoAimTarget" startZ="2.69" endZ="0.73" invert="false" startPercentage="25"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration name="1">
+                <volumes>
+                    <volume node="fillVolume" maxDelta="0.2" maxAllowedHeapAngle="5" fillUnitIndex="2"/>
+                </volumes>
+            </fillVolumeConfiguration>
+
+            <fillVolumeConfiguration name="2" isSelectable="false"/> <!-- Empty config -->
+        </fillVolumeConfigurations>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node node="unloadInfo" width="2.5" length="4.5"/>
+            </unloadInfo>
+        </unloadInfos>
+    </fillVolume>
+
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration name="1">
+                <foldingParts startMoveDirection="-1" posDirectionText="$l10n_action_closeBackDoor" negDirectionText="$l10n_action_openBackDoor" requiresPower="false">
+                    <foldingPart animationName="foldingAnimBox" speedScale="1.0"/>
+                </foldingParts>
+                <objectChange node="gateCollision01" compoundChildActive="true" compoundChildInactive="false"/>
+                <objectChange node="gateCollision02" compoundChildActive="true" compoundChildInactive="false"/>
+                <objectChange node="gateCollision03" compoundChildActive="true" compoundChildInactive="false"/>
+                <objectChange node="gateCollision04" compoundChildActive="true" compoundChildInactive="false"/>
+            </foldingConfiguration>
+
+            <foldingConfiguration name="2">
+                <foldingParts startMoveDirection="-1" posDirectionText="$l10n_action_foldableSteps_closeSidePanel" negDirectionText="$l10n_action_foldableSteps_openSidePanel" requiresPower="false">
+                    <foldingPart animationName="foldingAnimTipper" speedScale="1.0"/>
+                </foldingParts>
+            </foldingConfiguration>
+
+            <foldingConfiguration name="3">
+                <foldingParts startMoveDirection="-1" posDirectionText="$l10n_action_foldableSteps_closeSidePanel" negDirectionText="$l10n_action_foldableSteps_openSidePanel" requiresPower="false">
+                    <foldingPart animationName="foldingAnimFlatbed" speedScale="1.0"/>
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <trailer>
+        <trailerConfigurations>
+            <trailerConfiguration name="1">
+                <trailer>
+                    <tipSide name="$l10n_info_tipSideBack" dischargeNodeIndex="1">
+                        <animation name="tipAnimBack" speedScale="0.9" closeSpeedScale="1.1"/>
+                        <doorAnimation name="tipAnimBackDoor" speedScale="0.9" closeSpeedScale="1.1" startTipTime="0.08"/>
+                    </tipSide>
+                </trailer>
+            </trailerConfiguration>
+
+            <trailerConfiguration name="2" isSelectable="false"/> <!-- Empty config -->
+        </trailerConfigurations>
+    </trailer>
+
+    <dischargeable>
+        <dischargeableConfigurations>
+            <dischargeableConfiguration name="1">
+                <dischargeNode node="dischargeNode" emptySpeed="1000000" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
+                    <info width="1.3" length="0.5"/>
+                    <effects>
+                        <effectNode effectClass="TipEffect">
+                            <effectNode effectNode="effectParticle" materialType="unloadingParticle" effectClass="ParticleEffect"/>
+                            <effectNode effectNode="effectGrain"  materialType="unloading" fadeTime="0.5" extraDistance="0.25"/>
+                        </effectNode>
+                        <effectNode effectNode="effectSmoke" materialType="unloadingSmoke" fadeTime="0.5"/>
+                    </effects>
+                </dischargeNode>
+            </dischargeableConfiguration>
+
+            <dischargeableConfiguration name="2" isSelectable="false"/> <!-- Empty config -->
+        </dischargeableConfigurations>
+    </dischargeable>
+
+    <animations>
+        <animation name="turnLightLeftAnim">
+            <part node="frontLightsLeft" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="turnLightFrontLeft" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+
+            <part node="dayCabMirrorLightsLeft" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="dayCabMirrorLightsLeftGlass" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="dayCabMirrorTurnlightsLeft" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+            <part node="dayCabMirrorTurnlightsLeftGlass" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+
+            <part node="crewCabMirrorLightsLeft" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="crewCabMirrorLightsLeftGlass" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="crewCabMirrorTurnlightsLeft" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+            <part node="crewCabMirrorTurnlightsLeftGlass" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+        </animation>
+
+        <animation name="turnLightRightAnim">
+            <part node="frontLightsRight" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="turnLightFrontRight" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+
+            <part node="dayCabMirrorLightsRight" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="dayCabMirrorLightsRightGlass" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="dayCabMirrorTurnlightsRight" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+            <part node="dayCabMirrorTurnlightsRightGlass" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+
+            <part node="crewCabMirrorLightsRight" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="crewCabMirrorLightsRightGlass" startTime="0" endTime="0.01" startVisibility="true" endVisibility="false"/>
+            <part node="crewCabMirrorTurnlightsRight" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+            <part node="crewCabMirrorTurnlightsRightGlass" startTime="0" endTime="0.01" startVisibility="false" endVisibility="true"/>
+        </animation>
+
+        <animation name="foldingAnimBox">
+            <part startTime="0.0" endTime="1.0" startGatePos="0.0" endGatePos="1.0">
+                <rollingGateAnimation splineNode="gatePathSpline" referenceFrame="gateSegmentReferenceFrame">
+                    <segment node="gateSegment01" length="0.075"/>
+                    <segment node="gateSegment02" length="0.075"/>
+                    <segment node="gateSegment03" length="0.075"/>
+                    <segment node="gateSegment04" length="0.075"/>
+                    <segment node="gateSegment05" length="0.075"/>
+                    <segment node="gateSegment06" length="0.075"/>
+                    <segment node="gateSegment07" length="0.075"/>
+                    <segment node="gateSegment08" length="0.075"/>
+                    <segment node="gateSegment09" length="0.075"/>
+                    <segment node="gateSegment10" length="0.075"/>
+                    <segment node="gateSegment11" length="0.075"/>
+                    <segment node="gateSegment12" length="0.075"/>
+                    <segment node="gateSegment13" length="0.075"/>
+                    <segment node="gateSegment14" length="0.075"/>
+                    <segment node="gateSegment15" length="0.075"/>
+                    <segment node="gateSegment16" length="0.075"/>
+                    <segment node="gateSegment17" length="0.075"/>
+                    <segment node="gateSegment18" length="0.075"/>
+                    <segment node="gateSegment19" length="0.075"/>
+                    <segment node="gateSegment20" length="0.075"/>
+                    <segment node="gateSegment21" length="0.075"/>
+
+                    <segment node="gateCollision01" length="0.47"/>
+                    <segment node="gateCollision02" length="0.47"/>
+                    <segment node="gateCollision03" length="0.47"/>
+                    <segment node="gateCollision04" length="0.42"/>
+                </rollingGateAnimation>
+            </part>
+            <sound template="slidingGateMetalLoop" startTime="0.01" endTime="0.99" volumeScale="1" pitchScale="1.3" fadeIn="0.01" fadeOut="0.01"/>
+            <sound template="slidingGateMetalClose" startTime="0.01" direction="-1" volumeScale="0.8" pitchScale="1"/>
+            <sound template="hingeImp" startTime="0.9" direction="1" volumeScale="1" pitchScale="1"/>
+            <sound template="vibratingImp" startTime="0.99" direction="1" volumeScale="1" pitchScale="1.5"/>
+        </animation>
+
+        <animation name="foldingAnimTipper">
+            <part node="doorLeft" startTime="0.0" endTime="1.0" startRot="0 0 0" endRot="0 0 -174"/>
+            <part node="doorRight" startTime="0.0" endTime="1.0" startRot="0 0 0" endRot="0 0 174"/>
+
+            <sound template="hingeMedium" startTime="0.1" direction="1" volumeScale="2" pitchScale="0.7"/>
+            <sound template="hingeSmall" startTime="0.9" direction="-1" volumeScale="1" pitchScale="0.5"/>
+            <sound template="vibratingImp" startTime="0.99" direction="1" volumeScale="1.5" pitchScale="1.2" />
+            <sound template="vibratingImp" startTime="0.01" direction="-1" volumeScale="1.5" pitchScale="1.2" />
+            <sound template="cylinderPunch" startTime="0.01" direction="-1" volumeScale="0.8" pitchScale="1.8" />
+        </animation>
+
+        <animation name="foldingAnimFlatbed">
+            <part node="flatbedPanelsSide" startTime="0" endTime="0.001" startVisibility="true" endVisibility="false"/>
+            <part node="colFlatbedWallLeft" startTime="0" endTime="0.001" startRot="0 0 0" endRot="0 0 90" startTrans="1.165 1.248 -1.732" endTrans="0.975 0.996 -1.732"/>
+            <part node="colFlatbedWallRight" startTime="0" endTime="0.001" startRot="0 0 0" endRot="0 0 90" startTrans="-1.165 1.248 -1.732" endTrans="-0.975 0.996 -1.732"/>
+            <sound  template="fenceMetalOpen"  startTime="0.0"  direction="-1" pitchScale="0.8" volumeScale="1.6"/>
+            <sound  template="fenceMetalClose"  startTime="0.001"  direction="1" pitchScale="0.8" volumeScale="1.7"/>
+
+        </animation>
+
+        <animation name="tipAnimBack">
+            <part node="tipBack" startTime="0.0" endTime="5.0" startRot="0 0 0" endRot="-40 0 0"/>
+            <part node="effectGrain" startTime="0.0" endTime="5.0" startRot="0 0 0" endRot="40 0 0"/>
+
+            <sound template="hydraulicClose01" startTime="0.01" endTime="4.99" direction="1"     volumeScale="5" pitchScale="0.6" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicOpen05"  startTime="0.01" endTime="4.99" direction="1"     volumeScale="3" pitchScale="1.6" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicOpen06"  startTime="0.01" endTime="4.99" direction="-1"    volumeScale="1" pitchScale="0.6" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicOpen02"  startTime="0.01" endTime="4.99" direction="-1"    volumeScale="3" pitchScale="1.6" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="vibratingImp"     startTime="0.01" direction="-1" volumeScale="1.3" pitchScale="1" />
+            <sound template="cylinderPunch"    startTime="0.01" direction="-1" volumeScale="1.2" pitchScale="1.7" />
+            <sound template="hingeImp"         startTime="0.1"  direction="-1" volumeScale="0.8" pitchScale="1.1" />
+            <sound template="vibratingImp"     startTime="4.99" direction="1"  volumeScale="1.3" pitchScale="1" />
+            <sound template="clackVar6"        startTime="4.99" direction="1"  volumeScale="1.3" pitchScale="0.6" />
+            <sound template="cylinderPunch"    startTime="4.99" direction="1"  volumeScale="1.2" pitchScale="1.7" />
+        </animation>
+
+        <animation name="tipAnimBackDoor">
+            <part node="doorBackLock" startTime="0.0" endTime="0.1" startRot="0 0 0" endRot="20 0 0"/>
+            <part node="doorBackLockLever" startTime="0.0" endTime="0.1" startRot="0 0 0" endRot="35 0 0"/>
+            <part node="doorBack" startTime="0.1" endTime="1.0" startRot="0 0 0" endRot="15 0 0"/>
+            <part node="doorBack" startTime="1.0" endTime="5.0" startRot="15 0 0" endRot="40 0 0"/>
+        </animation>
+
+        <animation name="needleSpeedAnim" isKeyframe="true">
+            <part node="needleSpeed" startTime="0"   endTime="20"  startRot="0 0 0" endRot="0 0 -27"/>
+            <part node="needleSpeed" startTime="20"  endTime="40"  startRot="0 0 -27" endRot="0 0 -53.5"/>
+            <part node="needleSpeed" startTime="40"  endTime="60"  startRot="0 0 -53.5" endRot="0 0 -80"/>
+            <part node="needleSpeed" startTime="60"  endTime="80"  startRot="0 0 -80" endRot="0 0 -107"/>
+            <part node="needleSpeed" startTime="80"  endTime="100" startRot="0 0 -107" endRot="0 0 -134"/>
+            <part node="needleSpeed" startTime="100" endTime="120" startRot="0 0 -134" endRot="0 0 -161"/>
+            <part node="needleSpeed" startTime="120" endTime="140" startRot="0 0 -161" endRot="0 0 -188"/>
+            <part node="needleSpeed" startTime="140" endTime="160" startRot="0 0 -188" endRot="0 0 -216"/>
+            <part node="needleSpeed" startTime="160" endTime="180" startRot="0 0 -216" endRot="0 0 -242.8"/>
+            <part node="needleSpeed" startTime="180" endTime="200" startRot="0 0 -242.8" endRot="0 0 -269.6"/>
+        </animation>
+
+        <animation name="needleRPMAnim" isKeyframe="true">
+            <part node="needleRPM" startTime="0" endTime="1" startRot="0 0 0" endRot="0 0 -56.5"/>
+            <part node="needleRPM" startTime="1" endTime="2" startRot="0 0 -56.5" endRot="0 0 -111.3"/>
+            <part node="needleRPM" startTime="2" endTime="3" startRot="0 0 -111.3" endRot="0 0 -165"/>
+            <part node="needleRPM" startTime="3" endTime="4" startRot="0 0 -165" endRot="0 0 -216.7"/>
+            <part node="needleRPM" startTime="4" endTime="5" startRot="0 0 -216.7" endRot="0 0 -269.3"/>
+        </animation>
+
+        <animation name="wiperAnim" isKeyframe="true">
+            <part node="wiperLeft" startTime="0.0" endTime="0.5" startRot="0 0 0" endRot="0 11 -40"/>
+            <part node="wiperLeft" startTime="0.5" endTime="1.0" startRot="0 11 -40" endRot="0 10 -80"/>
+
+            <part node="wiperRight" startTime="0.0" endTime="0.5" startRot="0 0 0" endRot="0 -6 -40"/>
+            <part node="wiperRight" startTime="0.5" endTime="1.0" startRot="0 -6 -40" endRot="0 -18 -80"/>
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="1.0" pitchScale="0.9" fadeOut="0.1" linkNode="wiperLeft"/>
+            <sound template="wiper2" startTime="0" endTime="1" direction="-1"  volumeScale="1.0" pitchScale="0.9" fadeOut="0.1" linkNode="wiperLeft"/>
+        </animation>
+    </animations>
+
+    <tensionBelts>
+        <tensionBeltsConfigurations>
+            <tensionBeltsConfiguration name="1">
+                <tensionBelts linkNode="tensionBeltsBox" jointNode="cvSeries_main_component1" width="0.055" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTriggerBox">
+                    <tensionBelt startNode="belt01Start" endNode="belt01End"/>
+                    <tensionBelt startNode="belt02Start" endNode="belt02End"/>
+                    <tensionBelt startNode="belt03Start" endNode="belt03End"/>
+                    <tensionBelt startNode="belt04Start" endNode="belt04End"/>
+                    <tensionBelt startNode="belt05Start" endNode="belt05End"/>
+                    <tensionBelt startNode="belt06Start" endNode="belt06End"/>
+                    <tensionBelt startNode="belt07Start" endNode="belt07End"/>
+
+                    <sounds>
+                        <addBelt template="beltOpen" volumeScale="4"/>
+                        <removeBelt template="beltClose" volumeScale="4"/>
+                    </sounds>
+                </tensionBelts>
+                <objectChange node="beltActivationTriggerFlatbed" rigidBodyTypeActive="NONE"/>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="2">
+                <tensionBelts linkNode="tensionBeltsFlatbed" jointNode="cvSeries_main_component1" width="0.055" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTriggerFlatbed">
+                    <tensionBelt startNode="belt08Start" endNode="belt08End">
+                        <intersectionNode node="belt08Intersection01"/>
+                        <intersectionNode node="belt08Intersection02"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="belt09Start" endNode="belt09End">
+                        <intersectionNode node="belt09Intersection01"/>
+                        <intersectionNode node="belt09Intersection02"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="belt10Start" endNode="belt10End">
+                        <intersectionNode node="belt10Intersection01"/>
+                        <intersectionNode node="belt10Intersection02"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="belt11Start" endNode="belt11End">
+                        <intersectionNode node="belt11Intersection01"/>
+                        <intersectionNode node="belt11Intersection02"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="belt12Start" endNode="belt12End">
+                        <intersectionNode node="belt12Intersection01"/>
+                        <intersectionNode node="belt12Intersection02"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="belt13Start" endNode="belt13End">
+                        <intersectionNode node="belt13Intersection01"/>
+                        <intersectionNode node="belt13Intersection02"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="belt14Start" endNode="belt14End">
+                        <intersectionNode node="belt14Intersection01"/>
+                        <intersectionNode node="belt14Intersection02"/>
+                    </tensionBelt>
+
+                    <sounds>
+                        <addBelt template="beltOpen" volumeScale="4"/>
+                        <removeBelt template="beltClose" volumeScale="4"/>
+                    </sounds>
+                </tensionBelts>
+                <objectChange node="beltActivationTriggerBox" rigidBodyTypeActive="NONE"/>
+            </tensionBeltsConfiguration>
+
+            <!-- Empty config -->
+            <tensionBeltsConfiguration name="3" isSelectable="false">
+                <objectChange node="beltActivationTriggerBox" rigidBodyTypeActive="NONE"/>
+                <objectChange node="beltActivationTriggerFlatbed" rigidBodyTypeActive="NONE"/>
+            </tensionBeltsConfiguration>
+        </tensionBeltsConfigurations>
+    </tensionBelts>
+
+    <wipers>
+        <wiper animName="wiperAnim">
+            <state animSpeed="1.0" animPause="2.0"/>
+            <state animSpeed="1.0" animPause="0.0"/>
+            <state animSpeed="1.5" animPause="0.0"/>
+        </wiper>
+    </wipers>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="tipBack">
+                <dependentPart node="dumperHydraulicPart01"/>
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <movingPart node="steeringbarMain" referencePoint="steeringbarMainRef" referenceFrame="steeringbarMainRef" isActiveDirty="true" maxUpdateDistance="150" scaleZ="true">
+                <dependentPart node="steeringPart02" maxUpdateDistance="50"/>
+            </movingPart>
+            <movingPart node="steeringPart02" referencePoint="steeringPart02Ref" referenceFrame="steeringPart02Ref" scaleZ="true"/>
+
+            <movingPart node="dumperHydraulicPart01" referencePoint="dumperHydraulicPart01Ref" localReferencePoint="dumperHydraulicPart02" referenceFrame="dumperHydraulicPart01RefFrame">
+                <dependentPart node="dumperHydraulicPart02"/>
+                <dependentPart node="dumperHydraulic"/>
+            </movingPart>
+            <movingPart node="dumperHydraulicPart02" referencePoint="dumperHydraulicPart01Ref" referenceFrame="dumperHydraulicPart02RefFrame"/>
+            <movingPart node="dumperHydraulic" referencePoint="dumperHydraulicRef" referenceFrame="dumperHydraulicRefFrame">
+                <translatingPart node="dumperHydraulicPunch"/>
+            </movingPart>
+        </movingParts>
+    </cylindered>
+
+    <suspensions>
+        <suspension useCharacterTorso="true" weight="90" minRotation="0 -5 -5" maxRotation="0 5 5" suspensionParametersY="7 1" suspensionParametersZ="7 1"/>
+    </suspensions>
+
+    <ai>
+        <agent frontWheelNodes="wheelFrontLeft wheelFrontRight"/>
+        <collisionTrigger useSize="true"/>
+    </ai>
+
+    <dashboard>
+        <groups>
+            <group name="MOTOR_STARTING" electronicsStarting="true"/>
+            <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+            <group name="MOTOR_RUNNING" electronicsRunning="true"/>
+        </groups>
+
+        <default>
+            <dashboard displayType="EMITTER" node="iconEngineStartRed" baseColor="SHARED_BLACK4" emitColor="RED" intensity="0.5" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="iconEngineStartYellow" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.5" groups="MOTOR_STARTING"/>
+
+            <dashboard displayType="EMITTER" node="dashboardGlow_decals" intensity="0.2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="needleRPMPart_decals" baseColor="RED" emitColor="RED" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="needleSpeedPart_decals" baseColor="RED" emitColor="RED" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="needleVoltagePart_decals" baseColor="RED" emitColor="RED" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="needleTempWaterPart_decals" baseColor="RED" emitColor="RED" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="needleFuelPart_decals" baseColor="RED" emitColor="RED" intensity="0.3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="needleOilPressurePart_decals" baseColor="RED" emitColor="RED" intensity="0.3" groups="MOTOR_ACTIVE"/>
+
+            <dashboard displayType="VISIBILITY" node="display01Starting_decals" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="display01Starting_decals" idleValue="-1" intensity="0.3" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="display01Running_decals" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="display02Starting_decals" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="display02Starting_decals" idleValue="-1" intensity="0.3" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="display02Running_decals" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+        </default>
+    </dashboard>
+
+    <foliageBending>
+        <bendingNode minX="-1.2" maxX="1.2" minZ="-3.75" maxZ="3.2" yOffset="0.4"/>
+    </foliageBending>
+
+    <baseColorConfigurations useDefaultColors="true">
+        <baseColorConfiguration materialTemplateName="INTERNATIONAL_RED1"/>
+
+        <material materialSlotName="cvSeries_body_mat"/>
+    </baseColorConfigurations>
+
+    <designColorConfigurations title="$l10n_configuration_grillColor">
+        <designColorConfiguration materialTemplateName="chrome" name="$l10n_ui_colorChrome"/>
+        <designColorConfiguration materialTemplateName="INTERNATIONAL_BLACK1" name="$l10n_ui_colorBlack" price="250"/>
+
+        <material materialSlotName="cvSeries_grill_mat"/>
+        <material materialSlotName="cvSeries_grill_grid_mat"/>
+    </designColorConfigurations>
+
+    <designColor2Configurations>
+        <designColor2Configuration materialTemplateName="chrome" name="$l10n_ui_colorChrome"/>
+        <designColor2Configuration materialTemplateName="INTERNATIONAL_BLACK1" name="$l10n_ui_colorBlack" price="500"/>
+
+        <material materialSlotName="cvSeries_design_mat"/>
+        <material materialSlotName="cvSeries_gridSteps_mat"/>
+    </designColor2Configurations>
+
+    <designColor3Configurations>
+        <designColor3Configuration materialTemplateName="INTERNATIONAL_GREY3" name="$l10n_ui_colorGrey"/>
+        <designColor3Configuration materialTemplateName="INTERNATIONAL_BLACK1" name="$l10n_ui_colorBlack" price="250"/>
+
+        <material materialSlotName="cvSeries_tipper_mat"/>
+    </designColor3Configurations>
+
+    <rimColorConfigurations>
+        <rimColorConfiguration materialTemplateName="RIM_CONFIGURATION_CHROME" price="1000"/>
+        <rimColorConfiguration materialTemplateName="RIM_DEFAULT"/>
+        <rimColorConfiguration materialTemplateName="RIM_CONFIGURATION_WHITE"/>
+        <rimColorConfiguration materialTemplateName="RIM_CONFIGURATION_BLACK"/>
+    </rimColorConfigurations>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="cvSeries_main_component1" node="0>" />
+        <i3dMapping id="wheelFrontLeftRepr" node="0>0|0|0|0" />
+        <i3dMapping id="wheelFrontLeft" node="0>0|0|0|0|0|0" />
+        <i3dMapping id="steeringbarMainRefFrame" node="0>0|0|0|0|1" />
+        <i3dMapping id="steeringbarMain" node="0>0|0|0|0|1|0" />
+        <i3dMapping id="driveShaft02" node="0>0|0|0|0|2|0" />
+        <i3dMapping id="steeringPart02" node="0>0|0|0|0|3" />
+        <i3dMapping id="wheelFrontRightRepr" node="0>0|0|1|0" />
+        <i3dMapping id="wheelFrontRight" node="0>0|0|1|0|0|0" />
+        <i3dMapping id="steeringbarMainRef" node="0>0|0|1|0|1" />
+        <i3dMapping id="driveShaft04" node="0>0|0|1|0|2|0" />
+        <i3dMapping id="outdoorCameraTargetTrans" node="0>0|1|0" />
+        <i3dMapping id="outdoorCameraTarget" node="0>0|1|0|0" />
+        <i3dMapping id="outdoorCamera" node="0>0|1|0|0|0" />
+        <i3dMapping id="indoorCamera" node="0>0|1|1" />
+        <i3dMapping id="cameraRaycastNode1" node="0>0|1|2" />
+        <i3dMapping id="cameraRaycastNode2" node="0>0|1|3" />
+        <i3dMapping id="cameraRaycastNode3" node="0>0|1|4" />
+        <i3dMapping id="shadowFocusBox" node="0>0|1|5" />
+        <i3dMapping id="frontLights" node="0>0|2|0|0" />
+        <i3dMapping id="frontLightsGlass" node="0>0|2|0|1" />
+        <i3dMapping id="frontLightsLeft" node="0>0|2|0|2" />
+        <i3dMapping id="frontLightsRight" node="0>0|2|0|3" />
+        <i3dMapping id="turnLightFrontLeft" node="0>0|2|0|4" />
+        <i3dMapping id="turnLightFrontRight" node="0>0|2|0|5" />
+        <i3dMapping id="frontLightLow" node="0>0|2|1|0" />
+        <i3dMapping id="highBeamLow" node="0>0|2|1|1" />
+        <i3dMapping id="frontLightHigh" node="0>0|2|1|2" />
+        <i3dMapping id="highBeamHigh" node="0>0|2|1|3" />
+        <i3dMapping id="interiorScreenLight01" node="0>0|2|1|4" />
+        <i3dMapping id="interiorScreenLight02" node="0>0|2|1|5" />
+        <i3dMapping id="turnLightLeftFront" node="0>0|2|2|0" />
+        <i3dMapping id="turnLightRightFront" node="0>0|2|2|1" />
+        <i3dMapping id="attacherJoints" node="0>0|3" />
+        <i3dMapping id="trailerAttacherJointBackLow" node="0>0|3|0" />
+        <i3dMapping id="electricBack" node="0>0|3|1" />
+        <i3dMapping id="exitPoint" node="0>0|4" />
+        <i3dMapping id="steeringWheel" node="0>0|5|0|0|0" />
+        <i3dMapping id="playerLeftHandTarget" node="0>0|5|0|0|0|0" />
+        <i3dMapping id="playerRightHandTarget" node="0>0|5|0|0|0|1" />
+        <i3dMapping id="iconsSteeringWheel_decals" node="0>0|5|0|0|0|4" />
+        <i3dMapping id="leverDrivingDirection" node="0>0|5|0|1|0" />
+        <i3dMapping id="playerRightHandTargetShift" node="0>0|5|0|1|0|1" />
+        <i3dMapping id="keyIgnition" node="0>0|5|0|2|0" />
+        <i3dMapping id="leverHighbeam" node="0>0|5|0|3|0" />
+        <i3dMapping id="leverTurnlight" node="0>0|5|0|3|0|0" />
+        <i3dMapping id="wiperLeft" node="0>0|5|1|0|0" />
+        <i3dMapping id="wiperRight" node="0>0|5|1|1|0" />
+        <i3dMapping id="switchLights" node="0>0|5|2|0|0" />
+        <i3dMapping id="switchLights_decals" node="0>0|5|2|0|0|0" />
+        <i3dMapping id="pedalGas" node="0>0|5|2|1" />
+        <i3dMapping id="playerRightFootTargetGasRef" node="0>0|5|2|1|0" />
+        <i3dMapping id="pedalBrake" node="0>0|5|2|2" />
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|5|2|2|0" />
+        <i3dMapping id="needleRPM" node="0>0|5|2|3|0" />
+        <i3dMapping id="needleRPMPart_decals" node="0>0|5|2|3|0|0" />
+        <i3dMapping id="needleSpeed" node="0>0|5|2|4|0" />
+        <i3dMapping id="needleSpeedPart_decals" node="0>0|5|2|4|0|0" />
+        <i3dMapping id="needleVoltage" node="0>0|5|2|5|0" />
+        <i3dMapping id="needleVoltagePart_decals" node="0>0|5|2|5|0|0" />
+        <i3dMapping id="needleTempWater" node="0>0|5|2|6|0" />
+        <i3dMapping id="needleTempWaterPart_decals" node="0>0|5|2|6|0|0" />
+        <i3dMapping id="needleFuel" node="0>0|5|2|7|0" />
+        <i3dMapping id="needleFuelPart_decals" node="0>0|5|2|7|0|0" />
+        <i3dMapping id="needleOilPressure" node="0>0|5|2|8|0" />
+        <i3dMapping id="needleOilPressurePart_decals" node="0>0|5|2|8|0|0" />
+        <i3dMapping id="iconDefaultLight" node="0>0|5|2|9" />
+        <i3dMapping id="iconTurnlightLeft_decals" node="0>0|5|2|10" />
+        <i3dMapping id="iconTurnlightRight_decals" node="0>0|5|2|11" />
+        <i3dMapping id="iconWarningFuel_decals" node="0>0|5|2|12" />
+        <i3dMapping id="iconCruiseControl_decals" node="0>0|5|2|13" />
+        <i3dMapping id="iconEngineStartRed" node="0>0|5|2|14" />
+        <i3dMapping id="iconEngineStartYellow" node="0>0|5|2|15" />
+        <i3dMapping id="display01Starting_decals" node="0>0|5|2|16" />
+        <i3dMapping id="display01Running_decals" node="0>0|5|2|17" />
+        <i3dMapping id="numbersSpeed" node="0>0|5|2|17|0" />
+        <i3dMapping id="display02Starting_decals" node="0>0|5|2|18" />
+        <i3dMapping id="display02Running_decals" node="0>0|5|2|19" />
+        <i3dMapping id="numbersTime" node="0>0|5|2|19|0" />
+        <i3dMapping id="dashboardGlow_decals" node="0>0|5|2|20" />
+        <i3dMapping id="interiorGlow_decals" node="0>0|5|2|21" />
+        <i3dMapping id="playerSkin" node="0>0|5|3|0" />
+        <i3dMapping id="playerSkinShift" node="0>0|5|3|1" />
+        <i3dMapping id="playerLeftFootTarget" node="0>0|5|3|2" />
+        <i3dMapping id="playerRightFootTarget" node="0>0|5|3|3" />
+        <i3dMapping id="playerRightFootTargetGas" node="0>0|5|3|4" />
+        <i3dMapping id="passengerSeatFrontRight" node="0>0|5|4" />
+        <i3dMapping id="indoorCameraPassenger01" node="0>0|5|4|0" />
+        <i3dMapping id="exitPointPassenger01" node="0>0|5|4|1" />
+        <i3dMapping id="playerSkinPassenger01" node="0>0|5|4|2" />
+        <i3dMapping id="playerLeftHandTargetPassenger01" node="0>0|5|4|3" />
+        <i3dMapping id="playerRightHandTargetPassenger01" node="0>0|5|4|4" />
+        <i3dMapping id="playerLeftFootTargetPassenger01" node="0>0|5|4|5" />
+        <i3dMapping id="playerRightFootTargetPassenger01" node="0>0|5|4|6" />
+        <i3dMapping id="passengerSeatBackLeft" node="0>0|5|5" />
+        <i3dMapping id="indoorCameraPassenger02" node="0>0|5|5|0" />
+        <i3dMapping id="exitPointPassenger02" node="0>0|5|5|1" />
+        <i3dMapping id="playerSkinPassenger02" node="0>0|5|5|2" />
+        <i3dMapping id="playerLeftHandTargetPassenger02" node="0>0|5|5|3" />
+        <i3dMapping id="playerRightHandTargetPassenger02" node="0>0|5|5|4" />
+        <i3dMapping id="playerLeftFootTargetPassenger02" node="0>0|5|5|5" />
+        <i3dMapping id="playerRightFootTargetPassenger02" node="0>0|5|5|6" />
+        <i3dMapping id="passengerSeatBackRight" node="0>0|5|6" />
+        <i3dMapping id="indoorCameraPassenger03" node="0>0|5|6|0" />
+        <i3dMapping id="exitPointPassenger03" node="0>0|5|6|1" />
+        <i3dMapping id="playerSkinPassenger03" node="0>0|5|6|2" />
+        <i3dMapping id="playerLeftHandTargetPassenger03" node="0>0|5|6|3" />
+        <i3dMapping id="playerRightHandTargetPassenger03" node="0>0|5|6|4" />
+        <i3dMapping id="playerLeftFootTargetPassenger03" node="0>0|5|6|5" />
+        <i3dMapping id="playerRightFootTargetPassenger03" node="0>0|5|6|6" />
+        <i3dMapping id="dayCab" node="0>0|6|0" />
+        <i3dMapping id="brakeLight" node="0>0|6|0|0|0" />
+        <i3dMapping id="brakeLightGlass" node="0>0|6|0|0|1" />
+        <i3dMapping id="dayCabMirrorLightsLeft" node="0>0|6|0|1|0|0|0" />
+        <i3dMapping id="dayCabMirrorLightsLeftGlass" node="0>0|6|0|1|0|0|1" />
+        <i3dMapping id="dayCabMirrorTurnlightsLeft" node="0>0|6|0|1|0|0|2" />
+        <i3dMapping id="dayCabMirrorTurnlightsLeftGlass" node="0>0|6|0|1|0|0|3" />
+        <i3dMapping id="dayCabMirrorLeft_decals" node="0>0|6|0|1|0|1" />
+        <i3dMapping id="dayCabDoorLeft_decals" node="0>0|6|0|1|0|5" />
+        <i3dMapping id="dayCabMirrorLightsRight" node="0>0|6|0|1|1|0|0" />
+        <i3dMapping id="dayCabMirrorLightsRightGlass" node="0>0|6|0|1|1|0|1" />
+        <i3dMapping id="dayCabMirrorTurnlightsRight" node="0>0|6|0|1|1|0|2" />
+        <i3dMapping id="dayCabMirrorTurnlightsRightGlass" node="0>0|6|0|1|1|0|3" />
+        <i3dMapping id="dayCabMirrorRight_decals" node="0>0|6|0|1|1|1" />
+        <i3dMapping id="dayCabDoorRight_decals" node="0>0|6|0|1|1|5" />
+        <i3dMapping id="crewCab" node="0>0|6|1" />
+        <i3dMapping id="crewCabMirrorLightsLeft" node="0>0|6|1|1|0|0|0" />
+        <i3dMapping id="crewCabMirrorLightsLeftGlass" node="0>0|6|1|1|0|0|1" />
+        <i3dMapping id="crewCabMirrorTurnlightsLeft" node="0>0|6|1|1|0|0|2" />
+        <i3dMapping id="crewCabMirrorTurnlightsLeftGlass" node="0>0|6|1|1|0|0|3" />
+        <i3dMapping id="crewCabMirrorLeft_decals" node="0>0|6|1|1|0|1" />
+        <i3dMapping id="crewCabDoorFrontLeft_decals" node="0>0|6|1|1|0|5" />
+        <i3dMapping id="crewCabMirrorLightsRight" node="0>0|6|1|1|1|0|0" />
+        <i3dMapping id="crewCabMirrorLightsRightGlass" node="0>0|6|1|1|1|0|1" />
+        <i3dMapping id="crewCabMirrorTurnlightsRight" node="0>0|6|1|1|1|0|2" />
+        <i3dMapping id="crewCabMirrorTurnlightsRightGlass" node="0>0|6|1|1|1|0|3" />
+        <i3dMapping id="crewCabMirrorRight_decals" node="0>0|6|1|1|1|1" />
+        <i3dMapping id="crewCabDoorFrontRight_decals" node="0>0|6|1|1|1|5" />
+        <i3dMapping id="crewCabDoorBackLeft_decals" node="0>0|6|1|1|2|3" />
+        <i3dMapping id="crewCabDoorBackRight_decals" node="0>0|6|1|1|3|3" />
+        <i3dMapping id="colCrewCab" node="0>0|6|1|4" />
+        <i3dMapping id="frameBackTrans" node="0>0|6|2" />
+        <i3dMapping id="frameBack" node="0>0|6|2|0" />
+        <i3dMapping id="wheelBackLeft" node="0>0|6|2|0|0|0" />
+        <i3dMapping id="wheelBackRight" node="0>0|6|2|0|0|1" />
+        <i3dMapping id="rearLight80_left" node="0>0|6|2|0|1|0|0" />
+        <i3dMapping id="rearLight80_right" node="0>0|6|2|0|1|0|1" />
+        <i3dMapping id="backLightsHigh" node="0>0|6|2|0|1|1|0" />
+        <i3dMapping id="licensePlateLightHigh" node="0>0|6|2|0|1|1|1" />
+        <i3dMapping id="turnLightLeftBack" node="0>0|6|2|0|1|2|0" />
+        <i3dMapping id="turnLightRightBack" node="0>0|6|2|0|1|2|1" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>0|6|2|0|2|0" />
+        <i3dMapping id="kardanShaftPart10" node="0>0|6|2|0|3|0" />
+        <i3dMapping id="licensePlateBack" node="0>0|6|2|0|4" />
+        <i3dMapping id="frameBackFuelPart" node="0>0|6|2|0|7" />
+        <i3dMapping id="cableBox" node="0>0|6|2|0|9" />
+        <i3dMapping id="frameExtensions01" node="0>0|6|3" />
+        <i3dMapping id="frameExtension01" node="0>0|6|3|0" />
+        <i3dMapping id="frameExtensions02" node="0>0|6|4" />
+        <i3dMapping id="frameExtension02" node="0>0|6|4|0" />
+        <i3dMapping id="frameExtension03" node="0>0|6|4|1" />
+        <i3dMapping id="vocations" node="0>0|6|5" />
+        <i3dMapping id="box" node="0>0|6|5|0" />
+        <i3dMapping id="rearLight26Red_01" node="0>0|6|5|0|0|0|0" />
+        <i3dMapping id="rearLight26Red_02" node="0>0|6|5|0|0|0|1" />
+        <i3dMapping id="rearLight26Orange_01" node="0>0|6|5|0|0|0|2" />
+        <i3dMapping id="rearLight26Orange_02" node="0>0|6|5|0|0|0|3" />
+        <i3dMapping id="sideMarker06Orange_01" node="0>0|6|5|0|0|0|4" />
+        <i3dMapping id="sideMarker06Orange_02" node="0>0|6|5|0|0|0|5" />
+        <i3dMapping id="sideMarker06Orange_03" node="0>0|6|5|0|0|0|6" />
+        <i3dMapping id="sideMarker06Orange_04" node="0>0|6|5|0|0|0|7" />
+        <i3dMapping id="sideMarker06Orange_05" node="0>0|6|5|0|0|0|8" />
+        <i3dMapping id="sideMarker06Orange_06" node="0>0|6|5|0|0|0|9" />
+        <i3dMapping id="sideMarker06Orange_07" node="0>0|6|5|0|0|0|10" />
+        <i3dMapping id="sideMarker06Orange_08" node="0>0|6|5|0|0|0|11" />
+        <i3dMapping id="sideMarker06Orange_09" node="0>0|6|5|0|0|0|12" />
+        <i3dMapping id="boxLights" node="0>0|6|5|0|0|1|0" />
+        <i3dMapping id="boxLightsGlass" node="0>0|6|5|0|0|1|1" />
+        <i3dMapping id="tensionBeltsBox" node="0>0|6|5|0|1" />
+        <i3dMapping id="beltActivationTriggerBox" node="0>0|6|5|0|1|0" />
+        <i3dMapping id="belt01Start" node="0>0|6|5|0|1|1" />
+        <i3dMapping id="belt01End" node="0>0|6|5|0|1|1|0" />
+        <i3dMapping id="belt02Start" node="0>0|6|5|0|1|2" />
+        <i3dMapping id="belt02End" node="0>0|6|5|0|1|2|0" />
+        <i3dMapping id="belt03Start" node="0>0|6|5|0|1|3" />
+        <i3dMapping id="belt03End" node="0>0|6|5|0|1|3|0" />
+        <i3dMapping id="belt04Start" node="0>0|6|5|0|1|4" />
+        <i3dMapping id="belt04End" node="0>0|6|5|0|1|4|0" />
+        <i3dMapping id="belt05Start" node="0>0|6|5|0|1|5" />
+        <i3dMapping id="belt05End" node="0>0|6|5|0|1|5|0" />
+        <i3dMapping id="belt06Start" node="0>0|6|5|0|1|6" />
+        <i3dMapping id="belt06End" node="0>0|6|5|0|1|6|0" />
+        <i3dMapping id="belt07Start" node="0>0|6|5|0|1|7" />
+        <i3dMapping id="belt07End" node="0>0|6|5|0|1|7|0" />
+        <i3dMapping id="gateSegment01" node="0>0|6|5|0|2|0" />
+        <i3dMapping id="gateSegment02" node="0>0|6|5|0|2|1" />
+        <i3dMapping id="gateSegment03" node="0>0|6|5|0|2|2" />
+        <i3dMapping id="gateSegment04" node="0>0|6|5|0|2|3" />
+        <i3dMapping id="gateSegment05" node="0>0|6|5|0|2|4" />
+        <i3dMapping id="gateSegment06" node="0>0|6|5|0|2|5" />
+        <i3dMapping id="gateSegment07" node="0>0|6|5|0|2|6" />
+        <i3dMapping id="gateSegment08" node="0>0|6|5|0|2|7" />
+        <i3dMapping id="gateSegment09" node="0>0|6|5|0|2|8" />
+        <i3dMapping id="gateSegment10" node="0>0|6|5|0|2|9" />
+        <i3dMapping id="gateSegment11" node="0>0|6|5|0|2|10" />
+        <i3dMapping id="gateSegment12" node="0>0|6|5|0|2|11" />
+        <i3dMapping id="gateSegment13" node="0>0|6|5|0|2|12" />
+        <i3dMapping id="gateSegment14" node="0>0|6|5|0|2|13" />
+        <i3dMapping id="gateSegment15" node="0>0|6|5|0|2|14" />
+        <i3dMapping id="gateSegment16" node="0>0|6|5|0|2|15" />
+        <i3dMapping id="gateSegment17" node="0>0|6|5|0|2|16" />
+        <i3dMapping id="gateSegment18" node="0>0|6|5|0|2|17" />
+        <i3dMapping id="gateSegment19" node="0>0|6|5|0|2|18" />
+        <i3dMapping id="gateSegment20" node="0>0|6|5|0|2|19" />
+        <i3dMapping id="gateSegment21" node="0>0|6|5|0|2|20" />
+        <i3dMapping id="gatePathSpline" node="0>0|6|5|0|2|21" />
+        <i3dMapping id="gateSegmentReferenceFrame" node="0>0|6|5|0|2|22" />
+        <i3dMapping id="gateCollision01" node="0>0|6|5|0|2|23" />
+        <i3dMapping id="gateCollision02" node="0>0|6|5|0|2|24" />
+        <i3dMapping id="gateCollision03" node="0>0|6|5|0|2|25" />
+        <i3dMapping id="gateCollision04" node="0>0|6|5|0|2|26" />
+        <i3dMapping id="colBoxFloor" node="0>0|6|5|0|3|0" />
+        <i3dMapping id="colBoxWallLeft" node="0>0|6|5|0|3|1" />
+        <i3dMapping id="colBoxWallRight" node="0>0|6|5|0|3|2" />
+        <i3dMapping id="colBoxRoof" node="0>0|6|5|0|3|3" />
+        <i3dMapping id="colBoxWallFront" node="0>0|6|5|0|3|4" />
+        <i3dMapping id="colBoxStep" node="0>0|6|5|0|3|5" />
+        <i3dMapping id="colBoxStepMount" node="0>0|6|5|0|3|6" />
+        <i3dMapping id="flatbed" node="0>0|6|5|1" />
+        <i3dMapping id="flatbedLights" node="0>0|6|5|1|0|0" />
+        <i3dMapping id="flatbedLightsGlass" node="0>0|6|5|1|0|1" />
+        <i3dMapping id="flatbedPanelsSide" node="0>0|6|5|1|1|0" />
+        <i3dMapping id="flatbedPanelsBack" node="0>0|6|5|1|1|1" />
+        <i3dMapping id="tensionBeltsFlatbed" node="0>0|6|5|1|2" />
+        <i3dMapping id="beltActivationTriggerFlatbed" node="0>0|6|5|1|2|0" />
+        <i3dMapping id="belt08Start" node="0>0|6|5|1|2|1" />
+        <i3dMapping id="belt08Intersection01" node="0>0|6|5|1|2|1|0" />
+        <i3dMapping id="belt08Intersection02" node="0>0|6|5|1|2|1|1" />
+        <i3dMapping id="belt08End" node="0>0|6|5|1|2|1|2" />
+        <i3dMapping id="belt09Start" node="0>0|6|5|1|2|2" />
+        <i3dMapping id="belt09Intersection01" node="0>0|6|5|1|2|2|0" />
+        <i3dMapping id="belt09Intersection02" node="0>0|6|5|1|2|2|1" />
+        <i3dMapping id="belt09End" node="0>0|6|5|1|2|2|2" />
+        <i3dMapping id="belt10Start" node="0>0|6|5|1|2|3" />
+        <i3dMapping id="belt10Intersection01" node="0>0|6|5|1|2|3|0" />
+        <i3dMapping id="belt10Intersection02" node="0>0|6|5|1|2|3|1" />
+        <i3dMapping id="belt10End" node="0>0|6|5|1|2|3|2" />
+        <i3dMapping id="belt11Start" node="0>0|6|5|1|2|4" />
+        <i3dMapping id="belt11Intersection01" node="0>0|6|5|1|2|4|0" />
+        <i3dMapping id="belt11Intersection02" node="0>0|6|5|1|2|4|1" />
+        <i3dMapping id="belt11End" node="0>0|6|5|1|2|4|2" />
+        <i3dMapping id="belt12Start" node="0>0|6|5|1|2|5" />
+        <i3dMapping id="belt12Intersection01" node="0>0|6|5|1|2|5|0" />
+        <i3dMapping id="belt12Intersection02" node="0>0|6|5|1|2|5|1" />
+        <i3dMapping id="belt12End" node="0>0|6|5|1|2|5|2" />
+        <i3dMapping id="belt13Start" node="0>0|6|5|1|2|6" />
+        <i3dMapping id="belt13Intersection01" node="0>0|6|5|1|2|6|0" />
+        <i3dMapping id="belt13Intersection02" node="0>0|6|5|1|2|6|1" />
+        <i3dMapping id="belt13End" node="0>0|6|5|1|2|6|2" />
+        <i3dMapping id="belt14Start" node="0>0|6|5|1|2|7" />
+        <i3dMapping id="belt14Intersection01" node="0>0|6|5|1|2|7|0" />
+        <i3dMapping id="belt14Intersection02" node="0>0|6|5|1|2|7|1" />
+        <i3dMapping id="belt14End" node="0>0|6|5|1|2|7|2" />
+        <i3dMapping id="colFlatbedFloor" node="0>0|6|5|1|3|0" />
+        <i3dMapping id="colFlatbedFront" node="0>0|6|5|1|3|1" />
+        <i3dMapping id="colFlatbedWallLeft" node="0>0|6|5|1|3|2" />
+        <i3dMapping id="colFlatbedWallRight" node="0>0|6|5|1|3|3" />
+        <i3dMapping id="colFlatbedWallBack" node="0>0|6|5|1|3|4" />
+        <i3dMapping id="colFlatbedGuard" node="0>0|6|5|1|3|5" />
+        <i3dMapping id="dumper" node="0>0|6|5|2" />
+        <i3dMapping id="tipBack" node="0>0|6|5|2|0" />
+        <i3dMapping id="dumperLights" node="0>0|6|5|2|0|0|0" />
+        <i3dMapping id="dumperLightsGlass" node="0>0|6|5|2|0|0|1" />
+        <i3dMapping id="doorLeft" node="0>0|6|5|2|0|1|0" />
+        <i3dMapping id="colDoorLeft" node="0>0|6|5|2|0|1|0|0" />
+        <i3dMapping id="doorRight" node="0>0|6|5|2|0|1|1" />
+        <i3dMapping id="colDoorRight" node="0>0|6|5|2|0|1|1|0" />
+        <i3dMapping id="doorBack" node="0>0|6|5|2|0|1|2" />
+        <i3dMapping id="colDoorBack" node="0>0|6|5|2|0|1|2|0" />
+        <i3dMapping id="doorBackLock" node="0>0|6|5|2|0|1|3" />
+        <i3dMapping id="doorBackLockLever" node="0>0|6|5|2|0|1|4" />
+        <i3dMapping id="dumperHydraulicPart01Ref" node="0>0|6|5|2|0|1|5" />
+        <i3dMapping id="fillVolume" node="0>0|6|5|2|0|2|0" />
+        <i3dMapping id="exactFillRootNode" node="0>0|6|5|2|0|2|1" />
+        <i3dMapping id="fillAutoAimTarget" node="0>0|6|5|2|0|2|2" />
+        <i3dMapping id="unloadInfo" node="0>0|6|5|2|0|2|3" />
+        <i3dMapping id="effectGrain" node="0>0|6|5|2|0|3|0|0" />
+        <i3dMapping id="effectParticle" node="0>0|6|5|2|0|3|0|1" />
+        <i3dMapping id="effectSmoke" node="0>0|6|5|2|0|3|0|2" />
+        <i3dMapping id="colDumperFloor" node="0>0|6|5|2|0|4|0" />
+        <i3dMapping id="colDumperFront" node="0>0|6|5|2|0|4|1" />
+        <i3dMapping id="colDumperBackLeft" node="0>0|6|5|2|0|4|2" />
+        <i3dMapping id="colDumperBackRight" node="0>0|6|5|2|0|4|3" />
+        <i3dMapping id="dumperHydraulicPart01RefFrame" node="0>0|6|5|2|1" />
+        <i3dMapping id="dumperHydraulicPart01" node="0>0|6|5|2|1|0" />
+        <i3dMapping id="dumperHydraulicPart02RefFrame" node="0>0|6|5|2|1|0|0" />
+        <i3dMapping id="dumperHydraulicPart02" node="0>0|6|5|2|1|0|0|0" />
+        <i3dMapping id="dumperHydraulicRef" node="0>0|6|5|2|1|0|0|0|0" />
+        <i3dMapping id="dumperHydraulicRefFrame" node="0>0|6|5|2|1|0|1" />
+        <i3dMapping id="dumperHydraulic" node="0>0|6|5|2|1|0|1|0" />
+        <i3dMapping id="dumperHydraulicPunch" node="0>0|6|5|2|1|0|1|0|0" />
+        <i3dMapping id="colDumperGuard" node="0>0|6|5|2|2|0" />
+        <i3dMapping id="colDumperFrame" node="0>0|6|5|2|2|1" />
+        <i3dMapping id="kardanShaftPart01" node="0>0|7|0|0" />
+        <i3dMapping id="kardanShaftPart02" node="0>0|7|1|0" />
+        <i3dMapping id="kardanShaftPart03" node="0>0|7|2|0" />
+        <i3dMapping id="kardanShaftPart04" node="0>0|7|3|0" />
+        <i3dMapping id="kardanShaftPart05" node="0>0|7|4|0" />
+        <i3dMapping id="kardanExtension01" node="0>0|7|5" />
+        <i3dMapping id="kardanShaftPart06" node="0>0|7|5|0|0" />
+        <i3dMapping id="kardanShaftPart07" node="0>0|7|5|1|0" />
+        <i3dMapping id="kardanExtension02" node="0>0|7|6" />
+        <i3dMapping id="kardanShaftPart08" node="0>0|7|6|0|0" />
+        <i3dMapping id="kardanShaftPart09" node="0>0|7|6|1|0" />
+        <i3dMapping id="driveShaft01" node="0>0|7|7" />
+        <i3dMapping id="driveShaft03" node="0>0|7|8" />
+        <i3dMapping id="steeringPart01" node="0>0|7|9" />
+        <i3dMapping id="steeringPart02Ref" node="0>0|7|9|0" />
+        <i3dMapping id="exhaustParticle" node="0>0|8|0" />
+        <i3dMapping id="licensePlateFront" node="0>0|8|1" />
+        <i3dMapping id="dischargeNode" node="0>0|8|2" />
+        <i3dMapping id="colFrameExtension" node="0>2|0" />
+    </i3dMappings>
+</vehicle>

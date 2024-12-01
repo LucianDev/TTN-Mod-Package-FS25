@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="trailer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>RamBody AS 750+</name>
+        <specs>
+            <combination filterCategory="weights" filterSpec="weight" filterSpecMin="600" filterSpecMax="650"/>
+        </specs>
+        <functions>
+            <function>$l10n_function_tipper</function>
+        </functions>
+        <image>$data/vehicles/krampe/ramBodyAS750/store_ramBodyAS750.png</image>
+        <price>60000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>KRAMPE</brand>
+        <category>trailers</category>
+        <shopTranslationOffset>0 -0.048 0</shopTranslationOffset>
+        <shopRotationOffset>0.047 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>2323200</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>1008640</indexBufferMemoryUsage>
+        <textureMemoryUsage>589824</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_trailer</typeDesc>
+        <filename>$data/vehicles/krampe/ramBodyAS750/ramBodyAS750.i3d</filename>
+        <size width="2.95" length="10.6" height="4"/>
+        <sounds volumeFactor="1.8"/>
+        <components maxMass="24000">
+            <component centerOfMass="0 0.85 -0.55" solverIterationCount="10" mass="7530"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT"/>
+        <mapHotspot type="TRAILER"/>
+    </base>
+
+    <configurationSets title="$l10n_configuration_extension" isYesNoOption="true">
+        <configurationSet name="$l10n_configuration_valueNo">
+            <configuration name="fillVolume" index="1" />
+            <configuration name="fillUnit" index="1" />
+        </configurationSet>
+        <configurationSet name="$l10n_configuration_valueYes" isDefault="true">
+            <configuration name="fillVolume" index="2" />
+            <configuration name="fillUnit" index="2" />
+        </configurationSet>
+    </configurationSets>
+
+    <wheels>
+        <wheelConfigurations tireCategories="TRAILER">
+            <tireCombination brand="TRELLEBORG" names="TwinRadial T404"/>
+            <tireCombination brand="VREDESTEIN" names="flotationPro flotationTrac"/>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" saveId="DEFAULT">
+                <wheels>
+                    <wheel dimensions="600_55R26_5" rimOffset="0.05" isLeft="true">
+                        <physics restLoad="2.9" repr="wheelFrontLeft"  forcePointRatio="0.3" initialCompression="18" suspTravel="0.12" spring="75" damper="55" yOffset="0.035"/>
+                        <wheelChock parkingNode="wheelChock01_01" isInverted="true"/>
+                        <wheelChock parkingNode="wheelChock01_02" />
+                    </wheel>
+                    <wheel dimensions="600_55R26_5" rimOffset="0.05" isLeft="false">
+                        <physics restLoad="2.9" repr="wheelFrontRight" forcePointRatio="0.3" initialCompression="18" suspTravel="0.12" spring="75" damper="55" yOffset="0.035"/>
+                    </wheel>
+                    <wheel dimensions="600_55R26_5" rimOffset="0.05" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="2.9" repr="wheelBackLeftRepr"  driveNode="wheelBackLeft"  forcePointRatio="0.3" initialCompression="18" suspTravel="0.12" spring="75" damper="55" yOffset="0.035"/>
+                        <steeringAxle scale="-1" rotMin="-15" rotMax="15"/>
+                        <steering node="steeringBarCenter" nodeMinTransX="0.078" nodeMaxTransX="-0.078"/>
+                    </wheel>
+                    <wheel dimensions="600_55R26_5" rimOffset="0.05" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="2.9" repr="wheelBackRightRepr" driveNode="wheelBackRight" forcePointRatio="0.3" initialCompression="18" suspTravel="0.12" spring="75" damper="55" yOffset="0.035"/>
+                        <steeringAxle scale="-1" rotMin="-15" rotMax="15"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+
+            <wheelConfiguration name="$l10n_configuration_valueWheelMedium" price="1000" saveId="MEDIUM" numDynamicConfigurations="1">
+                <wheels baseConfig="DEFAULT">
+                    <wheel dimensions="710_50R26_5"/>
+                    <wheel dimensions="710_50R26_5"/>
+                    <wheel dimensions="710_50R26_5"/>
+                    <wheel dimensions="710_50R26_5"/>
+                </wheels>
+            </wheelConfiguration>
+
+            <wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="1500" saveId="BROAD" numDynamicConfigurations="1">
+                <wheels baseConfig="DEFAULT">
+                    <wheel dimensions="800_45R26_5"/>
+                    <wheel dimensions="800_45R26_5"/>
+                    <wheel dimensions="800_45R26_5"/>
+                    <wheel dimensions="800_45R26_5"/>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <hubMaterial materialTemplateName="KRAMPE_GREY1"/>
+
+        <hubs>
+            <hub linkNode="wheelFrontLeft"   filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true"  scale="0.28 0.335 0.335" offset="0.005"/>
+            <hub linkNode="wheelFrontRight"  filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.28 0.335 0.335" offset="0.005"/>
+            <hub linkNode="wheelBackLeft"    filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true"  scale="0.28 0.335 0.335" offset="0.005"/>
+            <hub linkNode="wheelBackRight"   filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.28 0.335 0.335" offset="0.005"/>
+        </hubs>
+    </wheels>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="trailerLow" attacherHeight="0.645" steeringBarLeftNode="steeringBarAttacher">
+                <objectChange node="steeringBarAttacherBelt" visibilityActive="true" visibilityInactive="false"/>
+            </inputAttacherJoint>
+        </inputAttacherJoints>
+        <steeringAxleAngleScale startSpeed="0" endSpeed="90" backwards="true"/>
+        <support animationName="moveSupport"/>
+        <brakeForce force="1.6" maxForce="3.2" maxForceMass="24000"/>
+    </attachable>
+
+    <powerConsumer ptoRpm="400" neededMinPtoPower="10" neededMaxPtoPower="30"/>
+
+    <connectionHoses>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn" node="hydraulicIn01"  length="1.4" diameter="0.017" straighteningFactor="0.5" adapterNode="hydraulicIn01_connector">
+            <objectChange node="hydraulicIn01_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydraulicOut01" length="1.4" diameter="0.017" straighteningFactor="0.5" adapterNode="hydraulicOut01_connector">
+            <objectChange node="hydraulicOut01_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn" node="hydraulicIn02"  length="1.4" diameter="0.017" straighteningFactor="0.5" adapterNode="hydraulicIn02_connector">
+            <objectChange node="hydraulicIn02_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydraulicOut02" length="1.4" diameter="0.017" straighteningFactor="0.5" adapterNode="hydraulicOut02_connector">
+            <objectChange node="hydraulicOut02_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="airDoubleRed" node="airRed" length="1.4" diameter="0.011" straighteningFactor="0.5" adapterNode="airRed_connector">
+            <objectChange node="airRed_detached" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+        <hose inputAttacherJointIndices="1" type="airDoubleYellow" node="airYellow" length="1.4" diameter="0.011" straighteningFactor="0.5" adapterNode="airYellow_connector">
+            <objectChange node="airYellow_detached" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+        <hose inputAttacherJointIndices="1" type="electric" node="electric" length="1.4" diameter="0.007" straighteningFactor="0.5" adapterNode="electric_connector">
+            <objectChange node="electric_detached" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+    </connectionHoses>
+
+    <lights>
+        <sharedLight linkNode="rearLight73_left" filename="$data/shared/assets/lights/lizard/rearLight73_left.xml"/>
+        <sharedLight linkNode="rearLight73_right" filename="$data/shared/assets/lights/lizard/rearLight73_right.xml"/>
+        <sharedLight linkNode="rearLight74_left" filename="$data/shared/assets/lights/lizard/rearLight74_left.xml"/>
+        <sharedLight linkNode="rearLight74_right" filename="$data/shared/assets/lights/lizard/rearLight74_right.xml"/>
+        <sharedLight linkNode="workingLight31_01" filename="$data/shared/assets/lights/lizard/workingLight31.xml"/>
+        <sharedLight linkNode="workingLight31_02" filename="$data/shared/assets/lights/lizard/workingLight31.xml"/>
+        <sharedLight linkNode="workingLight31_03" filename="$data/shared/assets/lights/lizard/workingLight31.xml"/>
+        <sharedLight linkNode="workingLight31_04" filename="$data/shared/assets/lights/lizard/workingLight31.xml"/>
+        <sharedLight linkNode="plateNumberLight03_01" filename="$data/shared/assets/lights/lizard/plateNumberLight03.xml"/>
+        <sharedLight linkNode="plateNumberLight03_02" filename="$data/shared/assets/lights/lizard/plateNumberLight03.xml"/>
+        <sharedLight linkNode="sideMarker15Static_left" filename="$data/shared/assets/lights/lizard/sideMarker15_left.xml"/>
+        <sharedLight linkNode="sideMarker15Static_right" filename="$data/shared/assets/lights/lizard/sideMarker15_right.xml"/>
+        <sharedLight linkNode="sideMarker09White_01" filename="$data/shared/assets/lights/lizard/sideMarker09White.xml"/>
+        <sharedLight linkNode="sideMarker09White_02" filename="$data/shared/assets/lights/lizard/sideMarker09White.xml"/>
+        <sharedLight linkNode="sideMarker09Orange_01" filename="$data/shared/assets/lights/lizard/sideMarker09Orange.xml"/>
+        <sharedLight linkNode="sideMarker09Orange_02" filename="$data/shared/assets/lights/lizard/sideMarker09Orange.xml"/>
+        <sharedLight linkNode="sideMarker09Orange_03" filename="$data/shared/assets/lights/lizard/sideMarker09Orange.xml"/>
+        <sharedLight linkNode="sideMarker09Orange_04" filename="$data/shared/assets/lights/lizard/sideMarker09Orange.xml"/>
+        <sharedLight linkNode="sideMarker09Orange_05" filename="$data/shared/assets/lights/lizard/sideMarker09Orange.xml"/>
+        <sharedLight linkNode="sideMarker09Orange_06" filename="$data/shared/assets/lights/lizard/sideMarker09Orange.xml"/>
+
+        <realLights>
+            <high>
+                <light node="backLightsHigh" lightTypes="0" />
+                <light node="licensePlateLightHigh" lightTypes="0" />
+                <turnLightLeft node="turnLightLeftBack" />
+                <turnLightRight node="turnLightRightBack" />
+                <reverseLight node="reverseLightHigh"/>
+                <brakeLight node="backLightsHigh" />
+            </high>
+        </realLights>
+    </lights>
+
+    <licensePlates>
+        <licensePlate node="licensePlateBack" position="BACK" preferedType="ELONGATED" placementArea="0.075 0.3 0.08 0.3"/>
+    </licensePlates>
+
+    <animations>
+        <animation name="moveSupport">
+            <part node="supportArm" startTime="0" endTime="0.5" startTrans="0 0 0" endTrans="0 -0.44 0" />
+
+            <sound template="hydraulicOpen02" startTime="0.01" endTime="0.49" volumeScale="1"   pitchScale="1.5" fadeIn="0.01" fadeOut="0.01" linkNode="supportArm"/>
+            <sound template="hingeImp"        startTime="0.1"  direction="-1" volumeScale="0.8" pitchScale="1.2" linkNode="supportArm"/>
+            <sound template="vibratingImp"    startTime="0.01" direction="-1" volumeScale="1.1" pitchScale="1.2" linkNode="supportArm"/>
+        </animation>
+
+        <animation name="tipAnimationBack">
+            <part node="pushWallPart01" startTime="0.0" endTime="5.0" startTrans="0.0 0.0 0.0" endTrans="0.0 0.0 -2.42" />
+            <part node="pushWallFrame" startTime="5.0" endTime="10.0" startTrans="-0.0 0.0 0.0" endTrans="-0.0 0.0 -2.4" />
+            <part node="pushWallPart02" startTime="10.0" endTime="12.5" startTrans="0.0 0.0 0.0" endTrans="0.0 0.0 -1.2" />
+            <part node="pushWall" startTime="12.5" endTime="15.0" startTrans="-0.0 0.0 0.0" endTrans="-0.0 0.0 -1.0" />
+            <part node="pushWallCableArm01" startTime="5.0" endTime="10.0" startRot="0.0 0.0 0.0" endRot="160.0 0.0 0.0" />
+            <part node="pushWallCableArm02" startTime="10.0" endTime="12.5" startRot="0.0 0.0 0.0" endRot="0.0 -75.0 0.0" />
+            <part node="pushWallPart01AnimJoint01" startTime="0.0" endTime="5.0" startRot="0.0 0.0 0.0" endRot="-56.241 0.0 0.0" />
+            <part node="pushWallPart01AnimJoint02" startTime="0.0" endTime="5.0" startRot="0.0 0.0 0.0" endRot="-33.556 0.0 0.0" />
+            <part node="pushWallFrameAnimJoint" startTime="10.0" endTime="12.5" startRot="0.0 0.0 0.0" endRot="0.0 -52.5 0.0" />
+            <part node="pushWallPart02AnimJoint" startTime="10.0" endTime="12.5" startTrans="0.001 0.272 0.064" endTrans="-0.016 0.272 0.113" startRot="0.0 -20.509 0.0" endRot="0.0 42.157 0.0" />
+
+            <sound template="hydraulicClose03" startTime="0.01"  endTime="14.99" volumeScale="2"   pitchScale="1.1" linkNode="pushWall" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="clackVar6"        startTime="14.99" direction="1"   volumeScale="1.3" pitchScale="0.7" />
+            <sound template="cylinderPunch"    startTime="14.99" direction="1"   volumeScale="0.4" pitchScale="0.7" />
+            <sound template="clackVar6"        startTime="0.01"  direction="-1"  volumeScale="1.3" pitchScale="0.7" />
+            <sound template="cylinderPunch"    startTime="0.01"  direction="-1"  volumeScale="0.4" pitchScale="0.7" />
+        </animation>
+
+        <animation name="tipAnimationBackDoor">
+            <part node="bumperBack" startTime="0.0" endTime="1.0" startRot="0 0 0" endRot="90 0 0"/>
+            <part node="backDoor" startTime="0.6" endTime="1.0" startTrans="0 0 0" endTrans="0 0.05 0"/>
+            <part node="backDoor" startTime="1.0" endTime="5.0" startRot="0 0 0" endRot="90 0 0"/>
+            <part node="deformNodeScaleBack" startTime="1.0" endTime="1.2" startTrans="0 0 0" endTrans="0 0 0.5"/>
+            <part node="deformNodeScaleBack" startTime="1.0" endTime="1.2" startScale="1 1 1" endScale="1 1 0.68"/>
+
+            <sound template="hydraulicOpen05"       startTime="0.01" endTime="1"       volumeScale="1.3" pitchScale="1.4" fadeIn="0.1" fadeOut="0.1" linkNode="bumperBack"/>
+            <sound template="clackVar6"             startTime="1.0"  volumeScale="1.3" pitchScale="0.7"  linkNode="bumperBack"/>
+            <sound template="cylinderPunch"         startTime="1.0"  volumeScale="0.3" pitchScale="0.9"  linkNode="bumperBack"/>
+            <sound template="clackVar6"             startTime="0.01" direction="-1"   volumeScale="0.5"  pitchScale="0.7"  linkNode="bumperBack"/>
+            <sound template="hydraulicClose01"      startTime="1.0"  endTime="4.99"   direction="1"      volumeScale="1.5" pitchScale="0.7" fadeIn="0.1" fadeOut="0.1" linkNode="backDoor"/>
+            <sound template="hydraulicOpen05"       startTime="1.0"  endTime="4.99"   direction="1"      volumeScale="0.8" pitchScale="1.7" fadeIn="0.1" fadeOut="0.1" linkNode="backDoor"/>
+            <sound template="hydraulicOpen06"       startTime="1.0"  endTime="4.99"   direction="-1"     volumeScale="0.4" startPitchScale="0.5" endPitchScale="0.6" fadeIn="0.1" fadeOut="0.1" linkNode="backDoor"/>
+            <sound template="hydraulicOpen02"       startTime="1.0"  endTime="4.99"   direction="-1"     volumeScale="0.8" startPitchScale="1.5" endPitchScale="1.6" fadeIn="0.1" fadeOut="0.1" linkNode="backDoor"/>
+            <sound template="vibratingImp"          startTime="4.99" direction="1"    volumeScale="0.6"  pitchScale="0.8"  linkNode="backDoor"/>
+            <sound template="clackVar6"             startTime="4.99" direction="1"    volumeScale="1.5"  pitchScale="0.8"  linkNode="backDoor"/>
+            <sound template="cylinderPunch"         startTime="4.99" direction="1"    volumeScale="0.4"  pitchScale="1.5"  linkNode="backDoor"/>
+            <sound template="cylinderPunch"         startTime="1.0"  direction="-1"   volumeScale="0.6"  pitchScale="0.8"  linkNode="backDoor"/>
+            <sound template="trailerCloseImpact_01" startTime="1.0"  direction="-1"   volumeScale="0.5"  pitchScale="0.8"  linkNode="backDoor"/>
+            <sound template="vibratingImp"          startTime="1.0"  direction="-1"   volumeScale="0.7"  pitchScale="1.4"  linkNode="backDoor"/>
+            <sound template="hingeImp"              startTime="0.85" direction="-1"   volumeScale="0.4"  pitchScale="0.8"  linkNode="backDoor"/>
+
+        </animation>
+
+        <animation name="tipAnimationGrainDoor">
+            <part node="grainDoor" startTime="0.0" endTime="1.0" startTrans="0 0 0" endTrans="0 0.35 0" />
+            <part node="bumperBack" startTime="0.0" endTime="1.0" startRot="0 0 0" endRot="93.5 0 0"/>
+
+            <sound template="latchSmall"      startTime="0.01" direction="1"     volumeScale="0.4" pitchScale="0.5" linkNode="grainDoor"/>
+            <sound template="latchSmall"      startTime="0.0"  direction="-1"    volumeScale="0.2" pitchScale="0.7" linkNode="grainDoor"/>
+            <sound template="slideOpen"       startTime="0.01" direction="1"     volumeScale="3.5" pitchScale="2.5" linkNode="grainDoor"/>
+            <sound template="slideClose"      startTime="0.99" direction="-1"    volumeScale="3.5" pitchScale="2.5" linkNode="grainDoor"/>
+            <sound template="metalClose"      startTime="0.99" direction="1"     volumeScale="0.8" pitchScale="2"   linkNode="grainDoor"/>
+            <sound template="metalClose"      startTime="0.0"  direction="-1"    volumeScale="0.8" pitchScale="1.8" linkNode="grainDoor"/>
+            <sound template="hydraulicOpen05" startTime="0.01" endTime="0.99"    volumeScale="1.3" pitchScale="1.4" fadeIn="0.1" fadeOut="0.1" linkNode="bumperBack"/>
+            <sound template="clackVar6"       startTime="0.99" volumeScale="1.3" pitchScale="0.7"  linkNode="bumperBack"/>
+            <sound template="cylinderPunch"   startTime="0.99" volumeScale="0.3" pitchScale="0.9"  linkNode="bumperBack"/>
+            <sound template="clackVar6"       startTime="0.01" direction="-1"    volumeScale="0.5" pitchScale="0.7"  linkNode="bumperBack"/>
+        </animation>
+    </animations>
+
+    <turnOnVehicle turnOffIfNotAllowed="true" />
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="topDoor" playSound="true">
+                <controls axis="AXIS_DOOR" invertAxis="true" mouseSpeedFactor="0.3" iconName="TOP_DOOR_ROTATE" />
+                <rotation rotSpeed="60" rotAcceleration="160" rotMax="82" rotMin="0" rotationAxis="1" />
+                <dependentPart node="topDoorHydraulic" />
+            </movingTool>
+            <movingTool node="backDoor">
+                <dependentPart node="backDoorHydraulic" />
+            </movingTool>
+            <movingTool node="pushWallPart01">
+                <fillVolume deformerNodeIndices="1 2 3 4 5 6"/>
+            </movingTool>
+            <movingTool node="pushWallFrame">
+                <fillVolume deformerNodeIndices="1 2 3 4 5 6"/>
+            </movingTool>
+            <movingTool node="pushWallPart02">
+                <fillVolume deformerNodeIndices="1 2 3 4 5 6"/>
+            </movingTool>
+            <movingTool node="pushWall">
+                <fillVolume deformerNodeIndices="1 2 3 4 5 6"/>
+            </movingTool>
+            <movingTool node="deformNodeScaleBack">
+                <fillVolume deformerNodeIndices="7 8 9 10"/>
+            </movingTool>
+            <movingTool node="grainDoor">
+                <dependentPart node="grainDoorHandle" />
+            </movingTool>
+            <movingTool node="bumperBack">
+                <dependentPart node="bumperBackAlignArm" />
+            </movingTool>
+            <movingTool node="pushWallCableArm02">
+                <dependentPart node="pushWallCableArmSpringBase" />
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <movingPart node="steeringBarBackLeft" referencePoint="steeringBarBackLeftRef" referenceFrame="steeringBarBackLeftRef" scaleZ="true" isActiveDirty="true" maxUpdateDistance="25">
+                <dependentPart node="steeringBarBackRight"/>
+            </movingPart>
+            <movingPart node="steeringBarBackRight" referencePoint="steeringBarBackRightRef" referenceFrame="steeringBarBackRightRef" scaleZ="true"/>
+            <movingPart node="steeringBarAttacher" referencePoint="steeringBarAttacherRef" referenceFrame="steeringBarAttacherRef">
+                <translatingPart node="steeringBarAttacherPunch" />
+            </movingPart>
+
+            <!-- backDoor -->
+            <movingPart node="backDoorHydraulic" referencePoint="backDoorHydraulicRef" referenceFrame="backDoorHydraulicRef">
+                <translatingPart node="backDoorHydraulicPunch" />
+            </movingPart>
+            <movingPart node="grainDoorHandle" localReferencePoint="grainDoorHandlePart" referencePoint="grainDoorHandleRef" referenceFrame="grainDoorHandleRefFrame">
+                <dependentPart node="grainDoorHandlePart" />
+            </movingPart>
+            <movingPart node="grainDoorHandlePart" referencePoint="grainDoorHandleRef" referenceFrame="grainDoorHandleRef"/>
+
+            <!-- bumper -->
+            <movingPart node="bumperBackAlignArm" localReferencePoint="bumperBackAlignArmPart" referencePoint="bumperBackAlignArmRef" referenceFrame="bumperBackAlignArmRefFrame">
+                <dependentPart node="bumperBackAlignArmPart" />
+                <dependentPart node="bumperBackHydraulic" />
+            </movingPart>
+            <movingPart node="bumperBackAlignArmPart" referencePoint="bumperBackAlignArmRef" referenceFrame="bumperBackAlignArmRef"/>
+            <movingPart node="bumperBackHydraulic" referencePoint="bumperBackHydraulicRef" referenceFrame="bumperBackHydraulicRef">
+                <translatingPart node="bumperBackHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="topDoorHydraulic" referencePoint="topFlapHydraulicRef" referenceFrame="topFlapHydraulicRef">
+                <translatingPart node="topFlapHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="pushWallCableArmSpringBase" referencePoint="pushWallCableArmSpringBaseRef" referenceFrame="pushWallCableArmSpringBaseRef">
+                <translatingPart node="pushWallCableArmSpringPunch" />
+                <dependentPart node="pushWallCableArmSpring" />
+            </movingPart>
+            <movingPart node="pushWallCableArmSpring" referencePoint="pushWallCableArmSpringRef" referenceFrame="pushWallCableArmSpringRef" scaleZ="true" />
+        </movingParts>
+        <sounds>
+            <actionSound template="hydraulicOpen05" volumeScale="0.8" pitchScale="1.8" linkNode="topDoor" actionNames="TOOL_MOVE_POS TOOL_MOVE_NEG" nodes="topDoor" fadeIn="0.1" fadeOut="0.1"/>
+            <actionSound template="vibratingImp"    volumeScale="0.6" pitchScale="1.4" linkNode="topDoor" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="topDoor" />
+            <actionSound template="cylinderPunch"   volumeScale="0.2" pitchScale="1.6" linkNode="topDoor" actionNames="TOOL_MOVE_END_NEG_LIMIT" nodes="topDoor" />
+        </sounds>
+    </cylindered>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration name="1">
+                <fillUnits>
+                    <fillUnit shopDisplayUnit="CUBICMETER" fillTypeCategories="BULK" capacity="38600" allowAILoading="true">
+                        <exactFillRootNode node="exactFillRootNodeDefault" />
+                        <autoAimTargetNode node="autoAimTargetNodeDefault" startZ="2.75" endZ="-4.52" invert="false" startPercentage="25"/>
+                    </fillUnit>
+                </fillUnits>
+
+                <objectChange node="exactFillRootNodeExtension" rigidBodyTypeActive="NONE"/>
+            </fillUnitConfiguration>
+            <fillUnitConfiguration name="2" price="30500">
+                <fillUnits>
+                    <fillUnit shopDisplayUnit="CUBICMETER" fillTypeCategories="BULK" capacity="5000000" updateMass="false" allowAILoading="true">
+                        <exactFillRootNode node="exactFillRootNodeExtension" />
+                        <autoAimTargetNode node="autoAimTargetNodeExtension" startZ="2.75" endZ="-4.52" invert="false" startPercentage="25"/>
+                    </fillUnit>
+                </fillUnits>
+
+                <objectChange node="exactFillRootNodeDefault" rigidBodyTypeActive="NONE"/>
+                <objectChange node="extensionMainBody_vis" visibilityActive="true" visibilityInactive="false" />
+                <objectChange node="extensionBackDoor_vis" visibilityActive="true" visibilityInactive="false" />
+
+                <objectChange node="colPart09" compoundChildActive="true" compoundChildInactive="false" />
+                <objectChange node="colPart10" compoundChildActive="true" compoundChildInactive="false" />
+                <objectChange node="colPart11" compoundChildActive="true" compoundChildInactive="false" />
+                <objectChange node="colPart12" compoundChildActive="true" compoundChildInactive="false" />
+                <objectChange node="colPart13" compoundChildActive="true" compoundChildInactive="false" />
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration name="1">
+                <volumes>
+                    <volume node="fillVolumeDefault" maxDelta="0.23" fillUnitIndex="1" maxAllowedHeapAngle="35">
+                        <deformNode node="fillVolumeDeformNode01"/>
+                        <deformNode node="fillVolumeDeformNode02"/>
+                        <deformNode node="fillVolumeDeformNode03"/>
+                        <deformNode node="fillVolumeDeformNode04"/>
+                        <deformNode node="fillVolumeDeformNode05"/>
+                        <deformNode node="fillVolumeDeformNode06"/>
+                        <deformNode node="fillVolumeDeformNode07"/>
+                        <deformNode node="fillVolumeDeformNode08"/>
+                        <deformNode node="fillVolumeDeformNode09"/>
+                        <deformNode node="fillVolumeDeformNode10"/>
+                    </volume>
+                </volumes>
+            </fillVolumeConfiguration>
+            <fillVolumeConfiguration name="2">
+                <volumes>
+                    <volume node="fillVolumeExtension" maxDelta="0.23" fillUnitIndex="1" maxAllowedHeapAngle="35">
+                        <deformNode node="fillVolumeDeformNode01"/>
+                        <deformNode node="fillVolumeDeformNode02"/>
+                        <deformNode node="fillVolumeDeformNode03"/>
+                        <deformNode node="fillVolumeDeformNode04"/>
+                        <deformNode node="fillVolumeDeformNode05"/>
+                        <deformNode node="fillVolumeDeformNode06"/>
+                        <deformNode node="fillVolumeDeformNode07"/>
+                        <deformNode node="fillVolumeDeformNode08"/>
+                        <deformNode node="fillVolumeDeformNode09"/>
+                        <deformNode node="fillVolumeDeformNode10"/>
+                    </volume>
+                </volumes>
+            </fillVolumeConfiguration>
+        </fillVolumeConfigurations>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node node="unloadInfo" width="3" length="5" />
+            </unloadInfo>
+        </unloadInfos>
+
+        <heightNodes>
+            <heightNode fillVolumeIndex="1">
+                <refNode node="heightNode01"/>
+                <refNode node="heightNode02"/>
+                <node node="grainEffectBack"  baseScale="1 1 1" transAxis="0 1 0"  minHeight="0.25"/>
+                <node node="emitterShapeBack" baseScale="1 0.1 1" scaleAxis="0 0.9 0" transAxis="0 0 0"/>
+            </heightNode>
+        </heightNodes>
+    </fillVolume>
+
+    <trailer>
+        <trailerConfigurations>
+            <trailerConfiguration>
+                <trailer>
+                    <tipSide name="$l10n_info_tipSideBack" dischargeNodeIndex="1">
+                        <animation name="tipAnimationBack" speedScale="0.95" closeSpeedScale="1.5"/>
+                        <doorAnimation name="tipAnimationBackDoor" speedScale="1.15" startTipTime="0.3"/>
+                    </tipSide>
+                    <tipSide name="$l10n_info_tipSideBackGrainDoor" dischargeNodeIndex="2">
+                        <animation name="tipAnimationBack" speedScale="0.38" closeSpeedScale="1.5"/>
+                        <doorAnimation name="tipAnimationGrainDoor" speedScale="2" closeSpeedScale="2" startTipTime="0.5"/>
+                    </tipSide>
+                </trailer>
+            </trailerConfiguration>
+        </trailerConfigurations>
+    </trailer>
+
+    <dischargeable>
+        <dischargeNode emptySpeed="50000" node="dischargeNode" fillUnitIndex="1" unloadInfoIndex="1" allowAIDischarge="true">
+            <info width="2.5" length="0.5" zOffset="-0.7" />
+            <effects>
+                <effectNode effectClass="TipEffect">
+                    <effectNode effectNode="emitterShapeBack" effectClass="ParticleEffect" materialType="unloadingParticle"/>
+                    <effectNode effectNode="grainEffectBack" materialType="unloading" fadeTime="0.5" extraDistanceNode="dischargeNode" extraDistance="0.3"/>
+                </effectNode>
+                <effectNode effectNode="smokeEffectBack" materialType="unloadingSmoke" fadeTime="0.5"/>
+            </effects>
+        </dischargeNode>
+        <dischargeNode emptySpeed="50000" node="dischargeNodeGrainDoor" fillUnitIndex="1" unloadInfoIndex="1" >
+            <info width="0.5" length="0.5" zOffset="-0.7" />
+            <effects>
+                <effectNode effectClass="TipEffect">
+                    <effectNode effectNode="emitterShapeGrainDoor" effectClass="ParticleEffect" materialType="unloadingParticle" emitCountScale="3"/>
+                    <effectNode effectNode="grainEffectGrainDoor"  materialType="unloading" fadeTime="0.5" maxBending="0" extraDistanceNode="dischargeNodeGrainDoor" extraDistance="0.4"/>
+                </effectNode>
+                <effectNode effectNode="smokeEffectGrainDoor" materialType="unloadingSmoke" fadeTime="0.5"/>
+            </effects>
+        </dischargeNode>
+    </dischargeable>
+
+    <tipOccluder>
+        <occlusionArea start="tipOccluderStart" width="tipOccluderWidth" height="tipOccluderHeight"/>
+    </tipOccluder>
+
+    <ai>
+        <agentAttachment jointNode="attacherJoint" rotCenterWheelIndices="1 2 3 4" useSize="true"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode wheelIndices="1 2 3 4" minZ="-3.3" maxZ="0.4" yOffset="0.6"/>
+        <bendingNode minX="-1.3" maxX="1.3" minZ="0.4" maxZ="3.75" yOffset="1.0"/>
+        <bendingNode minX="-1.3" maxX="1.3" minZ="-4.2" maxZ="-3.3" yOffset="1.05"/>
+        <bendingNode minX="-1.3" maxX="1.3" minZ="-5.1" maxZ="-4.2" yOffset="1.35"/>
+    </foliageBending>
+
+    <baseColorConfigurations>
+        <baseColorConfiguration materialTemplateName="KRAMPE_RED1"/>
+        <baseColorConfiguration materialTemplateName="KRAMPE_BLACK1"/>
+        <material materialSlotName="chassis_mat"/>
+    </baseColorConfigurations>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="ramBodyAS750_main_component1" node="0>" />
+        <i3dMapping id="ramBodyAS750_vis" node="0>0" />
+        <i3dMapping id="wheelFrontLeft" node="0>0|0|0" />
+        <i3dMapping id="wheelFrontRight" node="0>0|0|1" />
+        <i3dMapping id="wheelBackLeftRepr" node="0>0|0|2|0" />
+        <i3dMapping id="wheelBackLeft" node="0>0|0|2|0|0|0" />
+        <i3dMapping id="steeringBarBackLeft" node="0>0|0|2|0|1" />
+        <i3dMapping id="wheelBackRightRepr" node="0>0|0|3|0" />
+        <i3dMapping id="wheelBackRight" node="0>0|0|3|0|0|0" />
+        <i3dMapping id="steeringBarBackRight" node="0>0|0|3|0|1" />
+        <i3dMapping id="steeringBarCenter" node="0>0|0|4" />
+        <i3dMapping id="steeringBarBackLeftRef" node="0>0|0|4|0" />
+        <i3dMapping id="steeringBarBackRightRef" node="0>0|0|4|1" />
+        <i3dMapping id="wheelChock01_01" node="0>0|0|5|0" />
+        <i3dMapping id="wheelChock01_02" node="0>0|0|5|1" />
+        <i3dMapping id="redTriangle_02_01" node="0>0|1|0|0" />
+        <i3dMapping id="redTriangle_02_02" node="0>0|1|0|1" />
+        <i3dMapping id="workingLight31_01" node="0>0|1|0|2" />
+        <i3dMapping id="workingLight31_02" node="0>0|1|0|3" />
+        <i3dMapping id="workingLight31_03" node="0>0|1|0|4" />
+        <i3dMapping id="workingLight31_04" node="0>0|1|0|5" />
+        <i3dMapping id="sideMarker09White_01" node="0>0|1|0|6" />
+        <i3dMapping id="sideMarker09White_02" node="0>0|1|0|7" />
+        <i3dMapping id="sideMarker09Orange_01" node="0>0|1|0|8" />
+        <i3dMapping id="sideMarker09Orange_02" node="0>0|1|0|9" />
+        <i3dMapping id="sideMarker09Orange_03" node="0>0|1|0|10" />
+        <i3dMapping id="sideMarker09Orange_04" node="0>0|1|0|11" />
+        <i3dMapping id="sideMarker09Orange_05" node="0>0|1|0|12" />
+        <i3dMapping id="sideMarker09Orange_06" node="0>0|1|0|13" />
+        <i3dMapping id="attacherJoint" node="0>0|2|0" />
+        <i3dMapping id="hydraulicIn01" node="0>0|2|1|0" />
+        <i3dMapping id="hydraulicIn01_detached" node="0>0|2|1|0|0" />
+        <i3dMapping id="hydraulicIn01_connector" node="0>0|2|1|0|0|0" />
+        <i3dMapping id="hydraulicOut01" node="0>0|2|1|1" />
+        <i3dMapping id="hydraulicOut01_detached" node="0>0|2|1|1|0" />
+        <i3dMapping id="hydraulicOut01_connector" node="0>0|2|1|1|0|0" />
+        <i3dMapping id="hydraulicIn02" node="0>0|2|1|2" />
+        <i3dMapping id="hydraulicIn02_detached" node="0>0|2|1|2|0" />
+        <i3dMapping id="hydraulicIn02_connector" node="0>0|2|1|2|0|0" />
+        <i3dMapping id="hydraulicOut02" node="0>0|2|1|3" />
+        <i3dMapping id="hydraulicOut02_detached" node="0>0|2|1|3|0" />
+        <i3dMapping id="hydraulicOut02_connector" node="0>0|2|1|3|0|0" />
+        <i3dMapping id="electric" node="0>0|2|1|4" />
+        <i3dMapping id="electric_detached" node="0>0|2|1|4|0" />
+        <i3dMapping id="electric_connector" node="0>0|2|1|4|0|0" />
+        <i3dMapping id="airYellow" node="0>0|2|1|5" />
+        <i3dMapping id="airYellow_detached" node="0>0|2|1|5|0" />
+        <i3dMapping id="airYellow_connector" node="0>0|2|1|5|0|0" />
+        <i3dMapping id="airRed" node="0>0|2|1|6" />
+        <i3dMapping id="airRed_detached" node="0>0|2|1|6|0" />
+        <i3dMapping id="airRed_connector" node="0>0|2|1|6|0|0" />
+        <i3dMapping id="steeringBarAttacherBelt" node="0>0|2|2" />
+        <i3dMapping id="pushWallPart01" node="0>0|3|0|0" />
+        <i3dMapping id="pushWallFrame" node="0>0|3|0|0|0" />
+        <i3dMapping id="pushWallPart02" node="0>0|3|0|0|0|0" />
+        <i3dMapping id="pushWall" node="0>0|3|0|0|0|0|0" />
+        <i3dMapping id="topDoor" node="0>0|3|0|0|0|0|0|0" />
+        <i3dMapping id="topFlapHydraulicRef" node="0>0|3|0|0|0|0|0|0|0" />
+        <i3dMapping id="topDoorHydraulic" node="0>0|3|0|0|0|0|0|1" />
+        <i3dMapping id="topFlapHydraulicPunch" node="0>0|3|0|0|0|0|0|1|0" />
+        <i3dMapping id="fillVolumeDeformNode01" node="0>0|3|0|0|0|0|0|2|0" />
+        <i3dMapping id="fillVolumeDeformNode02" node="0>0|3|0|0|0|0|0|2|1" />
+        <i3dMapping id="fillVolumeDeformNode03" node="0>0|3|0|0|0|0|0|2|2" />
+        <i3dMapping id="fillVolumeDeformNode04" node="0>0|3|0|0|0|0|0|2|3" />
+        <i3dMapping id="fillVolumeDeformNode05" node="0>0|3|0|0|0|0|0|2|4" />
+        <i3dMapping id="fillVolumeDeformNode06" node="0>0|3|0|0|0|0|0|2|5" />
+        <i3dMapping id="pushWallPart02AnimJoint" node="0>0|3|0|0|0|0|3" />
+        <i3dMapping id="pushWallCableArm01" node="0>0|3|0|0|0|1" />
+        <i3dMapping id="pushWallCableArm01AnimJoint" node="0>0|3|0|0|0|1|2" />
+        <i3dMapping id="pushWallCableArm02" node="0>0|3|0|0|0|2" />
+        <i3dMapping id="pushWallCableArmSpringBaseRef" node="0>0|3|0|0|0|2|1" />
+        <i3dMapping id="pushWallCableArmSpringBase" node="0>0|3|0|0|0|3" />
+        <i3dMapping id="pushWallCableArmSpringPunch" node="0>0|3|0|0|0|3|0" />
+        <i3dMapping id="pushWallCableArmSpringRef" node="0>0|3|0|0|0|3|0|0" />
+        <i3dMapping id="pushWallCableArmSpring" node="0>0|3|0|0|0|3|1" />
+        <i3dMapping id="pushWallFrameAnimJoint" node="0>0|3|0|0|0|6" />
+        <i3dMapping id="pushWallPart01AnimJoint02" node="0>0|3|0|0|4" />
+        <i3dMapping id="supportArm" node="0>0|3|1|0|0" />
+        <i3dMapping id="steeringBarAttacher" node="0>0|3|1|1" />
+        <i3dMapping id="steeringBarAttacherPunch" node="0>0|3|1|1|0" />
+        <i3dMapping id="steeringBarAttacherRef" node="0>0|3|1|1|0|0" />
+        <i3dMapping id="backDoor" node="0>0|3|2|0|0" />
+        <i3dMapping id="rearLight73_left" node="0>0|3|2|0|0|0|0|0" />
+        <i3dMapping id="rearLight73_right" node="0>0|3|2|0|0|0|0|1" />
+        <i3dMapping id="rearLight74_left" node="0>0|3|2|0|0|0|0|2" />
+        <i3dMapping id="rearLight74_right" node="0>0|3|2|0|0|0|0|3" />
+        <i3dMapping id="plateNumberLight03_01" node="0>0|3|2|0|0|0|0|6" />
+        <i3dMapping id="plateNumberLight03_02" node="0>0|3|2|0|0|0|0|7" />
+        <i3dMapping id="sideMarker15Static_left" node="0>0|3|2|0|0|0|0|8" />
+        <i3dMapping id="sideMarker15Static_right" node="0>0|3|2|0|0|0|0|9" />
+        <i3dMapping id="licensePlateLightHigh" node="0>0|3|2|0|0|0|1|0" />
+        <i3dMapping id="backLightsHigh" node="0>0|3|2|0|0|0|2|0" />
+        <i3dMapping id="turnLightLeftBack" node="0>0|3|2|0|0|0|3|0" />
+        <i3dMapping id="turnLightRightBack" node="0>0|3|2|0|0|0|3|1" />
+        <i3dMapping id="reverseLightHigh" node="0>0|3|2|0|0|0|4|0" />
+        <i3dMapping id="grainDoorHandleLock" node="0>0|3|2|0|0|1|0|0" />
+        <i3dMapping id="grainDoorHandleRefFrame" node="0>0|3|2|0|0|1|1" />
+        <i3dMapping id="grainDoorHandle" node="0>0|3|2|0|0|1|1|0" />
+        <i3dMapping id="grainDoorHandlePart" node="0>0|3|2|0|0|1|1|0|0" />
+        <i3dMapping id="grainDoor" node="0>0|3|2|0|0|1|2|0" />
+        <i3dMapping id="grainDoorHandleRef" node="0>0|3|2|0|0|1|2|0|0" />
+        <i3dMapping id="extensionBackDoor_vis" node="0>0|3|2|0|0|2" />
+        <i3dMapping id="colPart11" node="0>0|3|2|0|0|2|1" />
+        <i3dMapping id="colPart12" node="0>0|3|2|0|0|2|2" />
+        <i3dMapping id="colPart13" node="0>0|3|2|0|0|2|3" />
+        <i3dMapping id="licensePlateBack" node="0>0|3|2|0|0|3|2" />
+        <i3dMapping id="backDoorHydraulicRef" node="0>0|3|2|0|0|5" />
+        <i3dMapping id="backDoorHydraulic" node="0>0|3|2|1" />
+        <i3dMapping id="backDoorHydraulicPunch" node="0>0|3|2|1|0" />
+        <i3dMapping id="bumperBack" node="0>0|3|3|0" />
+        <i3dMapping id="bumperBackAlignArmRef" node="0>0|3|3|0|0" />
+        <i3dMapping id="bumperBackAlignArmRefFrame" node="0>0|3|3|1" />
+        <i3dMapping id="bumperBackAlignArm" node="0>0|3|3|1|0" />
+        <i3dMapping id="bumperBackAlignArmPart" node="0>0|3|3|1|0|0" />
+        <i3dMapping id="bumperBackHydraulicRef" node="0>0|3|3|1|0|1" />
+        <i3dMapping id="bumperBackHydraulic" node="0>0|3|3|2" />
+        <i3dMapping id="bumperBackHydraulicPunch" node="0>0|3|3|2|0" />
+        <i3dMapping id="pushWallPart01AnimJoint01" node="0>0|3|4" />
+        <i3dMapping id="extensionMainBody_vis" node="0>0|4|0" />
+        <i3dMapping id="colPart09" node="0>0|4|0|1" />
+        <i3dMapping id="colPart10" node="0>0|4|0|2" />
+        <i3dMapping id="tipOccluderStart" node="0>0|5|0" />
+        <i3dMapping id="tipOccluderWidth" node="0>0|5|1" />
+        <i3dMapping id="tipOccluderHeight" node="0>0|5|2" />
+        <i3dMapping id="dischargeNode" node="0>0|6|0" />
+        <i3dMapping id="dischargeNodeGrainDoor" node="0>0|6|1" />
+        <i3dMapping id="fillVolumeDefault" node="0>0|6|2" />
+        <i3dMapping id="fillVolumeExtension" node="0>0|6|3" />
+        <i3dMapping id="exactFillRootNodeDefault" node="0>0|6|4" />
+        <i3dMapping id="exactFillRootNodeExtension" node="0>0|6|5" />
+        <i3dMapping id="autoAimTargetNodeDefault" node="0>0|6|6" />
+        <i3dMapping id="autoAimTargetNodeExtension" node="0>0|6|7" />
+        <i3dMapping id="deformNodeScaleBack" node="0>0|6|8|0" />
+        <i3dMapping id="fillVolumeDeformNode07" node="0>0|6|8|0|0" />
+        <i3dMapping id="fillVolumeDeformNode08" node="0>0|6|8|0|1" />
+        <i3dMapping id="fillVolumeDeformNode09" node="0>0|6|8|0|2" />
+        <i3dMapping id="fillVolumeDeformNode10" node="0>0|6|8|0|3" />
+        <i3dMapping id="unloadInfo" node="0>0|6|9" />
+        <i3dMapping id="heightNode01" node="0>0|6|10" />
+        <i3dMapping id="heightNode02" node="0>0|6|11" />
+        <i3dMapping id="grainEffectBack" node="0>0|7|0|0" />
+        <i3dMapping id="emitterShapeBack" node="0>0|7|0|1" />
+        <i3dMapping id="smokeEffectBack" node="0>0|7|0|2" />
+        <i3dMapping id="grainEffectGrainDoor" node="0>0|7|1|0" />
+        <i3dMapping id="emitterShapeGrainDoor" node="0>0|7|1|1" />
+        <i3dMapping id="smokeEffectGrainDoor" node="0>0|7|1|2" />
+    </i3dMappings>
+</vehicle>

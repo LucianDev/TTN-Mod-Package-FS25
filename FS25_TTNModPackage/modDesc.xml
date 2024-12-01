@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="92">
+    <author>LucianDev</author>
+    <version>1.0.0.0</version>
+    <iconFilename>store_af11.dds</iconFilename>
+
+    <title>
+        <en>TTN Mod Package</en>
+    </title>
+	<description>
+		<en><![CDATA[TTN Mod Package
+➣ Price: $
+➣ Power: HP
+➣ Max Speed:KMH
+]]></en>	
+	</description>
+	<multiplayer supported="true"/>
+    <storeItems>
+        <storeItem xmlFilename="xml/cr11.xml"/>
+        <storeItem xmlFilename="xml/fd250.xml"/>
+        <storeItem xmlFilename="xml/quadtrac715.xml"/>
+        <storeItem xmlFilename="xml/ramBodyAS750.xml"/>
+        <storeItem xmlFilename="xml/ans1900.xml"/>
+        <storeItem xmlFilename="xml/bigX1180.xml"/>
+        <storeItem xmlFilename="xml/xDisc620.xml"/>
+        <storeItem xmlFilename="xml/gx520.xml"/>
+        <storeItem xmlFilename="xml/hj6130.xml"/>
+        <storeItem xmlFilename="xml/prj8d.xml"/>
+        <storeItem xmlFilename="xml/series3650.xml"/>
+        <storeItem xmlFilename="xml/multiPurposeTruck.xml"/>
+        <storeItem xmlFilename="xml/anthemBlack.xml"/>
+        <storeItem xmlFilename="xml/sSeries.xml"/>
+        <storeItem xmlFilename="xml/cp690.xml"/>
+        <storeItem xmlFilename="xml/series8R.xml"/>
+        <!-- <storeItem xmlFilename="xml/series9RX.xml"/> -->
+        <storeItem xmlFilename="xml/landRoller591A.xml"/>
+        <storeItem xmlFilename="xml/epd540E.xml"/>
+        <storeItem xmlFilename="xml/moduleExpress635.xml"/>
+        <storeItem xmlFilename="xml/zgts10001.xml"/>
+        <storeItem xmlFilename="xml/sbh4_36.xml"/>
+        <storeItem xmlFilename="xml/pq32000.xml"/>
+        <storeItem xmlFilename="xml/cvSeries.xml"/>
+        <storeItem xmlFilename="xml/zkivSe.xml"/>
+        <!-- <storeItem xmlFilename="xml/series9R.xml"/> -->
+        <storeItem xmlFilename="xml/Lizard_MT.xml"/>
+        <storeItem xmlFilename="xml/tiger6S.xml"/>
+        <storeItem xmlFilename="xml/rrXL9.xml"/>
+    </storeItems>
+
+</modDesc>

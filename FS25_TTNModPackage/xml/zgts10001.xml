@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="spreader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>ZG-TS 10001</name>
+        <specs>
+            <workingWidth>42.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_fertilizer</function>
+        </functions>
+        <image>$data/vehicles/amazone/zgts10001/store_zgts10001.png</image>
+        <price>30000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>AMAZONE</brand>
+        <category>fertilizerSpreaders</category>
+        <shopTranslationOffset>0 0.404 0</shopTranslationOffset>
+        <shopRotationOffset>0.005 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>1533696</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>375296</indexBufferMemoryUsage>
+        <textureMemoryUsage>983040</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_fertilizerSpreader</typeDesc>
+        <filename>$data/vehicles/amazone/zgts10001/zgts10001.i3d</filename>
+        <size width="2.65" length="7.4" height="3.25"/>
+        <speedLimit value="30" />
+        <components maxMass="12500">
+            <component centerOfMass="0 0.6 -0.5" solverIterationCount="10" mass="3450"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+        <sounds volumeFactor="1.4" />
+        <mapHotspot type="TOOL_TRAILED" />
+    </base>
+
+    <wheels>
+        <wheelConfigurations tireCategories="TRACTOR">
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" saveId="DEFAULT" numDynamicConfigurations="1">
+                <wheels>
+                    <wheel dimensions="520_85R38" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics restLoad="1.8" repr="axisLeft"  driveNode="wheelLeft"  forcePointRatio="0.3" initialCompression="17" suspTravel="0.12" spring="72" damper="50" yOffset="0.03"/>
+                        <wheelChock/>
+                        <wheelChock isInverted="true"/>
+                        <steeringAxle scale="-0.7" rotMax="28" rotMin="-28" />
+                        <steering node="steeringBar" nodeMinTransX="0.12" nodeMaxTransX="-0.12"/>
+                        <tire isInverted="true"/>
+                    </wheel>
+                    <wheel dimensions="520_85R38" isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics restLoad="1.8" repr="axisRight" driveNode="wheelRight" forcePointRatio="0.3" initialCompression="17" suspTravel="0.12" spring="72" damper="50" yOffset="0.03"/>
+                        <steeringAxle scale="-0.7" rotMax="28" rotMin="-28" />
+                        <tire isInverted="true"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+
+            <wheelConfiguration name="$l10n_configuration_valueWheelNarrow" price="1000" saveId="NARROW" numDynamicConfigurations="1">
+                <wheels baseConfig="DEFAULT" isCareWheelConfiguration="true">
+                    <wheel dimensions="480_80R42"/>
+                    <wheel dimensions="480_80R42"/>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <rimMaterial materialTemplateName="RIM_DEFAULT" />
+
+        <hubs>
+            <hub linkNode="wheelLeft"  filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true"  scale="0.335 0.335 0.335" offset="-0.008"/>
+            <hub linkNode="wheelRight" filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.335 0.335 0.335" offset="-0.008"/>
+        </hubs>
+    </wheels>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="trailer" attacherHeight="0.625" />
+        </inputAttacherJoints>
+        <support animationName="moveSupport" />
+        <brakeForce force="1.3" maxForce="3.4" maxForceMass="12000"/>
+        <steeringAxleAngleScale startSpeed="0" endSpeed="30" />
+        <airConsumer usage="0.3" />
+        <sounds>
+            <active file="$data/sounds/tools/trailer/trailerRattle_02.wav" innerRadius="10" outerRadius="50" volumeScale="3.3" isLocalSound="true" pitchScale="1.2">
+                <volume indoor="0.7" outdoor="0.9" >
+                    <modifier type="WHEEL_SUSPENSION" value="-0.04" modifiedValue="0.3"/>
+                    <modifier type="WHEEL_SUSPENSION" value="-0.02" modifiedValue="0.2"/>
+                    <modifier type="WHEEL_SUSPENSION" value="-0.01" modifiedValue="0.1"/>
+                    <modifier type="WHEEL_SUSPENSION" value="-0.00" modifiedValue="0.03"/>
+                    <modifier type="WHEEL_SUSPENSION" value="0.01" modifiedValue="0.1"/>
+                    <modifier type="WHEEL_SUSPENSION" value="0.02" modifiedValue="0.2"/>
+                    <modifier type="WHEEL_SUSPENSION" value="0.04" modifiedValue="0.3"/>
+
+                    <modifier type="SPEED" value="0.0" modifiedValue="0.0"/>
+                    <modifier type="SPEED" value="2.0" modifiedValue="1.0"/>
+                    <modifier type="SPEED" value="40.0" modifiedValue="1.0"/>
+                </volume>
+                <lowpassCutoffFrequency indoor="250" outdoor="20000" />
+                <lowpassGain indoor="0.5" outdoor="1" />
+            </active>
+        </sounds>
+    </attachable>
+
+    <powerTakeOffs>
+        <input inputAttacherJointIndices="1" detachNode="ptoDetachNode" inputNode="ptoInputNode" aboveAttacher="true">
+            <objectChange node="ptoHolder" rotationActive="0 0 0" rotationInactive="55 0 0"/>
+        </input>
+    </powerTakeOffs>
+
+    <connectionHoses>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn"  node="hydraulicIn01"  length="1.5" diameter="0.02" straighteningFactor="2" adapterNode="hydraulicIn01_connector">
+            <objectChange node="hydraulicIn01_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydraulicOut01" length="1.5" diameter="0.02" straighteningFactor="2" adapterNode="hydraulicOut01_connector">
+            <objectChange node="hydraulicOut01_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn"  node="hydraulicIn02"  length="1.5" diameter="0.02" straighteningFactor="2" adapterNode="hydraulicIn02_connector">
+            <objectChange node="hydraulicIn02_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydraulicOut02" length="1.5" diameter="0.02" straighteningFactor="2" adapterNode="hydraulicOut02_connector">
+            <objectChange node="hydraulicOut02_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn"  node="hydraulicIn03"  length="1.5" diameter="0.02" straighteningFactor="2" adapterNode="hydraulicIn03_connector">
+            <objectChange node="hydraulicIn03_detached" visibilityActive="false" visibilityInactive="true"/>
+        </hose>
+        <hose inputAttacherJointIndices="1" type="electric" node="electric" length="1.5" diameter="0.02" straighteningFactor="2" adapterNode="electric_connector">
+            <objectChange node="electric_detached" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+    </connectionHoses>
+
+    <powerConsumer ptoRpm="400" neededMaxPtoPower="15"/>
+
+    <lights>
+        <sharedLight linkNode="sideMarker05White" filename="$data/shared/assets/lights/lizard/sideMarker05White.xml" />
+        <sharedLight linkNode="sideMarker05White1" filename="$data/shared/assets/lights/lizard/sideMarker05White.xml" />
+        <sharedLight linkNode="sideMarker05Red" filename="$data/shared/assets/reflectors/lizard/redRectangle_01.xml" />
+        <sharedLight linkNode="sideMarker05Red1" filename="$data/shared/assets/reflectors/lizard/redRectangle_01.xml" />
+        <sharedLight linkNode="plateNumberLight02_01" filename="$data/shared/assets/lights/lizard/plateNumberLight02.xml" />
+        <sharedLight linkNode="plateNumberLight02_02" filename="$data/shared/assets/lights/lizard/plateNumberLight02.xml" />
+
+        <realLights>
+            <high>
+                <light node="backLightsHigh1" lightTypes="0"/>
+                <light node="licensePlateLightHigh" lightTypes="0"/>
+                <turnLightLeft node="turnLightLeftBack"/>
+                <turnLightRight node="turnLightRightBack"/>
+                <brakeLight node="backLightsHigh1"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="zgts10001Lights_static" intensity="5"/>
+                <node node="zgts10001LightsGlass_static" intensity="1"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+    </lights>
+
+    <licensePlates>
+        <licensePlate node="licensePlateBack" position="BACK" preferedType="ELONGATED" placementArea="0.07 0.25 0.07 0.25"/>
+    </licensePlates>
+
+    <sprayer fillUnitIndex="1" unloadInfoIndex="1">
+        <usageScales workAreaIndex="1" scale="1" />
+
+        <animationNodes>
+            <animationNode node="discLeft"  rotSpeed="-2000"  turnOnFadeTime="1" turnOffFadeTime="2"/>
+            <animationNode node="discRight" rotSpeed="2000"  turnOnFadeTime="1" turnOffFadeTime="2"/>
+            <animationNode node="roller"    rotSpeed="-50" rotAxis="1"  turnOnFadeTime="1" turnOffFadeTime="2"/>
+            <animationNode class="ScrollingAnimation" node="belt" shaderParameterComponent="2" scrollSpeed="0.05" turnOnFadeTime="2" turnOffFadeTime="2"/>
+        </animationNodes>
+
+        <effects>
+            <effectNode effectClass="FertilizerMotionPathEffect" effectType="FERTILIZER" linkNode="fertilizerEffectLeft">
+                <motionPathEffect textureFilename="$data/vehicles/amazone/zgts10001/fertilizerEffectLeftArray.dds" numRows="22" rowLength="32" minFade="0.03" isLeft="true"/>
+            </effectNode>
+            <effectNode effectClass="FertilizerMotionPathEffect" effectType="FERTILIZER" linkNode="fertilizerEffectRight">
+                <motionPathEffect textureFilename="$data/vehicles/amazone/zgts10001/fertilizerEffectRightArray.dds" numRows="22" rowLength="32" minFade="0.03" isLeft="false"/>
+            </effectNode>
+        </effects>
+    </sprayer>
+
+    <variableWorkWidth>
+        <sections>
+            <section isLeft="true" maxWidthNode="section01"/>
+            <section isLeft="true" maxWidthNode="section02"/>
+            <section isLeft="true" maxWidthNode="section03"/>
+
+            <section isLeft="true" maxWidthNode="section04"/>
+            <section isLeft="true" maxWidthNode="section05"/>
+            <section isLeft="true" maxWidthNode="section06"/>
+
+            <section isLeft="false" maxWidthNode="section08"/>
+            <section isLeft="false" maxWidthNode="section09"/>
+            <section isLeft="false" maxWidthNode="section10"/>
+
+            <section isLeft="false" maxWidthNode="section11"/>
+            <section isLeft="false" maxWidthNode="section12"/>
+            <section isLeft="false" maxWidthNode="section13"/>
+        </sections>
+
+        <sectionNodes>
+            <sectionNode node="workAreaHeight" isLeft="true"  minTrans="7.5 0 -11"  maxTrans="21 0 -7"/>
+            <sectionNode node="workAreaWidth"  isLeft="false" minTrans="-7.5 0 -11" maxTrans="-21 0 -7"/>
+
+            <sectionNode node="aiMarkerLeft"  isLeft="true"  minTrans="7.5 0 -10.8"  maxTrans="21 0 -6.8"/>
+            <sectionNode node="aiMarkerRight" isLeft="false" minTrans="-7.5 0 -10.8" maxTrans="-21 0 -6.8"/>
+            <sectionNode node="aiMarkerBack"  isLeft="false" minTrans="0 0 -11.2"    maxTrans="0 0 -7.2"/>
+        </sectionNodes>
+    </variableWorkWidth>
+
+    <workAreas>
+        <workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false" requiresGroundContact="false">
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight" />
+            <onlyActiveWhenLowered value="false"/>
+        </workArea>
+    </workAreas>
+
+    <animations>
+        <animation name="toggleCover">
+            <part node="coverClosed" startTime="0"    endTime="0.02" visibility="true" />
+            <part node="coverClosed" startTime="0.02" endTime="0.04" visibility="false" />
+            <part node="coverOpened" startTime="0"    endTime="0.02" visibility="false" />
+            <part node="coverOpened" startTime="0.02" endTime="0.04" visibility="true" />
+
+            <sound template="fabricCover2" startTime="0.01" direction="1"  volumeScale="1.8" pitchScale="1.5"/>
+            <sound template="fabricCover1" startTime="0.01" direction="-1" volumeScale="1.8" pitchScale="1.8"/>
+        </animation>
+        <animation name="moveSupport">
+            <part node="supportArm" startTime="0" endTime="0.5" startRot="0 0 0" endRot="-62.5 0 0" />
+            <part node="supportArmPart" startTime="0" endTime="0.5" startRot="0 0 0" endRot="58 0 0" />
+
+            <sound template="hydraulicSoftOpen01" startTime="0.01" endTime="0.49" volumeScale="0.8" pitchScale="1.11" linkNode="attacherJoint" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicClose01" startTime="0.01" endTime="0.49" volumeScale="0.8" pitchScale="1.11" linkNode="attacherJoint" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hingeImp"            startTime="0.1"  direction="-1" volumeScale="1.7" pitchScale="1"   linkNode="attacherJoint"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingParts>
+            <movingPart node="steeringBarLeft" referencePoint="steeringBarLeftRef" referenceFrame="steeringBarLeftRef" isActiveDirty="true" maxUpdateDistance="20"/>
+            <movingPart node="steeringBarRight" referencePoint="steeringBarRightRef" referenceFrame="steeringBarRightRef" isActiveDirty="true" maxUpdateDistance="20"/>
+        </movingParts>
+    </cylindered>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <unloading width="21" offset="0 0 -4.5" />
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" fillTypes="fertilizer" capacity="30000" >
+                        <exactFillRootNode node="exactFillRootNode" />
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration>
+                <volumes>
+                    <volume node="fillVolume" maxDelta="0.2" maxAllowedHeapAngle="18" fillUnitIndex="1" />
+                </volumes>
+            </fillVolumeConfiguration>
+        </fillVolumeConfigurations>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node node="unloadInfo" width="2" length="4.0" />
+            </unloadInfo>
+        </unloadInfos>
+    </fillVolume>
+
+    <turnOnVehicle turnOffIfNotAllowed="true">
+        <sounds>
+            <work template="defaultSpreader" linkNode="zgts10001_main_component1" volumeScale="0.60" fadeIn="0.5" fadeOut="2"/>
+        </sounds>
+    </turnOnVehicle>
+
+    <cover>
+        <coverConfigurations>
+            <coverConfiguration>
+                <cover openAnimation="toggleCover" fillUnitIndices="1" />
+            </coverConfiguration>
+        </coverConfigurations>
+    </cover>
+
+    <ai>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack" />
+        <sizeMarkers leftNode="sizeMarkerLeft" rightNode="sizeMarkerRight" backNode="sizeMarkerBack" />
+        <needsLowering value="false" />
+        <collisionTrigger node="aiCollisionNode" width="2.65" height="3.25"/>
+        <toolReverserDirectionNode node="sizeMarkerBack" />
+        <allowTurnBackward value="false"/>
+        <agentAttachment jointNode="attacherJoint" rotCenterWheelIndices="1 2" width="2.65" height="3.3" length="5.7" lengthOffset="0.3"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode wheelIndices="1 2" minZ="-3.65" maxZ="2" yOffset="0.5"/>
+        <bendingNode minX="-0.4" maxX="0.4" minZ="2" maxZ="3.35" yOffset="0.25"/>
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="zgts10001_main_component1" node="0>" />
+        <i3dMapping id="zgts10001_vis" node="0>0" />
+        <i3dMapping id="attacherJoint" node="0>0|0|0" />
+        <i3dMapping id="supportArm" node="0>0|0|1" />
+        <i3dMapping id="supportArmPart" node="0>0|0|1|0" />
+        <i3dMapping id="ptoInputNode" node="0>0|0|2" />
+        <i3dMapping id="ptoDetachNode" node="0>0|0|3" />
+        <i3dMapping id="ptoHolder" node="0>0|0|4" />
+        <i3dMapping id="electric" node="0>0|0|5|0" />
+        <i3dMapping id="electric_detached" node="0>0|0|5|0|0" />
+        <i3dMapping id="electric_connector" node="0>0|0|5|0|0|0" />
+        <i3dMapping id="hydraulicIn01" node="0>0|0|5|1" />
+        <i3dMapping id="hydraulicIn01_detached" node="0>0|0|5|1|0" />
+        <i3dMapping id="hydraulicIn01_connector" node="0>0|0|5|1|0|0" />
+        <i3dMapping id="hydraulicOut01" node="0>0|0|5|2" />
+        <i3dMapping id="hydraulicOut01_detached" node="0>0|0|5|2|0" />
+        <i3dMapping id="hydraulicOut01_connector" node="0>0|0|5|2|0|0" />
+        <i3dMapping id="hydraulicIn02" node="0>0|0|5|3" />
+        <i3dMapping id="hydraulicIn02_detached" node="0>0|0|5|3|0" />
+        <i3dMapping id="hydraulicIn02_connector" node="0>0|0|5|3|0|0" />
+        <i3dMapping id="hydraulicOut02" node="0>0|0|5|4" />
+        <i3dMapping id="hydraulicOut02_detached" node="0>0|0|5|4|0" />
+        <i3dMapping id="hydraulicOut02_connector" node="0>0|0|5|4|0|0" />
+        <i3dMapping id="hydraulicIn03" node="0>0|0|5|5" />
+        <i3dMapping id="hydraulicIn03_detached" node="0>0|0|5|5|0" />
+        <i3dMapping id="hydraulicIn03_connector" node="0>0|0|5|5|0|0" />
+        <i3dMapping id="axisLeft" node="0>0|1|0|0" />
+        <i3dMapping id="wheelLeft" node="0>0|1|0|0|0|0" />
+        <i3dMapping id="steeringBarLeft" node="0>0|1|0|0|1" />
+        <i3dMapping id="axisRight" node="0>0|1|1|0" />
+        <i3dMapping id="wheelRight" node="0>0|1|1|0|0|0" />
+        <i3dMapping id="steeringBarRight" node="0>0|1|1|0|1" />
+        <i3dMapping id="redTriangle_02" node="0>0|2|0|0" />
+        <i3dMapping id="redTriangle_03" node="0>0|2|0|1" />
+        <i3dMapping id="sideMarker05White" node="0>0|2|0|2" />
+        <i3dMapping id="sideMarker05White1" node="0>0|2|0|3" />
+        <i3dMapping id="yellowRectangle_01" node="0>0|2|0|4" />
+        <i3dMapping id="yellowRectangle_02" node="0>0|2|0|5" />
+        <i3dMapping id="sideMarker05Red" node="0>0|2|0|6" />
+        <i3dMapping id="sideMarker05Red1" node="0>0|2|0|7" />
+        <i3dMapping id="yellowRectangle_03" node="0>0|2|0|8" />
+        <i3dMapping id="yellowRectangle_04" node="0>0|2|0|9" />
+        <i3dMapping id="yellowRectangle_05" node="0>0|2|0|10" />
+        <i3dMapping id="yellowRectangle_06" node="0>0|2|0|11" />
+        <i3dMapping id="plateNumberLight02_01" node="0>0|2|0|12" />
+        <i3dMapping id="plateNumberLight02_02" node="0>0|2|0|13" />
+        <i3dMapping id="zgts10001Lights_static" node="0>0|2|1|0" />
+        <i3dMapping id="zgts10001LightsGlass_static" node="0>0|2|1|1" />
+        <i3dMapping id="backLightsHigh1" node="0>0|2|2|0" />
+        <i3dMapping id="licensePlateLightHigh" node="0>0|2|2|1" />
+        <i3dMapping id="turnLightLeftBack" node="0>0|2|3|0" />
+        <i3dMapping id="turnLightRightBack" node="0>0|2|3|1" />
+        <i3dMapping id="steeringBar" node="0>0|3|0" />
+        <i3dMapping id="steeringBarLeftRef" node="0>0|3|0|0" />
+        <i3dMapping id="steeringBarRightRef" node="0>0|3|0|1" />
+        <i3dMapping id="discLeft" node="0>0|3|1" />
+        <i3dMapping id="discRight" node="0>0|3|2" />
+        <i3dMapping id="belt" node="0>0|3|3" />
+        <i3dMapping id="roller" node="0>0|3|4" />
+        <i3dMapping id="exactFillRootNode" node="0>0|4|0" />
+        <i3dMapping id="unloadInfo" node="0>0|4|1" />
+        <i3dMapping id="fillVolume" node="0>0|4|2" />
+        <i3dMapping id="workAreaStart" node="0>0|5|0" />
+        <i3dMapping id="workAreaWidth" node="0>0|5|1" />
+        <i3dMapping id="workAreaHeight" node="0>0|5|2" />
+        <i3dMapping id="section01" node="0>0|5|3|0" />
+        <i3dMapping id="section02" node="0>0|5|3|1" />
+        <i3dMapping id="section03" node="0>0|5|3|2" />
+        <i3dMapping id="section04" node="0>0|5|3|3" />
+        <i3dMapping id="section05" node="0>0|5|3|4" />
+        <i3dMapping id="section06" node="0>0|5|3|5" />
+        <i3dMapping id="section08" node="0>0|5|3|6" />
+        <i3dMapping id="section09" node="0>0|5|3|7" />
+        <i3dMapping id="section10" node="0>0|5|3|8" />
+        <i3dMapping id="section11" node="0>0|5|3|9" />
+        <i3dMapping id="section12" node="0>0|5|3|10" />
+        <i3dMapping id="section13" node="0>0|5|3|11" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|6|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|6|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|6|2" />
+        <i3dMapping id="sizeMarkerLeft" node="0>0|6|3" />
+        <i3dMapping id="sizeMarkerRight" node="0>0|6|4" />
+        <i3dMapping id="sizeMarkerBack" node="0>0|6|5" />
+        <i3dMapping id="aiCollisionNode" node="0>0|6|6" />
+        <i3dMapping id="licensePlateBack" node="0>0|7" />
+        <i3dMapping id="fertilizerEffectLeft" node="0>0|8|0" />
+        <i3dMapping id="fertilizerEffectRight" node="0>0|8|1" />
+        <i3dMapping id="coverClosed" node="0>0|9|0" />
+        <i3dMapping id="coverOpened" node="0>0|9|1" />
+    </i3dMappings>
+</vehicle>

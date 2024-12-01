@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="selfPropelledSowingMachineConsumable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>PRJ8D</name>
+        <specs>
+            <power>25</power>
+            <maxSpeed>20</maxSpeed>
+        </specs>
+        <functions>
+            <function>$l10n_function_riceTransplanter</function>
+        </functions>
+        <storePacks>
+            <storePack>STARTER_RICE</storePack>
+        </storePacks>
+        <image>$data/vehicles/iseki/prj8d/store_prj8d.png</image>
+        <price>20000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>ISEKI</brand>
+        <category>ricePlanters</category>
+        <shopTranslationOffset>0 -0.003 0</shopTranslationOffset>
+        <shopRotationOffset>-0.505 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>5146112</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>2459904</indexBufferMemoryUsage>
+        <textureMemoryUsage>1114112</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>1463024</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_planter</typeDesc>
+        <filename>$data/vehicles/iseki/prj8d/prj8d.i3d</filename>
+        <sounds filename="$data/vehicles/iseki/prj8d/sounds/prj8d.xml" volumeFactor="1.1"/>
+        <size width="2.85" length="3.5" lengthOffset="-0.1" height="2.4"/>
+        <speedLimit value="20"/>
+        <components>
+            <component centerOfMass="0 0.6 0" solverIterationCount="10" mass="530"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="TRACTOR"/>
+        <mapHotspot type="TRACTOR"/>
+    </base>
+
+    <powerConsumer ptoRpm="470" neededMaxPtoPower="2"/>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueWheelNarrow" saveId="NARROW">
+                <wheels autoRotateBackSpeed="2.2" isCareWheelConfiguration="true">
+                    <wheel isLeft="true" hasTireTracks="true">
+                        <physics rotSpeed="1" restLoad="0.2" repr="wheelFrontLeftRepr"  driveNode="wheelFrontLeft"  radius="0.325" width="0.1" forcePointRatio="0.25" frictionScale="2" initialCompression="10" suspTravel="0.1" spring="13" damper="15" supportsWheelSink="true">
+                            <extraSink supported="true" maxValue="0.15"/>
+                        </physics>
+                        <steering node="steeringBarCenter" nodeMinRotY="45" nodeMaxRotY="-45"/>
+                    </wheel>
+                    <wheel isLeft="false" hasTireTracks="true">
+                        <physics rotSpeed="1" restLoad="0.2" repr="wheelFrontRightRepr" driveNode="wheelFrontRight" radius="0.325" width="0.1" forcePointRatio="0.25" frictionScale="2" initialCompression="10" suspTravel="0.1" spring="13" damper="15" supportsWheelSink="true">
+                            <extraSink supported="true" maxValue="0.15"/>
+                        </physics>
+                    </wheel>
+                    <wheel isLeft="true" hasTireTracks="true">
+                        <physics restLoad="0.3" repr="wheelBackLeft"  radius="0.474" width="0.17" forcePointRatio="0.25" frictionScale="2" initialCompression="10" suspTravel="0.1" spring="15" damper="15" supportsWheelSink="true">
+                            <extraSink supported="true" maxValue="0.15"/>
+                        </physics>
+                    </wheel>
+                    <wheel isLeft="false" hasTireTracks="true">
+                        <physics restLoad="0.3" repr="wheelBackRight" radius="0.474" width="0.17" forcePointRatio="0.25" frictionScale="2" initialCompression="10" suspTravel="0.1" spring="15" damper="15" supportsWheelSink="true">
+                            <extraSink supported="true" maxValue="0.15"/>
+                        </physics>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <ackermannSteeringConfigurations>
+            <ackermannSteering rotSpeed="40" rotMax="40" rotCenterWheel1="3" rotCenterWheel2="4"/>
+        </ackermannSteeringConfigurations>
+    </wheels>
+
+    <speedRotatingParts>
+        <speedRotatingPart node="ridgeMarkerLeftWheel" radius="0.16" groundReferenceNodeIndex="2"/>
+        <speedRotatingPart node="ridgeMarkerRightWheel" radius="0.16" groundReferenceNodeIndex="3"/>
+    </speedRotatingParts>
+
+    <dynamicallyLoadedParts>
+        <dynamicallyLoadedPart linkNode="plantLinkNode01" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode02" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode03" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode04" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode05" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode06" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode07" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode08" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode09" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode10" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode11" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode12" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode13" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode14" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode15" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+        <dynamicallyLoadedPart linkNode="plantLinkNode16" filename="$data/objects/riceSaplings/saplingBox/sapling.i3d" node="0"/>
+    </dynamicallyLoadedParts>
+
+    <lights>
+        <states>
+            <state lightTypes="0"/>
+        </states>
+
+        <realLights>
+            <low>
+                <light node="frontLightLow" lightTypes="0" excludedLightTypes="3"/>
+                <light node="highBeamLow" lightTypes="3"/>
+            </low>
+            <high>
+                <light node="frontLightHigh" lightTypes="0" excludedLightTypes="3"/>
+                <light node="highBeamHigh" lightTypes="3"/>
+                <interiorLight node="interiorScreenLight"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="defaultLight_static" intensity="5"/>
+                <node node="defaultLightGlass_static" intensity="1"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="lightState" node="leverLight" lightTypes="0 3" rotAxis="2" minRot="0" maxRot="-40" doInterpolation="true"/>
+            <dashboard displayType="EMITTER" valueType="turnLightLeft" node="turnLightLeftIcon_decal" baseColor="BLACK" intensity="0.5" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightRight" node="turnLightRightIcon_decal" baseColor="BLACK" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </lights>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="groundReferenceNode" forceFactor="1" threshold="0.25" />
+        <groundReferenceNode node="ridgeMarkerLeftNode" forceFactor="0" threshold="0.25" onlyActiveWhenLowered="false"/>
+        <groundReferenceNode node="ridgeMarkerRightNode" forceFactor="0" threshold="0.25" onlyActiveWhenLowered="false"/>
+    </groundReferenceNodes>
+
+    <workAreas>
+        <workArea type="sowingMachine" functionName="processSowingMachineArea">
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight"/>
+            <groundReferenceNode index="1"/>
+            <folding minLimit="0" maxLimit="0.5"/>
+            <onlyActiveWhenLowered value="true"/>
+        </workArea>
+        <workArea type="ridgemarker" functionName="processRidgeMarkerArea" disableBackwards="false" needsSetIsTurnedOn="false">
+            <ridgeMarkerArea node="ridgeMarkerLeftNode" size="0.1" testAreaOffset="0.75"/>
+            <groundReferenceNode index="2"/>
+        </workArea>
+        <workArea type="ridgemarker" functionName="processRidgeMarkerArea" disableBackwards="false" needsSetIsTurnedOn="false">
+            <ridgeMarkerArea node="ridgeMarkerRightNode" size="0.1" testAreaOffset="0.75"/>
+            <groundReferenceNode index="3"/>
+        </workArea>
+    </workAreas>
+
+    <enterable>
+        <enterReferenceNode node="prj8d_main_component1"/>
+        <exitPoint node="exitPoint"/>
+
+        <cameras>
+            <camera node="outdoorCamera" rotatable="true" rotateNode="outdoorCameraTarget" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="3" transMax="40" translation="0 0 4.1" rotation="-21 180 0">
+                <raycastNode node="cameraRaycastNode1"/>
+                <raycastNode node="cameraRaycastNode2"/>
+                <raycastNode node="cameraRaycastNode3"/>
+            </camera>
+            <camera node="indoorCamera" rotation="-27 180 0" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" useOutdoorSounds="true" shadowFocusBox="shadowFocusBox"/>
+        </cameras>
+
+        <characterNode node="playerSkin" cameraMinDistance="0.5">
+            <target ikChain="leftFoot"  targetNode="playerLeftFootTarget"/>
+            <target ikChain="rightFoot" targetNode="playerRightFootTarget"/>
+            <target ikChain="leftArm"   targetNode="playerLeftHandTarget" poseId="narrowFingers"/>
+            <target ikChain="rightArm"  targetNode="playerRightHandTarget" poseId="narrowFingers"/>
+        </characterNode>
+
+        <characterTargetNodeModifier node="playerSkin" transitionTime="0.2">
+            <state node="playerSkinLeverDirection" referenceNode="leverDirection" referenceNodeMovement="true"/>
+        </characterTargetNodeModifier>
+
+        <characterTargetNodeModifier node="playerRightHandTarget" transitionTime="0.1" poseId="narrowFingers">
+            <state node="playerRightHandTargetDirection" referenceNode="leverDirection" referenceNodeMovement="true" poseId="wideFingers"/>
+        </characterTargetNodeModifier>
+
+        <characterTargetNodeModifier node="playerRightFootTarget" transitionTime="0.1">
+            <state node="playerRightFootTargetBrake" referenceNode="pedalBrake"/>
+            <state node="playerRightFootTargetGas" referenceNode="pedalGas" directionReferenceNode="playerRightFootTargetGasRef"/>
+        </characterTargetNodeModifier>
+
+        <dashboards>
+            <dashboard displayType="TEXT" valueType="operatingTime" node="numbersOperatingHours" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="0000.0" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+        </dashboards>
+    </enterable>
+
+    <motorized>
+        <consumerConfigurations>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="3" usage="10" fillType="diesel"/> <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+        </consumerConfigurations>
+
+        <differentialConfigurations>
+          <differentialConfiguration>
+              <differentials>
+                  <differential torqueRatio="0.5" maxSpeedRatio="1.65" wheelIndex1="1" wheelIndex2="2"/> <!-- back left-right -->
+                  <differential torqueRatio="0.5" maxSpeedRatio="2.00" wheelIndex1="3" wheelIndex2="4"/> <!-- front left-right -->
+                  <differential torqueRatio="0.5" maxSpeedRatio="1.25" differentialIndex1="1" differentialIndex2="2"/> <!-- front-back -->
+              </differentials>
+          </differentialConfiguration>
+        </differentialConfigurations>
+
+        <motorConfigurations>
+            <motorConfiguration name="PRJ8D" hp="25" price="0">
+                <motor torqueScale="1.104" minRpm="850" maxRpm="2200" minSpeed="0.01" maxForwardSpeed="40" maxBackwardSpeed="30" brakeForce="0.25" lowBrakeForceScale="0.1" accelerationLimit="1.6" dampingRateScale="0.1">
+                    <torque normRpm="0.45" torque="0.90"/>
+                    <torque normRpm="0.50" torque="0.97"/>
+                    <torque normRpm="0.59" torque="1.00"/>
+                    <torque normRpm="0.72" torque="1.00"/>
+                    <torque normRpm="0.86" torque="0.88"/>
+                    <torque normRpm="1.00" torque="0.72"/>
+                </motor>
+                <transmission minForwardGearRatio="20" maxForwardGearRatio="320" minBackwardGearRatio="55.2" maxBackwardGearRatio="320" name="$l10n_info_transmission_cvt"/>
+            </motorConfiguration>
+        </motorConfigurations>
+
+        <motorStartDuration>1000</motorStartDuration>
+
+        <dashboards>
+            <dashboard displayType="ANIMATION" valueType="movingDirection" animName="leverDirectionAnim" doInterpolation="true" interpolationSpeed="0.005"/>
+            <dashboard displayType="MULTI_STATE" valueType="ignitionState" node="keyIgnition" doInterpolation="true">
+                <state value="0" rotation="0 0 0"/>
+                <state value="1" rotation="-115 0 0"/>
+                <state value="2" rotation="-90 0 0"/>
+            </dashboard>
+            <dashboard displayType="TEXT" valueType="gear" node="numbersGear" textColor="0 0 0 1" textSize="0.008" textMask="0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="EMITTER" valueType="directionForwardExclusive" node="drivingDirectionArrowForward_decal" baseColor="GREY" intensity="0.5" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="directionBackward" node="drivingDirectionArrowBackward_decal" baseColor="GREY" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+
+        <animationNodes>
+            <animationNode node="engineFan" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+        </animationNodes>
+    </motorized>
+
+    <drivable>
+        <steeringWheel node="steeringWheel" indoorRotation="540" outdoorRotation="40"/>
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="accelerationAxis" node="pedalGas" minRot="0 0 0" maxRot="15 0 0" doInterpolation="true"/>
+            <dashboard displayType="ROT" valueType="decelerationAxis" node="pedalBrake" minRot="0 0 0" maxRot="-15 0 0" doInterpolation="true"/>
+        </dashboards>
+    </drivable>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" fillTypes="RICESAPLINGS" capacity="600" updateMass="false">
+                        <exactFillRootNode node="exactFillRootNodeSaplings"/>
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" fillTypes="fertilizer" capacity="8000" updateMass="false">
+                        <exactFillRootNode node="exactFillRootNodeFertilizer" extraEffectDistance="0.6"/>
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="80">
+                        <exactFillRootNode node="exactFillRootNodeFuel" />
+                        <dashboard displayType="SLIDER" valueType="fillLevel" node="sliderFuel_decal" groups="MOTOR_RUNNING"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration>
+                <volumes>
+                    <volume node="fillVolumeLeft"  maxDelta="0.1" fillUnitIndex="2"/>
+                    <volume node="fillVolumeRight" maxDelta="0.1" fillUnitIndex="2"/>
+                </volumes>
+            </fillVolumeConfiguration>
+        </fillVolumeConfigurations>
+    </fillVolume>
+
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="1" foldMiddleAnimTime="0.5" turnOnFoldMinLimit="0" turnOnFoldMaxLimit="0.5">
+                    <foldingPart animationName="foldingAnim" speedScale="1"/>
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <animations>
+        <animation name="foldingAnim" soundVolumeFactor="0.7">
+            <part node="sideMarkerLeft"  startTime="1.0" endTime="2.0" startRot="0 47 0" endRot="0 0 0"/>
+            <part node="sideMarkerRight" startTime="1.0" endTime="2.0" startRot="0 -47 0" endRot="0 0 0"/>
+            <part node="sideMarkerLeftDummy"  startTime="1.0" endTime="2.0" startRot="0 47 0" endRot="0 0 0"/>
+            <part node="sideMarkerRightDummy" startTime="1.0" endTime="2.0" startRot="0 -47 0" endRot="0 0 0"/>
+
+            <part node="ridgeMarkerLeftPart" startTime="1.0" endTime="2.0" startRot="0 0 0" endRot="0 80 0"/>
+            <part node="ridgeMarkerRightPart" startTime="1.0" endTime="2.0" startRot="0 0 0" endRot="0 -80 0"/>
+
+            <part node="planterArm02Phy" startTime="0.0" endTime="1.0" startRot="40 0 0" endRot="0 0 0"/>
+            <part node="planterArm02PhyInv" startTime="0.0" endTime="1.0" startRot="-40 0 0" endRot="-0 0 0"/>
+
+            <sound template="slideOpen"        startTime="1"    endTime="1.99" volumeScale="2"   pitchScale="1.2"  linkNode="ridgeMarkerLeftPart" />
+            <sound template="slideOpen"        startTime="1"    endTime="1.99" volumeScale="2"   pitchScale="1.0"  linkNode="ridgeMarkerRightPart"/>
+            <sound template="vibratingImp"     startTime="1"    direction="-1" volumeScale="0.6" pitchScale="1.6"  linkNode="ridgeMarkerLeftPart"/>
+            <sound template="vibratingImp"     startTime="1"    direction="-1" volumeScale="0.6" pitchScale="2"  linkNode="ridgeMarkerRightPart"/>
+            <sound template="vibratingImp"     startTime="1.99" direction="1"  volumeScale="0.6" pitchScale="1.6"  linkNode="ridgeMarkerLeftPart"/>
+            <sound template="clackVar6"        startTime="1.99" direction="1"  volumeScale="1.6" pitchScale="0.8"  linkNode="ridgeMarkerLeftPart"/>
+            <sound template="hingeImp"         startTime="1.9"  direction="1"  volumeScale="0.6" pitchScale="1.1"  linkNode="ridgeMarkerLeftPart"/>
+            <sound template="vibratingImp"     startTime="1.99" direction="1"  volumeScale="0.6" pitchScale="1.8"  linkNode="ridgeMarkerRightPart"/>
+            <sound template="clackVar6"        startTime="1.99" direction="1"  volumeScale="1.4" pitchScale="1.0"  linkNode="ridgeMarkerRightPart"/>
+            <sound template="hydraulicOpen06"  startTime="0.01" endTime="1"    direction="-1"    volumeScale="1.3" pitchScale="0.7" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicOpen04"  startTime="0.01" endTime="1"    direction="-1"    volumeScale="1.6" pitchScale="1"   fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicClose01" startTime="0.01" endTime="1"    direction="1"     volumeScale="3.2" pitchScale="0.7" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicClose03" startTime="0.01" endTime="1"    direction="1"     volumeScale="2.6" pitchScale="1.2" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="vibratingImp"     startTime="0.01" direction="-1" volumeScale="1"   pitchScale="1.2"  linkNodeOffset="0 0.2 -1.5"/>
+            <sound template="metalImpHigh01"   startTime="0.01" direction="-1" volumeScale="0.6" pitchScale="1.0"  linkNodeOffset="0 0.2 -1.5"/>
+            <sound template="metalImpHigh04"   startTime="0.1"  direction="-1" volumeScale="0.3" pitchScale="1.0"  linkNodeOffset="0 0.2 -1.5"/>
+            <sound template="metalImpHigh03"   startTime="0.1"  direction="-1" volumeScale="0.6" pitchScale="1.0"  linkNodeOffset="0 0.2 -1.5"/>
+            <sound template="hingeImp"         startTime="0.9"  direction="1"  volumeScale="0.6" pitchScale="1.0"  linkNodeOffset="0 0.2 -1.5"/>
+            <sound template="vibratingImp"     startTime="0.99" direction="1"  volumeScale="0.9" pitchScale="0.8"  linkNodeOffset="0 0.2 -1.5"/>
+            <sound template="metalImpHigh03"   startTime="0.9"  direction="1"  volumeScale="0.3" pitchScale="0.8"  linkNodeOffset="0 0.2 -1.5"/>
+        </animation>
+
+        <animation name="turnedAnim">
+            <part node="leverPTO" startTime="0.0" endTime="0.3" startRot="0 0 0" endRot="30 0 0"/>
+        </animation>
+
+        <animation name="consumingAnimationSide">
+            <part node="planterTrans" startTime="0.0" endTime="0.5" startTrans="-0.14 0 0" endTrans="0.10 0 0"/>
+            <part node="planterTrans" startTime="0.5" endTime="1.0" startTrans="0.10 0 0" endTrans="-0.14 0 0"/>
+        </animation>
+        <animation name="consumingAnimationVertical">
+            <part node="saplingSlots" startTime="0.0" endTime="1.0" startTrans="-0.000 0.227 0.247" startRot="-44.885 0.023 0.000" endTrans="-0.000 -0.224 -0.144" endRot="-53.615 0.023 0.000"/>
+            <part node="consumingSlots" startTime="0.0" endTime="1.0" startTrans="-0.000 -0.224 -0.144" startRot="-53.615 0.023 0.000" endTrans="-0.000 -0.717 -0.508" endRot="-53.615 0.023 0.000"/>
+        </animation>
+
+        <animation name="coverAnim">
+            <part node="coverLeft" startTime="0.0" endTime="0.5" startRot="0 0 0" endRot="-90 0 0"/>
+            <part node="coverRight" startTime="0.5" endTime="1.0" startRot="0 0 0" endRot="-90 0 0"/>
+
+            <sound template="slideOpen"     startTime="0.01" endTime="0.5"  volumeScale="3"   pitchScale="2"   fadeIn="0.1" fadeOut="0.1" linkNode="coverLeft"/>
+            <sound template="slideOpen"     startTime="0.5"  endTime="0.99" volumeScale="3"   pitchScale="1.8" fadeIn="0.1" fadeOut="0.1" linkNode="coverRight"/>
+            <sound template="metalImpLow"  startTime="0.5"   direction="-1" volumeScale="0.5" pitchScale="2"   linkNode="coverRight"/>
+            <sound template="metalImpLow"  startTime="0.01"  direction="-1" volumeScale="0.5" pitchScale="2"   linkNode="coverLeft"/>
+            <sound template="vibratingImp" startTime="0.5"   direction="1"  volumeScale="0.7" pitchScale="2"   linkNode="coverLeft"/>
+            <sound template="vibratingImp" startTime="0.99"  direction="1"  volumeScale="0.7" pitchScale="1.8" linkNode="coverRight"/>
+        </animation>
+
+        <animation name="ridgeMarkerLeftAnim">
+            <part node="ridgeMarkerLeft" startTime="0.0" endTime="1.0" startRot="0 0 0" endRot="0 0 -92"/>
+
+            <sound template="hydraulicOpen02" startTime="0.01" endTime="0.99" volumeScale="1.8" pitchScale="1.5" linkNode="ridgeMarkerLeft" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hingeImp"        startTime="0.1"  direction="-1" volumeScale="0.4" pitchScale="1.2" linkNode="ridgeMarkerLeft"/>
+            <sound template="vibratingImp"    startTime="0.99" direction="1"  volumeScale="1.2" pitchScale="1.8" linkNode="ridgeMarkerLeft"/>
+        </animation>
+
+        <animation name="ridgeMarkerRightAnim">
+            <part node="ridgeMarkerRight" startTime="0.0" endTime="1.0" startRot="0 0 0" endRot="0 0 92"/>
+
+            <sound template="hydraulicOpen02" startTime="0.01" endTime="0.99" volumeScale="1.8" pitchScale="1.7" linkNode="ridgeMarkerRight" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hingeImp"        startTime="0.1"  direction="-1" volumeScale="0.4" pitchScale="1.4" linkNode="ridgeMarkerRight"/>
+            <sound template="vibratingImp"    startTime="0.99" direction="1"  volumeScale="1.2" pitchScale="1.6" linkNode="ridgeMarkerRight"/>
+        </animation>
+
+        <animation name="leverDirectionAnim">
+            <part node="leverDirection" startTime="0.0" endTime="0.4" startRot="-20 0 0" endRot="0 0 0"/>
+            <part node="leverDirectionPart" startTime="0.4" endTime="0.5" startRot="0 0 15" endRot="0 0 0"/>
+            <part node="leverDirection" startTime="0.5" endTime="1.0" startRot="0 0 0" endRot="20 0 0"/>
+        </animation>
+
+        <animation name="plantVisibilityAnimation">
+            <part node="plantLinkNodesPart01AnimNode" startTime="0" endTime="215" visibility="false"/>
+            <part node="plantLinkNodesPart01AnimNode" startTime="215" endTime="350" visibility="true"/>
+            <part node="plantLinkNodesPart01AnimNode" startTime="350" endTime="360" visibility="false"/>
+
+            <part node="plantLinkNodesPart02AnimNode" startTime="0" endTime="35" visibility="false"/>
+            <part node="plantLinkNodesPart02AnimNode" startTime="35" endTime="170" visibility="true"/>
+            <part node="plantLinkNodesPart02AnimNode" startTime="170" endTime="360" visibility="false"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="trayModuleLeft01">
+                <dependentPart node="trayLeft01"/>
+                <dependentPart node="trayLeft02"/>
+                <dependentPart node="trayLeft03"/>
+            </movingTool>
+
+            <movingTool node="trayModuleRight01">
+                <dependentPart node="trayRight01"/>
+                <dependentPart node="trayRight02"/>
+                <dependentPart node="trayRight03"/>
+            </movingTool>
+
+            <movingTool node="ridgeMarkerLeftPart">
+                <dependentPart node="ridgeMarkerLeftSpring"/>
+            </movingTool>
+
+            <movingTool node="ridgeMarkerRightPart">
+                <dependentPart node="ridgeMarkerRightSpring"/>
+            </movingTool>
+
+            <movingTool node="leverDirection" updateCharacterTargetModifier="true"/>
+
+            <movingTool node="groundAdjustedNodeLeft">
+                <dependentPart node="groundAdjustedNodesAlign"/>
+                <dependentPart node="planterArm02"/>
+            </movingTool>
+            <movingTool node="groundAdjustedNodeRight">
+                <dependentPart node="groundAdjustedNodesAlign"/>
+                <dependentPart node="planterArm02"/>
+            </movingTool>
+            <movingTool node="planterArm02Phy">
+                <dependentPart node="groundAdjustedNodesAlign"/>
+                <dependentPart node="planterArm02"/>
+            </movingTool>
+            <movingTool node="planterArm02PhyInv">
+                <dependentPart node="groundAdjustedNodesAlign"/>
+                <dependentPart node="planterArm02"/>
+            </movingTool>
+
+            <movingTool node="plantingUnits">
+                <dependentAnimation rotationAxis="1" minValue="0" maxValue="360" name="plantVisibilityAnimation"/>
+                <dependentPart node="plantingUnitsPart01Align"/>
+                <dependentPart node="plantingUnitsPart02Align"/>
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <movingPart node="trayLeft01" referencePoint="trayLeft01Ref" referenceFrame="trayLeft01RefFrame"/>
+            <movingPart node="trayLeft02" referencePoint="trayLeft02Ref" referenceFrame="trayLeft02RefFrame"/>
+            <movingPart node="trayLeft03" referencePoint="trayLeft03Ref" referenceFrame="trayLeft03RefFrame"/>
+
+            <movingPart node="trayRight01" referencePoint="trayRight01Ref" referenceFrame="trayRight01RefFrame"/>
+            <movingPart node="trayRight02" referencePoint="trayRight02Ref" referenceFrame="trayRight02RefFrame"/>
+            <movingPart node="trayRight03" referencePoint="trayRight03Ref" referenceFrame="trayRight03RefFrame"/>
+
+            <movingPart node="ridgeMarkerLeftSpring" referencePoint="ridgeMarkerLeftSpringRef" referenceFrame="ridgeMarkerLeftSpringRef" scaleZ="true"/>
+            <movingPart node="ridgeMarkerRightSpring" referencePoint="ridgeMarkerRightSpringRef" referenceFrame="ridgeMarkerRightSpringRef" scaleZ="true"/>
+
+            <movingPart node="steeringBarLeft" referencePoint="steeringBarLeftRef" referenceFrame="steeringBarLeftRef" scaleZ="true" isActiveDirty="true" maxUpdateDistance="150">
+                <dependentPart node="steeringBarRight"/>
+            </movingPart>
+            <movingPart node="steeringBarRight" referencePoint="steeringBarRightRef" referenceFrame="steeringBarRightRef" scaleZ="true"/>
+
+            <movingPart node="groundAdjustedNodesAlign" referencePoint="groundAdjustedNodesAlignRef" referenceFrame="groundAdjustedNodesAlignRef">
+                <dependentPart node="planterMain"/>
+            </movingPart>
+
+            <movingPart node="planterArm02" referencePoints="groundAdjustedNodesAlign groundAdjustedNodesAlignRef" referenceFrame="planterArm02RefFrame">
+                <dependentPart node="planterArm01"/>
+                <dependentPart node="planterArmMainHydraulic"/>
+            </movingPart>
+
+            <movingPart node="planterArm01" referencePoint="planterArmMainRef" localReferencePoint="planterArmMain" referenceFrame="planterArm01RefFrame" limitedAxis="1">
+                <dependentPart node="planterArmMain"/>
+                <dependentPart node="planterMain"/>
+                <dependentPart node="pto02RotNode"/>
+                <dependentPart node="plantingUnitsPart01Align"/>
+                <dependentPart node="plantingUnitsPart02Align"/>
+            </movingPart>
+            <movingPart node="planterArmMain" referencePoint="planterArmMainRef" referenceFrame="planterArmMainRef" />
+
+            <movingPart node="planterArmMainHydraulic" referencePoint="planterArmMainHydraulicRef" referenceFrame="planterArmMainHydraulicRef">
+                <translatingPart node="planterArmMainHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="planterMain" referencePoint="planterMainRef" referenceFrame="planterMainRefFrame" limitedAxis="1">
+                <dependentPart node="planterMainHydraulic"/>
+            </movingPart>
+
+            <movingPart node="pto02RotNode" referencePoint="pto02RotNodeRef" referenceFrame="pto02RotNodeRef">
+                <translatingPart node="pto02Trans"/>
+            </movingPart>
+
+            <movingPart node="planterMainHydraulic" referencePoint="planterMainHydraulicRef" referenceFrame="planterMainHydraulicRefFrame">
+                <translatingPart node="planterMainHydraulicPunch"/>
+            </movingPart>
+
+            <movingPart node="plantingUnitsPart01Align" referenceFrame="prj8d_main_component1" />
+            <movingPart node="plantingUnitsPart02Align" referenceFrame="prj8d_main_component1" />
+
+            <movingPart node="sideMarkerLeftBall" referencePoint="sideMarkerLeftBallRef" referenceFrame="sideMarkerLeftBallRef" isActiveDirty="true" maxUpdateDistance="50">
+                <dependentPart node="sideMarkerRightBall"/>
+            </movingPart>
+            <movingPart node="sideMarkerRightBall" referencePoint="sideMarkerRightBallRef" referenceFrame="sideMarkerRightBallRef"/>
+        </movingParts>
+    </cylindered>
+
+    <turnOnVehicle>
+        <turnedAnimation name="turnedAnim"/>
+        <animationNodes>
+            <animationNode node="rollCenter" rotSpeed="1000" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="rollLeft" rotSpeed="1000" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="rollRight" rotSpeed="1000" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="beltRolls01" rotSpeed="-20" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="beltRolls02" rotSpeed="-20" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="pto01" rotSpeed="-1000" rotAxis="3" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="pto02" rotSpeed="-1000" rotAxis="3" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="pto03" rotSpeed="1000" rotAxis="3" turnOnFadeTime="2" turnOffFadeTime="2"/>
+
+            <animationNode node="plantingUnits" rotSpeed="75" rotAxis="1" class="RotationAnimationSpikes" turnOnFadeTime="1" turnOffFadeTime="1" speedFunc="getGroundReferenceNodeForwardSpeed" speedFuncParam="1">
+                <spikes moveUpRange="-90 0" moveDownRange="70 200" minRot="50" maxRot="80" rotAxis="1">
+                    <spike node="plantingUnitsPart01"/>
+                    <spike node="plantingUnitsPart02"/>
+                </spikes>
+            </animationNode>
+        </animationNodes>
+        <turnedAnimation name="turnOnAnimation" turnOnSpeedScale="0.6"/>
+
+        <sounds>
+            <start template="dischargeStart" volumeScale="0.8" pitchScale="1.3"/>
+            <work template="dischargeLoop"   volumeScale="0.8" pitchScale="1.3"/>
+            <stop template="dischargeStop"   volumeScale="0.8" pitchScale="1.3"/>
+        </sounds>
+    </turnOnVehicle>
+
+    <ridgeMarker foldMinLimit="0" foldMaxLimit="0.5">
+        <marker animName="ridgeMarkerLeftAnim" workAreaIndex="2"/>
+        <marker animName="ridgeMarkerRightAnim" workAreaIndex="3"/>
+    </ridgeMarker>
+
+    <sprayer fillUnitIndex="2" unloadInfoIndex="1">
+        <usageScales scale="0.5" workAreaIndex="1"/>
+        <sounds>
+            <work template="defaultSowingWorkRice" pitchScale="1.2" volumeScale="2.1" linkNodeOffset="0 0.2 -1.5"/>
+        </sounds>
+    </sprayer>
+
+    <sowingMachine fillUnitIndex="1" consumableName="RICE_SAPLINGS">
+        <seedFruitTypes>rice</seedFruitTypes>
+        <seedFillType>RICESAPLINGS</seedFillType>
+        <needsActivation value="true"/>
+        <useDirectPlanting value="false"/>
+        <waterSeeding value="true"/>
+        <fieldGroundType value="SOWN"/>
+    </sowingMachine>
+
+    <consumable>
+        <type typeName="RICE_SAPLINGS" fillUnitIndex="1" showWarning="false" allowRefillDialog="false">
+            <slot node="saplingSlot01"/>
+            <slot node="saplingSlot02"/>
+            <slot node="saplingSlot03"/>
+            <slot node="saplingSlot04"/>
+            <slot node="saplingSlot05"/>
+            <slot node="saplingSlot06"/>
+            <slot node="saplingSlot07"/>
+            <slot node="saplingSlot08"/>
+            <slot node="saplingSlot09"/>
+            <slot node="saplingSlot10"/>
+            <slot node="saplingSlot11"/>
+            <slot node="saplingSlot12"/>
+            <slot node="saplingSlot13"/>
+            <slot node="saplingSlot14"/>
+            <slot node="saplingSlot15"/>
+            <slot node="saplingSlot16"/>
+
+            <slot node="consumingSlot01" isConsumingSlot="true"/>
+            <slot node="consumingSlot02" isConsumingSlot="true"/>
+            <slot node="consumingSlot03" isConsumingSlot="true"/>
+            <slot node="consumingSlot04" isConsumingSlot="true"/>
+            <slot node="consumingSlot05" isConsumingSlot="true"/>
+            <slot node="consumingSlot06" isConsumingSlot="true"/>
+            <slot node="consumingSlot07" isConsumingSlot="true"/>
+            <slot node="consumingSlot08" isConsumingSlot="true"/>
+
+            <consuming useScale="false" useHideByIndex="true" hideByIndexOffset="0">
+                <animation name="consumingAnimationSide" numLoops="8" speedScale="0.5"/>
+                <animation name="consumingAnimationVertical" numSteps="16" speedScale="0.5"/>
+            </consuming>
+
+            <objectChange node="plantLinkNodesPart01" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="plantLinkNodesPart02" visibilityActive="true" visibilityInactive="false"/>
+        </type>
+    </consumable>
+
+    <groundAdjustedNodes adjustToWater="true">
+        <groundAdjustedNode node="groundAdjustedNodeLeft" yOffset="0.3" minY="-0.3" maxY="0.3" inActiveY="-0.3" moveSpeed="0.5" moveSpeedStateChange="0.5" activationTime="1">
+            <raycastNode node="groundAdjustedNodeLeftRaycast" distance="0.6"/>
+            <foldable minLimit="0" maxLimit="0.49"/>
+        </groundAdjustedNode>
+        <groundAdjustedNode node="groundAdjustedNodeRight" yOffset="0.3" minY="-0.3" maxY="0.3" inActiveY="-0.3" moveSpeed="0.5" moveSpeedStateChange="0.5" activationTime="1">
+            <raycastNode node="groundAdjustedNodeRightRaycast" distance="0.6"/>
+            <foldable minLimit="0" maxLimit="0.49"/>
+        </groundAdjustedNode>
+    </groundAdjustedNodes>
+
+    <cover>
+        <coverConfigurations>
+            <coverConfiguration>
+                <cover openAnimation="coverAnim" fillUnitIndices="2" openOnBuy="false"/>
+            </coverConfiguration>
+        </coverConfigurations>
+    </cover>
+
+    <suspensions>
+        <suspension useCharacterTorso="true" weight="90" minRotation="0 -5 -5" maxRotation="0 5 5" suspensionParametersY="7 1" suspensionParametersZ="7 1"/>
+        <suspension node="suspensionNode" weight="500" minTranslation="-0.3 0 -0.3" maxTranslation="0.3 0 0.3" suspensionParametersX="10 1" suspensionParametersZ="10 1"/>
+    </suspensions>
+
+    <dashboard>
+        <groups>
+            <group name="MOTOR_ACTIVE" isMotorStarting="true" isMotorRunning="true"/>
+            <group name="MOTOR_STARTING" isMotorStarting="true"/>
+            <group name="MOTOR_RUNNING" isMotorStarting="false" isMotorRunning="true"/>
+        </groups>
+
+        <default>
+            <dashboard displayType="EMITTER" node="engineStarting_decals" baseColor="BLACK" intensity="0.5"  groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="engineRunning_decals" baseColor="BLACK" intensity="0.5" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="EMITTER" node="displayRunning_decals" hideInactiveChildren="true" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="EMITTER" node="displayStarting_decals" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING"/>
+        </default>
+    </dashboard>
+
+    <ai>
+        <agent frontWheelNodes="wheelFrontLeft wheelFrontRight"/>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack"/>
+        <collisionTrigger node="aiCollisionNode"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-1" maxX="1" minZ="-1.1" maxZ="1.45" yOffset="0.55"/>
+        <bendingNode minX="-1.27" maxX="1.27" minZ="-0.5" maxZ="0.1" yOffset="-0.35" node="planterTrans"/>
+    </foliageBending>
+
+    <shallowWaterObstacle>
+        <obstacleNode node="wheelFrontLeftShallowWater" size="0.1 0.65 0.65"/>
+        <obstacleNode node="wheelFrontRightShallowWater" size="0.1 0.65 0.65"/>
+        <obstacleNode node="wheelBackLeft" directionNode="prj8d_main_component1" size="0.17 0.94 0.94"/>
+        <obstacleNode node="wheelBackRight" directionNode="prj8d_main_component1" size="0.17 0.94 0.94"/>
+        <obstacleNode node="shallowWaterObstaclePlanter" size="2.2 0.5 0.65" offset="0 0.2 0.07"/>
+    </shallowWaterObstacle>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="prj8d_main_component1" node="0>" />
+        <i3dMapping id="prj8d_vis" node="0>0" />
+        <i3dMapping id="wheelFrontLeftRepr" node="0>0|0|0|0" />
+        <i3dMapping id="wheelFrontLeft" node="0>0|0|0|0|0|0" />
+        <i3dMapping id="wheelFrontLeftShallowWater" node="0>0|0|0|0|1" />
+        <i3dMapping id="steeringBarLeftRef" node="0>0|0|0|0|2" />
+        <i3dMapping id="wheelFrontRightRepr" node="0>0|0|1|0" />
+        <i3dMapping id="wheelFrontRight" node="0>0|0|1|0|0|0" />
+        <i3dMapping id="wheelFrontRight_vis" node="0>0|0|1|0|0|0|0" />
+        <i3dMapping id="wheelFrontRightShallowWater" node="0>0|0|1|0|1" />
+        <i3dMapping id="steeringBarRightRef" node="0>0|0|1|0|2" />
+        <i3dMapping id="wheelBackLeft" node="0>0|0|2" />
+        <i3dMapping id="wheelBackRight" node="0>0|0|3" />
+        <i3dMapping id="outdoorCameraTarget" node="0>0|1|0" />
+        <i3dMapping id="outdoorCamera" node="0>0|1|0|0" />
+        <i3dMapping id="indoorCamera" node="0>0|1|1" />
+        <i3dMapping id="cameraRaycastNode1" node="0>0|1|2" />
+        <i3dMapping id="cameraRaycastNode2" node="0>0|1|3" />
+        <i3dMapping id="cameraRaycastNode3" node="0>0|1|4" />
+        <i3dMapping id="shadowFocusBox" node="0>0|1|5" />
+        <i3dMapping id="defaultLight_static" node="0>0|2|0|0" />
+        <i3dMapping id="defaultLightGlass_static" node="0>0|2|0|1" />
+        <i3dMapping id="frontLightLow" node="0>0|2|1|0" />
+        <i3dMapping id="highBeamLow" node="0>0|2|1|1" />
+        <i3dMapping id="frontLightHigh" node="0>0|2|1|2" />
+        <i3dMapping id="highBeamHigh" node="0>0|2|1|3" />
+        <i3dMapping id="interiorScreenLight" node="0>0|2|1|4" />
+        <i3dMapping id="exitPoint" node="0>0|3" />
+        <i3dMapping id="steeringWheel" node="0>0|4|0|0" />
+        <i3dMapping id="playerLeftHandTarget" node="0>0|4|0|0|0" />
+        <i3dMapping id="playerRightHandTarget" node="0>0|4|0|0|1" />
+        <i3dMapping id="leverDirectionPart" node="0>0|4|1|0|0" />
+        <i3dMapping id="leverDirection" node="0>0|4|1|0|0|0|0" />
+        <i3dMapping id="playerRightHandTargetDirection" node="0>0|4|1|0|0|0|0|0" />
+        <i3dMapping id="leverLight" node="0>0|4|1|1|0" />
+        <i3dMapping id="leverPTO" node="0>0|4|1|2" />
+        <i3dMapping id="keyIgnition" node="0>0|4|1|3|0" />
+        <i3dMapping id="pedalGas" node="0>0|4|1|4" />
+        <i3dMapping id="playerRightFootTargetGasRef" node="0>0|4|1|4|0" />
+        <i3dMapping id="pedalBrake" node="0>0|4|1|5" />
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|4|1|5|0" />
+        <i3dMapping id="switchTrayModule" node="0>0|4|1|6|0" />
+        <i3dMapping id="dashboardGlass_static" node="0>0|4|1|7" />
+        <i3dMapping id="displayRunning_decals" node="0>0|4|1|8" />
+        <i3dMapping id="numbersOperatingHours" node="0>0|4|1|8|0" />
+        <i3dMapping id="numbersGear" node="0>0|4|1|8|1" />
+        <i3dMapping id="sliderFuel_decal" node="0>0|4|1|8|2" />
+        <i3dMapping id="drivingDirectionArrowBackward_decal" node="0>0|4|1|8|3" />
+        <i3dMapping id="drivingDirectionArrowForward_decal" node="0>0|4|1|8|4" />
+        <i3dMapping id="displayStarting_decals" node="0>0|4|1|9" />
+        <i3dMapping id="engineStarting_decals" node="0>0|4|1|10" />
+        <i3dMapping id="engineRunning_decals" node="0>0|4|1|11" />
+        <i3dMapping id="turnLightLeftIcon_decal" node="0>0|4|1|12" />
+        <i3dMapping id="turnLightRightIcon_decal" node="0>0|4|1|13" />
+        <i3dMapping id="playerSkin" node="0>0|4|2|0" />
+        <i3dMapping id="playerSkinLeverDirection" node="0>0|4|2|1" />
+        <i3dMapping id="playerLeftFootTarget" node="0>0|4|2|2" />
+        <i3dMapping id="playerRightFootTarget" node="0>0|4|2|3" />
+        <i3dMapping id="playerRightFootTargetGas" node="0>0|4|2|4" />
+        <i3dMapping id="planterArm01RefFrame" node="0>0|5|0" />
+        <i3dMapping id="planterArm01" node="0>0|5|0|0" />
+        <i3dMapping id="planterArmMain" node="0>0|5|0|0|0" />
+        <i3dMapping id="planterMainRefFrame" node="0>0|5|0|0|0|0" />
+        <i3dMapping id="planterMain" node="0>0|5|0|0|0|0|0" />
+        <i3dMapping id="planterTrans" node="0>0|5|0|0|0|0|0|0|0" />
+        <i3dMapping id="beltRolls01" node="0>0|5|0|0|0|0|0|0|0|0|1" />
+        <i3dMapping id="beltRolls02" node="0>0|5|0|0|0|0|0|0|0|0|2" />
+        <i3dMapping id="saplingSlots" node="0>0|5|0|0|0|0|0|0|0|1" />
+        <i3dMapping id="saplingSlot09" node="0>0|5|0|0|0|0|0|0|0|1|0" />
+        <i3dMapping id="saplingSlot10" node="0>0|5|0|0|0|0|0|0|0|1|1" />
+        <i3dMapping id="saplingSlot11" node="0>0|5|0|0|0|0|0|0|0|1|2" />
+        <i3dMapping id="saplingSlot12" node="0>0|5|0|0|0|0|0|0|0|1|3" />
+        <i3dMapping id="saplingSlot13" node="0>0|5|0|0|0|0|0|0|0|1|4" />
+        <i3dMapping id="saplingSlot14" node="0>0|5|0|0|0|0|0|0|0|1|5" />
+        <i3dMapping id="saplingSlot15" node="0>0|5|0|0|0|0|0|0|0|1|6" />
+        <i3dMapping id="saplingSlot16" node="0>0|5|0|0|0|0|0|0|0|1|7" />
+        <i3dMapping id="consumingSlots" node="0>0|5|0|0|0|0|0|0|0|2" />
+        <i3dMapping id="consumingSlot01" node="0>0|5|0|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="consumingSlot02" node="0>0|5|0|0|0|0|0|0|0|2|1" />
+        <i3dMapping id="consumingSlot03" node="0>0|5|0|0|0|0|0|0|0|2|2" />
+        <i3dMapping id="consumingSlot04" node="0>0|5|0|0|0|0|0|0|0|2|3" />
+        <i3dMapping id="consumingSlot05" node="0>0|5|0|0|0|0|0|0|0|2|4" />
+        <i3dMapping id="consumingSlot06" node="0>0|5|0|0|0|0|0|0|0|2|5" />
+        <i3dMapping id="consumingSlot07" node="0>0|5|0|0|0|0|0|0|0|2|6" />
+        <i3dMapping id="consumingSlot08" node="0>0|5|0|0|0|0|0|0|0|2|7" />
+        <i3dMapping id="plantingUnits" node="0>0|5|0|0|0|0|0|1|0" />
+        <i3dMapping id="plantingUnitsPart01Align" node="0>0|5|0|0|0|0|0|1|0|0" />
+        <i3dMapping id="plantingUnitsPart01" node="0>0|5|0|0|0|0|0|1|0|0|0" />
+        <i3dMapping id="plantLinkNodesPart01" node="0>0|5|0|0|0|0|0|1|0|0|0|0" />
+        <i3dMapping id="plantLinkNodesPart01AnimNode" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0" />
+        <i3dMapping id="plantLinkNode09" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|0" />
+        <i3dMapping id="plantLinkNode10" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|1" />
+        <i3dMapping id="plantLinkNode11" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|2" />
+        <i3dMapping id="plantLinkNode12" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|3" />
+        <i3dMapping id="plantLinkNode13" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|4" />
+        <i3dMapping id="plantLinkNode14" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|5" />
+        <i3dMapping id="plantLinkNode15" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|6" />
+        <i3dMapping id="plantLinkNode16" node="0>0|5|0|0|0|0|0|1|0|0|0|0|0|7" />
+        <i3dMapping id="plantingUnitsPart02Align" node="0>0|5|0|0|0|0|0|1|0|1" />
+        <i3dMapping id="plantingUnitsPart02" node="0>0|5|0|0|0|0|0|1|0|1|0" />
+        <i3dMapping id="plantLinkNodesPart02" node="0>0|5|0|0|0|0|0|1|0|1|0|0" />
+        <i3dMapping id="plantLinkNodesPart02AnimNode" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0" />
+        <i3dMapping id="plantLinkNode01" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|0" />
+        <i3dMapping id="plantLinkNode02" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|1" />
+        <i3dMapping id="plantLinkNode03" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|2" />
+        <i3dMapping id="plantLinkNode04" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|3" />
+        <i3dMapping id="plantLinkNode05" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|4" />
+        <i3dMapping id="plantLinkNode06" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|5" />
+        <i3dMapping id="plantLinkNode07" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|6" />
+        <i3dMapping id="plantLinkNode08" node="0>0|5|0|0|0|0|0|1|0|1|0|0|0|7" />
+        <i3dMapping id="rollCenter" node="0>0|5|0|0|0|0|0|1|1" />
+        <i3dMapping id="rollLeft" node="0>0|5|0|0|0|0|0|1|2" />
+        <i3dMapping id="rollRight" node="0>0|5|0|0|0|0|0|1|3" />
+        <i3dMapping id="shallowWaterObstaclePlanter" node="0>0|5|0|0|0|0|0|2" />
+        <i3dMapping id="planterMainHydraulicRef" node="0>0|5|0|0|0|0|0|3" />
+        <i3dMapping id="pto02RotNodeRef" node="0>0|5|0|0|0|0|0|4" />
+        <i3dMapping id="groundReferenceNode" node="0>0|5|0|0|0|0|0|5" />
+        <i3dMapping id="pto03" node="0>0|5|0|0|0|0|0|6|0" />
+        <i3dMapping id="colPart" node="0>0|5|0|0|0|0|0|7" />
+        <i3dMapping id="planterMainHydraulicRefFrame" node="0>0|5|0|0|0|1" />
+        <i3dMapping id="planterMainHydraulic" node="0>0|5|0|0|0|1|0" />
+        <i3dMapping id="planterMainHydraulicPunch" node="0>0|5|0|0|0|1|0|0" />
+        <i3dMapping id="planterArm02RefFrame" node="0>0|5|1" />
+        <i3dMapping id="planterArm02" node="0>0|5|1|0" />
+        <i3dMapping id="planterArmMainRef" node="0>0|5|1|0|0" />
+        <i3dMapping id="planterArmMainHydraulicRef" node="0>0|5|1|0|1" />
+        <i3dMapping id="planterArm02Phy" node="0>0|5|2|0" />
+        <i3dMapping id="planterArm02PhyInv" node="0>0|5|2|0|0" />
+        <i3dMapping id="groundAdjustedNodeLeftRaycast" node="0>0|5|2|0|0|0" />
+        <i3dMapping id="groundAdjustedNodeLeft" node="0>0|5|2|0|0|0|0" />
+        <i3dMapping id="groundAdjustedNodesAlign" node="0>0|5|2|0|0|0|0|0" />
+        <i3dMapping id="planterMainRef" node="0>0|5|2|0|0|0|0|0|0" />
+        <i3dMapping id="groundAdjustedNodeRightRaycast" node="0>0|5|2|0|0|1" />
+        <i3dMapping id="groundAdjustedNodeRight" node="0>0|5|2|0|0|1|0" />
+        <i3dMapping id="groundAdjustedNodesAlignRef" node="0>0|5|2|0|0|1|0|0" />
+        <i3dMapping id="planterArmMainHydraulic" node="0>0|5|3" />
+        <i3dMapping id="planterArmMainHydraulicPunch" node="0>0|5|3|0" />
+        <i3dMapping id="trayModuleLeft01" node="0>0|5|4" />
+        <i3dMapping id="trayLeft01RefFrame" node="0>0|5|4|0" />
+        <i3dMapping id="trayLeft01" node="0>0|5|4|0|0" />
+        <i3dMapping id="saplingSlot04" node="0>0|5|4|0|0|3" />
+        <i3dMapping id="trayLeft02RefFrame" node="0>0|5|4|1" />
+        <i3dMapping id="trayLeft02" node="0>0|5|4|1|0" />
+        <i3dMapping id="rollsLeft01" node="0>0|5|4|1|0|0|0" />
+        <i3dMapping id="saplingSlot03" node="0>0|5|4|1|0|3" />
+        <i3dMapping id="trayLeft03RefFrame" node="0>0|5|4|2" />
+        <i3dMapping id="trayLeft03" node="0>0|5|4|2|0" />
+        <i3dMapping id="rollsLeft02" node="0>0|5|4|2|0|0|0" />
+        <i3dMapping id="saplingSlot02" node="0>0|5|4|2|0|4" />
+        <i3dMapping id="trayModuleLeft02" node="0>0|5|5" />
+        <i3dMapping id="trayLeft01Ref" node="0>0|5|5|0" />
+        <i3dMapping id="trayLeft02Ref" node="0>0|5|5|1" />
+        <i3dMapping id="trayLeft03Ref" node="0>0|5|5|2" />
+        <i3dMapping id="trayModuleRight01" node="0>0|5|6" />
+        <i3dMapping id="trayRight01RefFrame" node="0>0|5|6|0" />
+        <i3dMapping id="trayRight01" node="0>0|5|6|0|0" />
+        <i3dMapping id="saplingSlot08" node="0>0|5|6|0|0|3" />
+        <i3dMapping id="trayRight02RefFrame" node="0>0|5|6|1" />
+        <i3dMapping id="trayRight02" node="0>0|5|6|1|0" />
+        <i3dMapping id="rollsRight01" node="0>0|5|6|1|0|0|0" />
+        <i3dMapping id="saplingSlot07" node="0>0|5|6|1|0|3" />
+        <i3dMapping id="trayRight03RefFrame" node="0>0|5|6|2" />
+        <i3dMapping id="trayRight03" node="0>0|5|6|2|0" />
+        <i3dMapping id="rollsRight02" node="0>0|5|6|2|0|0|0" />
+        <i3dMapping id="saplingSlot06" node="0>0|5|6|2|0|4" />
+        <i3dMapping id="trayModuleRight02" node="0>0|5|7" />
+        <i3dMapping id="trayRight01Ref" node="0>0|5|7|0" />
+        <i3dMapping id="trayRight02Ref" node="0>0|5|7|1" />
+        <i3dMapping id="trayRight03Ref" node="0>0|5|7|2" />
+        <i3dMapping id="coverLeft" node="0>0|5|8" />
+        <i3dMapping id="coverRight" node="0>0|5|9" />
+        <i3dMapping id="ridgeMarkerLeftPart" node="0>0|5|10" />
+        <i3dMapping id="ridgeMarkerLeft" node="0>0|5|10|0" />
+        <i3dMapping id="ridgeMarkerLeftWheel" node="0>0|5|10|0|0|0" />
+        <i3dMapping id="ridgeMarkerLeftNode" node="0>0|5|10|0|1" />
+        <i3dMapping id="ridgeMarkerLeftSpring" node="0>0|5|10|1" />
+        <i3dMapping id="ridgeMarkerRightPart" node="0>0|5|11" />
+        <i3dMapping id="ridgeMarkerRight" node="0>0|5|11|0" />
+        <i3dMapping id="ridgeMarkerRightWheel" node="0>0|5|11|0|0|0" />
+        <i3dMapping id="ridgeMarkerRightNode" node="0>0|5|11|0|1" />
+        <i3dMapping id="ridgeMarkerRightSpring" node="0>0|5|11|1" />
+        <i3dMapping id="sideMarkerLeft" node="0>0|5|12" />
+        <i3dMapping id="sideMarkerLeftBall" node="0>0|5|12|0" />
+        <i3dMapping id="sideMarkerRight" node="0>0|5|13" />
+        <i3dMapping id="sideMarkerRightBall" node="0>0|5|13|0" />
+        <i3dMapping id="steeringBarCenter" node="0>0|5|14|0" />
+        <i3dMapping id="steeringBarLeft" node="0>0|5|14|0|0" />
+        <i3dMapping id="steeringBarRight" node="0>0|5|14|0|1" />
+        <i3dMapping id="engineFan" node="0>0|5|15" />
+        <i3dMapping id="pto01" node="0>0|5|17|0" />
+        <i3dMapping id="pto02RotNode" node="0>0|5|18" />
+        <i3dMapping id="pto02" node="0>0|5|18|0" />
+        <i3dMapping id="pto02Trans" node="0>0|5|18|0|0" />
+        <i3dMapping id="fillVolumeLeft" node="0>0|6|0" />
+        <i3dMapping id="fillVolumeRight" node="0>0|6|1" />
+        <i3dMapping id="exactFillRootNodeSaplings" node="0>0|6|2" />
+        <i3dMapping id="exactFillRootNodeFertilizer" node="0>0|6|3" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>0|6|4" />
+        <i3dMapping id="saplingSlot01" node="0>0|6|5" />
+        <i3dMapping id="saplingSlot05" node="0>0|6|6" />
+        <i3dMapping id="workAreaStart" node="0>0|7|0" />
+        <i3dMapping id="workAreaWidth" node="0>0|7|1" />
+        <i3dMapping id="workAreaHeight" node="0>0|7|2" />
+        <i3dMapping id="aiCollisionNode" node="0>0|8|0" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|8|1" />
+        <i3dMapping id="aiMarkerRight" node="0>0|8|2" />
+        <i3dMapping id="aiMarkerBack" node="0>0|8|3" />
+        <i3dMapping id="suspensionNode" node="0>0|9|0" />
+        <i3dMapping id="sideMarkerLeftDummy" node="0>0|9|0|0" />
+        <i3dMapping id="sideMarkerLeftBallRef" node="0>0|9|0|0|0" />
+        <i3dMapping id="sideMarkerRightDummy" node="0>0|9|0|1" />
+        <i3dMapping id="sideMarkerRightBallRef" node="0>0|9|0|1|0" />
+        <i3dMapping id="ridgeMarkerLeftSpringRef" node="0>0|9|1" />
+        <i3dMapping id="ridgeMarkerRightSpringRef" node="0>0|9|2" />
+    </i3dMappings>
+</vehicle>
