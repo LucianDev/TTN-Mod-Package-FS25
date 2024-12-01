@@ -425,8 +425,8 @@
         </TransformGroup>
         <TransformGroup name="workArea" nodeId="215">
           <TransformGroup name="workAreaStart" translation="4 0 1.26874" nodeId="216"/>
-          <TransformGroup name="workAreaWidth" translation="-4 0 1.26874" nodeId="217"/>
-          <TransformGroup name="workAreaHeight" translation="4 0 -0.494267" nodeId="218"/>
+          <TransformGroup name="workAreaWidth" translation="-0 0 1.26874" nodeId="217"/>
+          <TransformGroup name="workAreaHeight" translation="0 0 -0.494267" nodeId="218"/>
         </TransformGroup>
         <TransformGroup name="ai" nodeId="219">
           <TransformGroup name="areaMarker" nodeId="220">

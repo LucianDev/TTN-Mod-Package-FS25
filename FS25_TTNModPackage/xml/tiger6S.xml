@@ -15,7 +15,7 @@
             <function>$l10n_function_combineNeedsCutter</function>
         </functions>
         <image>$data/vehicles/ropa/tiger6S/store_tiger6S.png</image>
-        <price>300000</price>
+        <price>200000</price>
         <lifetime>600</lifetime>
         <rotation>0</rotation>
         <brand>ROPA</brand>
@@ -36,7 +36,7 @@
         <filename>$data/vehicles/ropa/tiger6S/tiger6S.i3d</filename>
         <sounds filename="$data/vehicles/ropa/tiger6S/sounds/tiger6S.xml"/>
         <size width="3.15" length="12.3" height="4.35" lengthOffset="0.97"/>
-        <speedLimit value="10"/>
+        <speedLimit value="30"/>
         <components maxMass="64000">
             <component centerOfMass="0 1.2 3.5" solverIterationCount="25" mass="8100"/>
             <component centerOfMass="0 1.2 0" solverIterationCount="10" mass="21435"/>
@@ -358,7 +358,7 @@
 
         <motorConfigurations>
             <motorConfiguration name="Tiger 6 XL" hp="796" price="0">
-                <motor torqueScale="3.359" minRpm="850" maxRpm="2200" maxForwardSpeed="60" maxBackwardSpeed="15" brakeForce="20" lowBrakeForceScale="0.1" lowBrakeForceSpeedLimit="1" accelerationLimit="1.7" dampingRateScale="4.5">
+                <motor torqueScale="4.359" minRpm="850" maxRpm="2200" maxForwardSpeed="60" maxBackwardSpeed="15" brakeForce="20" lowBrakeForceScale="0.1" lowBrakeForceSpeedLimit="1" accelerationLimit="1.7" dampingRateScale="4.5">
                     <torque normRpm="0.45" torque="0.9"/>
                     <torque normRpm="0.5" torque="0.97"/>
                     <torque normRpm="0.59" torque="1"/>
@@ -845,7 +845,7 @@
     </pipe>
 
     <dischargeable>
-        <dischargeNode node="raycastNode" emptySpeed="500000" fillUnitIndex="1" maxDistance="6">
+        <dischargeNode node="raycastNode" emptySpeed="30000" fillUnitIndex="1" maxDistance="6">
             <info width="2" length="1" useRaycastHitPosition="true"/>
             <effects>
                 <effectNode effectClass="MorphPositionEffect" effectNode="unloadingAnimation" materialType="belt" delay="0" fadeTime="1.5" speed="0.9" scrollLength="10" scrollSpeed="1.5"/>

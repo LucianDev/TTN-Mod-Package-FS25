@@ -477,7 +477,7 @@
         <motorConfigurations>
             <motorConfiguration name="CV Series" hp="350">
                 <!-- International 6.6L V8 Turbocharged Diesel 950Nm -->
-                <motor torqueScale="8.083" minRpm="800" maxRpm="2000" maxForwardSpeed="92" maxBackwardSpeed="90" brakeForce="8" lowBrakeForceScale="0.1" dampingRateScale="0.4">
+                <motor torqueScale="8.083" minRpm="800" maxRpm="2000" maxForwardSpeed="92" maxBackwardSpeed="24" brakeForce="8" lowBrakeForceScale="0.1" dampingRateScale="0.4">
                     <torque normRpm="0.45" torque="0.9"/>
                     <torque normRpm="0.50" torque="0.97"/>
                     <torque normRpm="0.59" torque="1.00"/>
@@ -487,7 +487,7 @@
                 </motor>
 
                 <!-- Allison 6-Speed: 1700, 1750, 2700 Series; Ratios are all the same -->
-                <transmission autoGearChangeTime="0.3" gearChangeTime="0.3" name="$l10n_info_transmission_automatic" axleRatio="19" startGearThreshold="0.3">
+                <transmission autoGearChangeTime="0.3" gearChangeTime="0.3" axleRatio="10" startGearThreshold="0.3">
                     <directionChange useGear="true"/>
                     <forwardGear gearRatio="3.10"/>
                     <forwardGear gearRatio="1.81"/>
@@ -495,7 +495,7 @@
                     <forwardGear gearRatio="1.00"/>
                     <forwardGear gearRatio="0.71"/>
                     <forwardGear gearRatio="0.61"/>
-                    <backwardGear gearRatio=".1" name="R"/>
+                    <backwardGear gearRatio="5" name="R"/>
                 </transmission>
             </motorConfiguration>
         </motorConfigurations>
@@ -565,7 +565,7 @@
                         <dashboard displayType="EMITTER" valueType="fillLevelWarning" node="iconWarningFuel_decals" warningThresholdMax="50" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE"/>
                         <exactFillRootNode node="exactFillRootNodeFuel"/>
                     </fillUnit>
-                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="35000000" updateMass="false" allowAILoading="true">
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="5000000" updateMass="false" allowAILoading="true">
                         <exactFillRootNode node="exactFillRootNode"/>
                         <autoAimTargetNode node="fillAutoAimTarget" startZ="2.69" endZ="0.73" invert="false" startPercentage="25"/>
                     </fillUnit>
@@ -636,7 +636,7 @@
     <dischargeable>
         <dischargeableConfigurations>
             <dischargeableConfiguration name="1">
-                <dischargeNode node="dischargeNode" emptySpeed="1000000" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
+                <dischargeNode node="dischargeNode" emptySpeed="500000" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
                     <info width="1.3" length="0.5"/>
                     <effects>
                         <effectNode effectClass="TipEffect">
