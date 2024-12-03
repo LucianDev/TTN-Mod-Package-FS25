@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="92">
     <author>LucianDev</author>
-    <version>1.0.0.2</version>
+    <version>1.0.0.3</version>
     <iconFilename>store_af11.dds</iconFilename>
 
     <title>
@@ -43,7 +43,6 @@
         <storeItem xmlFilename="xml/cvSeries.xml"/>
         <storeItem xmlFilename="xml/zkivSe.xml"/>
         <!-- <storeItem xmlFilename="xml/series9R.xml"/> -->
-        <storeItem xmlFilename="xml/Lizard_MT.xml"/>
         <storeItem xmlFilename="xml/tiger6S.xml"/>
         <storeItem xmlFilename="xml/rrXL9.xml"/>
     </storeItems>

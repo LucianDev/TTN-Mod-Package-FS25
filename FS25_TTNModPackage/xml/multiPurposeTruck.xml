@@ -3,7 +3,7 @@
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
 
     <storeData>
-        <name>Dragon (unreal)</name>
+        <name>Dragon (Unreal)</name>
         <specs>
             <power>170</power>
             <maxSpeed>80</maxSpeed>
@@ -19,7 +19,7 @@
         <category>trucks</category>
         <shopTranslationOffset>0 -0.002 0</shopTranslationOffset>
         <shopRotationOffset>-0.083 0 0</shopRotationOffset>
-        <vertexBufferMemoryUsage>1917184</vertexBufferMemoryUsage>
+        <vertexBufferMemoryUsage>1916672</vertexBufferMemoryUsage>
         <indexBufferMemoryUsage>967424</indexBufferMemoryUsage>
         <textureMemoryUsage>983040</textureMemoryUsage>
         <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
@@ -269,7 +269,7 @@
 
         <motorConfigurations>
             <motorConfiguration name="Dragon" hp="170" price="0">
-                <motor torqueScale="2.34" minRpm="850" maxRpm="5000" maxForwardSpeed="83" maxBackwardSpeed="15" brakeForce="8" lowBrakeForceScale="1" dampingRateScale="0.3">
+                <motor torqueScale="0.34" minRpm="850" maxRpm="5000" maxForwardSpeed="83" maxBackwardSpeed="15" brakeForce="2.2" lowBrakeForceScale="0.1" dampingRateScale="0.3">
                     <torque rpm="1000" torque="0.9"/>
                     <torque rpm="2400" torque="1"/>
                     <torque rpm="3480" torque="1"/>
@@ -277,11 +277,11 @@
                     <torque rpm="4880" torque="0.63"/>
                     <torque rpm="5000" torque="0.2"/>
                 </motor>
-                <transmission minForwardGearRatio="20" maxForwardGearRatio="320" minBackwardGearRatio="20" maxBackwardGearRatio="320" name="$l10n_info_transmission_cvt"/>
+                <transmission minForwardGearRatio="10" maxForwardGearRatio="320" minBackwardGearRatio="125" maxBackwardGearRatio="320" name="$l10n_info_transmission_cvt"/>
             </motorConfiguration>
         </motorConfigurations>
 
-        <motorStartDuration>1000</motorStartDuration>
+        <motorStartDuration>2500</motorStartDuration>
 
         <exhaustEffects>
             <exhaustEffect node="exhaustParticle" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.05" maxRpmScale="0.5"/>
@@ -291,7 +291,7 @@
             <dashboard displayType="ANIMATION" valueType="rpm" animName="needleRPMAnim" minValueAnim="0" maxValueAnim="5000" doInterpolation="true" interpolationSpeed="5" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="ANIMATION" valueType="speed" animName="needleSpeedAnim" minValueAnim="0" maxValueAnim="83" doInterpolation="true" interpolationSpeed="5" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="ROT" valueType="motorTemperature" node="needleTemperature" minRot="0 0 0" maxRot="0 94.5 0" minValueRot="75" maxValueRot="125" doInterpolation="true" interpolationSpeed="0.2" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="ROT" valueType="movingDirection" node="leverMovingDirection" minRot="0 0 0" maxRot="-7 0 -1" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="movingDirection" node="leverMovingDirection" minRot="-7 0 -1" maxRot="0 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="MULTI_STATE" valueType="ignitionState" node="keyIgnition" doInterpolation="true">
                 <state value="0" rotation="0 0 0"/>
                 <state value="1" rotation="90 0 0"/>
@@ -326,12 +326,12 @@
     </wipers>
 
     <animations>
-        <animation name="needleSpeedAnim">
+        <animation name="needleSpeedAnim" isKeyframe="true">
             <part node="needleSpeed" startTime="0" endTime="80" startRot="0 0 0" endRot="0 -149 0"/>
             <part node="needleSpeed" startTime="80" endTime="83" startRot="0 -149 0" endRot="0 -160 0"/>
         </animation>
 
-        <animation name="needleRPMAnim">
+        <animation name="needleRPMAnim" isKeyframe="true">
             <part node="needleRPM" startTime="0" endTime="1" startRot="0 0 0" endRot="0 -55 0"/>
             <part node="needleRPM" startTime="1" endTime="2" startRot="0 -55 0" endRot="0 -106 0"/>
             <part node="needleRPM" startTime="2" endTime="3" startRot="0 -106 0" endRot="0 -156 0"/>
@@ -339,7 +339,7 @@
             <part node="needleRPM" startTime="4" endTime="5" startRot="0 -207 0" endRot="0 -264 0"/>
         </animation>
 
-        <animation name="wiperFrontAnimation" soundVolumeFactor="0.7">
+        <animation name="wiperFrontAnimation" isKeyframe="true" soundVolumeFactor="0.7">
             <part node="wiperFrontLeft" startTime="0.0" endTime="0.25" startRot="0.0 0.0 0.0" endRot="0.0 3.9 -45.0" />
             <part node="wiperFrontLeft" startTime="0.25" endTime="0.5" startRot="0.0 3.9 -45.0" endRot="-0.0 5.5 -90.0" />
             <part node="wiperFrontLeft" startTime="0.5" endTime="0.75" startRot="-0.0 5.5 -90.0" endRot="-0.0 3.9 -45.0" />
@@ -630,7 +630,7 @@
                         <dashboard displayType="EMITTER" valueType="fillLevelWarning" node="iconFuelWarning_decal" warningThresholdMax="50" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE"/>
                         <exactFillRootNode node="exactFillRootNodeFuel"/>
                     </fillUnit>
-                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="95000" updateMass="false" allowAILoading="true" foldMinLimit="0" foldMaxLimit="0" fillAnimation="closeDoors" fillAnimationLoadTime="1">
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="30000" updateMass="false" allowAILoading="true" foldMinLimit="0" foldMaxLimit="0" fillAnimation="closeDoors" fillAnimationLoadTime="1">
                         <exactFillRootNode node="exactFillRootNodeDefault"/>
                         <autoAimTargetNode node="fillAutoAimTargetDefault" startZ="2.69" endZ="0.58" invert="false" startPercentage="25"/>
                     </fillUnit>
@@ -639,14 +639,14 @@
                 <objectChange node="exactFillRootNodeExtension" rigidBodyTypeActive="NONE"/>
             </fillUnitConfiguration>
 
-            <fillUnitConfiguration name="2" price="8000">
+            <fillUnitConfiguration name="2" price="4000">
                 <fillUnits>
-                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="280">
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="180">
                         <dashboard displayType="ROT" valueType="fillLevel" node="needleFuel" minRot="0 0 0" maxRot="0 94.5 0" doInterpolation="true" interpolationSpeed="1" groups="MOTOR_ACTIVE"/>
                         <dashboard displayType="EMITTER" valueType="fillLevelWarning" node="iconFuelWarning_decal" warningThresholdMax="50" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE"/>
                         <exactFillRootNode node="exactFillRootNodeFuel"/>
                     </fillUnit>
-                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="150000" updateMass="false" allowAILoading="true" foldMinLimit="0" foldMaxLimit="0" fillAnimation="closeDoors" fillAnimationLoadTime="1">
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="true" fillTypeCategories="BULK" capacity="150000" udpateMass="false" allowAILoading="true" foldMinLimit="0" foldMaxLimit="0" fillAnimation="closeDoors" fillAnimationLoadTime="1">
                         <exactFillRootNode node="exactFillRootNodeExtension"/>
                         <autoAimTargetNode node="fillAutoAimTargetExtension" startZ="2.69" endZ="0.58" invert="false" startPercentage="25"/>
                     </fillUnit>
@@ -765,7 +765,7 @@
     <dischargeable>
         <dischargeableConfigurations>
             <dischargeableConfiguration name="1">
-                <dischargeNode node="dischargeNodeBack" emptySpeed="2275" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
+                <dischargeNode node="dischargeNodeBack" emptySpeed="1000" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
                     <info width="2.5" length="0.5" zOffset="-0.5"/>
                     <effects>
                         <effectNode effectClass="TipEffect">
@@ -785,7 +785,7 @@
                         <effectNode effectNode="effectSmokeLeft" materialType="unloadingSmoke" fadeTime="0.5" />
                     </effects>
                 </dischargeNode>
-                <dischargeNode node="dischargeNodeRight" emptySpeed="5000" fillUnitIndex="2" unloadInfoIndex="3" >
+                <dischargeNode node="dischargeNodeRight" emptySpeed="275" fillUnitIndex="2" unloadInfoIndex="3" >
                     <info width="4" length="0.5" zOffset="-0.5"/>
                     <effects>
                         <effectNode effectClass="TipEffect">
@@ -801,7 +801,7 @@
             </dischargeableConfiguration>
 
             <dischargeableConfiguration name="2">
-                <dischargeNode node="dischargeNodeBack" emptySpeed="4000" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
+                <dischargeNode node="dischargeNodeBack" emptySpeed="600" fillUnitIndex="2" unloadInfoIndex="1" allowAIDischarge="true">
                     <info width="2.5" length="0.5" zOffset="-0.5"/>
                     <effects>
                         <effectNode effectClass="TipEffect">
@@ -824,7 +824,7 @@
         <tensionBeltsConfigurations>
 
             <tensionBeltsConfiguration name="1">
-                <tensionBelts linkNode="tensionBelts" jointNode="multiPurposeTruck_main_component1" width="0.055" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
+                <tensionBelts linkNode="tensionBelts" jointNode="multiPurposeTruck_main_component1" width="0.055" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger" allowDischargeWhileFasten="false">
                     <tensionBelt startNode="belt06Start" endNode="belt06End" />
                     <tensionBelt startNode="belt07Start" endNode="belt07End" />
                     <tensionBelt startNode="belt08Start" endNode="belt08End" />
@@ -838,7 +838,7 @@
             </tensionBeltsConfiguration>
 
             <tensionBeltsConfiguration name="2">
-                <tensionBelts linkNode="tensionBelts" jointNode="multiPurposeTruck_main_component1" width="0.055" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
+                <tensionBelts linkNode="tensionBelts" jointNode="multiPurposeTruck_main_component1" width="0.055" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger" allowDischargeWhileFasten="false">
                     <tensionBelt startNode="belt01Start" endNode="belt01End" >
                         <intersectionNode node="belt01Intersection01"/>
                         <intersectionNode node="belt01Intersection02"/>
@@ -883,9 +883,9 @@
 
     <dashboard>
         <groups>
-            <group name="MOTOR_STARTING" isMotorStarting="true"/>
-            <group name="MOTOR_ACTIVE" isMotorStarting="true" isMotorRunning="true"/>
-            <group name="MOTOR_RUNNING" isMotorStarting="false" isMotorRunning="true"/>
+            <group name="MOTOR_STARTING" electronicsStarting="true"/>
+            <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+            <group name="MOTOR_RUNNING" electronicsRunning="true"/>
             <group name="LIGHT_ENABLED" lightTypes="0"/>
         </groups>
 
@@ -1101,6 +1101,7 @@
         <i3dMapping id="effectParticleBack" node="0>0|6|1|0|0|0|0|4|0|0" />
         <i3dMapping id="effectSmokeBack" node="0>0|6|1|0|0|0|0|4|0|1" />
         <i3dMapping id="effectGrainBack_joint" node="0>0|6|1|0|0|0|0|4|1" />
+        <i3dMapping id="colPart02" node="0>0|6|1|0|0|0|0|5|0" />
         <i3dMapping id="colPart07" node="0>0|6|1|0|0|0|0|5|2" />
         <i3dMapping id="colPart08" node="0>0|6|1|0|0|0|0|5|3" />
         <i3dMapping id="hydraulicBodyRef" node="0>0|6|1|0|0|0|0|6" />
